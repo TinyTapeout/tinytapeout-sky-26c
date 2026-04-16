@@ -5,6 +5,7 @@
 ```bash
 export LIBRELANE_ROOT=~/librelane
 export SKY130_PDK_VERSION=6d4d11780c40b20ee63cc98e645307a9bf2b2ab8
+export TT_CONFIG=sky130.yaml:../../mux_overrides.yaml
 
 pip3 install ciel
 ciel enable --pdk sky130 $SKY130_PDK_VERSION

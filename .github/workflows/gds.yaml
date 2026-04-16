@@ -16,7 +16,7 @@ jobs:
     env:
       PYTHONIOENCODING: utf-8
       PDK_ROOT: ${{ github.workspace }}/pdk
-      TT_CONFIG: sky130.yaml
+      TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
       # Uncomment the following line to build only the specified projects:
       #TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test
 
