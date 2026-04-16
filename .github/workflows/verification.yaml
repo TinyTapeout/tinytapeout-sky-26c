@@ -16,7 +16,7 @@ jobs:
     env:
       SKY130_PDK_VERSION: 1341f54f5ce0c4955326297f235e4ace1eb6d419
       PDK_ROOT: /home/runner/pdk
-      MPW_TAG: mpw-9a
+      TT_CONFIG: sky130.yaml
 
     # ubuntu
     runs-on: ubuntu-24.04
