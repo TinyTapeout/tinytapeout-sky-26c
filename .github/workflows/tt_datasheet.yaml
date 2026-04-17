@@ -15,7 +15,7 @@ jobs:
   build_datasheet:
     runs-on: ubuntu-24.04
     env:
-      TT_CONFIG: sky130.yaml
+      TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
