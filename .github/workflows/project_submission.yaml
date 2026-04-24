@@ -98,16 +98,16 @@ jobs:
         uses: test-summary/action@v2.3
         with:
           paths: 'tt/precheck/reports/results.xml'
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: (success() || failure()) && steps.changed-files.outputs.any_changed == 'true'
 
       - name: Capture test results
         shell: bash
         working-directory: tt/precheck
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: (success() || failure()) && steps.changed-files.outputs.any_changed == 'true'
         run: cat reports/results.md >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: (success() || failure()) && steps.changed-files.outputs.any_changed == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: precheck-reports
