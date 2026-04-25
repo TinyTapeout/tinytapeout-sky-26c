@@ -1,5 +1,5 @@
-id: 'ttsky26a'
-name: 'Tiny Tapeout SKY 26a'
+id: 'ttsky26b'
+name: 'Tiny Tapeout SKY 26b'
 pdk: 'sky130A'
 end_date: '2026-05-11'
 project_dir: 'projects'

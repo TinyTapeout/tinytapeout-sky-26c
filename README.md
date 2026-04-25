@@ -3,7 +3,7 @@
 [![gds](../../actions/workflows/gds.yaml/badge.svg)](../../actions/workflows/gds.yaml)
 [![precheck](../../actions/workflows/precheck.yaml/badge.svg)](../../actions/workflows/precheck.yaml)
 
-# Tiny Tapeout SKY 26a
+# Tiny Tapeout SKY 26b
 
 - Visit https://tinytapeout.com for more information on the project and how to get involved.
 
