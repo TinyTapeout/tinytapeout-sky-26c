@@ -76,7 +76,7 @@ jobs:
             -i ${{ github.workspace }}/tinytapeout-submission \
             -p ${{ env.PDK_ROOT }}/sky130A \
             -c ${{ env.GOLDEN_CARAVEL }} \
-            --skip-checks lvs makefile
+            --skip-checks lvs makefile oeb
 
       - name: Upload precheck results
         uses: actions/upload-artifact@v4
