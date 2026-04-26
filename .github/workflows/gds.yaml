@@ -127,6 +127,12 @@ jobs:
       - name: Patch GL power pin assignments
         run: sed -i 's/^ assign \(v[a-z0-9]*\) = \(v[a-z]*\);$/ assign \1 = \2; assign \2 = \1;/' foundry_submission/verilog/gl/openframe_project_wrapper.v
 
+      - name: Add lvs_config.json to foundry submission
+        run: |
+          mkdir -p foundry_submission/lvs/openframe_project_wrapper
+          cp lvs/openframe_project_wrapper/lvs_config.json \
+             foundry_submission/lvs/openframe_project_wrapper/lvs_config.json
+
       - name: upload GDS artifact
         if: success() || failure()
         uses: actions/upload-artifact@v4
