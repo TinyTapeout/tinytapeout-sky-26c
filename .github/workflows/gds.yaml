@@ -69,6 +69,14 @@ jobs:
           pdk_version: ${{ env.SKY130_PDK_VERSION }}
           pdk_root: ${{ env.PDK_ROOT }}
 
+      # Drop obsm5 from the met5.2 rule to allow tt_um_oscillating_bones fill blockers.
+      - name: Patch magic DRC for FILLOBSM5 spacing rule
+        run: |
+          TECH=${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.tech
+          sed -i -E \
+            -e 's|(spacing[[:space:]]+allm5[[:space:]]+allm5),obsm5(,m5fill)|\1\2|' \
+            "$TECH"
+
       # Patch all digital projects to work around the poly density issue
       - name: Patch projects for poly density issue
         working-directory: projects
