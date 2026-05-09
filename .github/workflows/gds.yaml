@@ -77,6 +77,14 @@ jobs:
             -e 's|(spacing[[:space:]]+allm5[[:space:]]+allm5),obsm5(,m5fill)|\1\2|' \
             "$TECH"
 
+      # Workaround for analog rpm.1 false positives.
+      # See https://github.com/librelane/librelane/issues/928
+      # and https://github.com/RTimothyEdwards/open_pdks/pull/504
+      - name: Disable rpm.1 check in sky130A.tech (false positives)
+        run: |
+          sed -i 's|^ cifwidth rpm_generate 1270 |# DISABLED for false positives: \0|' \
+            ${{ env.PDK_ROOT }}/sky130A/libs.tech/magic/sky130A.tech
+
       # Patch all digital projects to work around the poly density issue
       - name: Patch projects for poly density issue
         working-directory: projects
