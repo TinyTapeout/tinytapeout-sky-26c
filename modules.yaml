@@ -1,8 +1,8 @@
 modules:
-# Hard coded module locations - other modules will be assigned dynamically
-  - name: "chip_rom"
-    x: 7
-    y: 15
-  - name: "factory_test"
-    x: 7
-    y: 14
+  # The following modules need to have specific mux addresses assigned
+  - name: 'chip_rom' # ROM module, address 0
+    mux_id: 0
+    blk_id: 0
+  - name: 'factory_test' # Factory test module, address 1
+    mux_id: 0
+    blk_id: 1
