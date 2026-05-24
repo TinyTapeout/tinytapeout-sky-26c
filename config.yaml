@@ -1,7 +1,7 @@
-id: 'ttsky26b'
-name: 'Tiny Tapeout SKY 26b'
+id: 'ttsky26c'
+name: 'Tiny Tapeout SKY 26c'
 pdk: 'sky130A'
-end_date: '2026-05-18'
+end_date: '2026-09-07'
 project_dir: 'projects'
 top_level_macro: 'openframe_project_wrapper'
 powered_netlists: true
