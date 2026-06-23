@@ -1,0 +1,41 @@
+project:
+  title:        "FPGA Face Detection"
+  author:       "Nikita"
+  discord:      ""
+  description:  "Streaming pixel-based skin-tone and facial feature detector with eye, nose and mouth dark-pixel counting."
+  language:     "Verilog"
+  clock_hz:     50000000
+  tiles:        "1x1"
+  wokwi_id:     0
+  top_module:   "tt_um_nikita_face_detect"
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "pixel channel value bit 0"
+  ui[1]: "pixel channel value bit 1"
+  ui[2]: "pixel channel value bit 2"
+  ui[3]: "pixel channel value bit 3"
+  ui[4]: "pixel channel value bit 4"
+  ui[5]: "pixel channel value bit 5"
+  ui[6]: "pixel channel value bit 6"
+  ui[7]: "pixel channel value bit 7"
+  uo[0]: "face_detected"
+  uo[1]: "skin_found"
+  uo[2]: "eyes_found"
+  uo[3]: "nose_found"
+  uo[4]: "mouth_found"
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+  uio[0]: "channel select bit 0"
+  uio[1]: "channel select bit 1"
+  uio[2]: "pixel_valid"
+  uio[3]: "frame_done"
+  uio[4]: "row_zone bit 0"
+  uio[5]: "row_zone bit 1"
+  uio[6]: "col_zone bit 0"
+  uio[7]: "col_zone bit 1"
+
+# Do not change!
+yaml_version: 6
