@@ -1,0 +1,24 @@
+121. Printing statistics.
+
+=== tt_um_obstacle_avoider ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       13        - wires
+       48        - wire bits
+        8        - public wires
+       43        - public wire bits
+        8        - ports
+       43        - port bits
+       29  182.675 cells
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        1    7.507   sky130_fd_sc_hd__and2_2
+       21   78.826   sky130_fd_sc_hd__conb_1
+        3   63.811   sky130_fd_sc_hd__dfxtp_2
+        2    7.507   sky130_fd_sc_hd__inv_2
+        1   12.512   sky130_fd_sc_hd__o2111a_2
+
+   Chip area for module '\tt_um_obstacle_avoider': 182.675200
+     of which used for sequential elements: 63.811200 (34.93%)
+
