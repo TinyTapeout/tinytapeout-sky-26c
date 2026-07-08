@@ -16,8 +16,8 @@ project:
 
 pinout:
   # Inputs
-  ui[0]: "feed button (rising edge = one meal)"
-  ui[1]: "pet/affection button (rising edge = one pat)"
+  ui[0]: "feed button (debounced ~6.6ms; one press = one meal)"
+  ui[1]: "pet/affection button (debounced ~6.6ms; one press = one pat)"
   ui[2]: "speed select bit 0 (00 real ~1.9h/tick, 01 needy ~27s, 10 demo ~0.4s, 11 sim)"
   ui[3]: "speed select bit 1"
   ui[4]: ""
