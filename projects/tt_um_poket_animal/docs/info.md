@@ -75,3 +75,7 @@ A 7-segment display with a decimal point on `uo_out` (segments a–g on
 demo board. Two push buttons on `ui[0]` (feed) and `ui[1]` (pet), and two
 switches or jumpers on `ui[3:2]` for speed select. Optionally an LED on
 `uio[1]` for the heartbeat.
+
+The buttons are debounced on-chip (the level must be stable for ~6.6 ms at
+10 MHz), so bare switches work fine: contact bounce on press or release
+still counts as a single meal or pat.
