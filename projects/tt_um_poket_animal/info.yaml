@@ -1,0 +1,48 @@
+# Tiny Tapeout project information
+project:
+  title:        "Poket Animal"
+  author:       "Vladimir Velikanov"
+  discord:      ""
+  description:  "A Silicon pet living in the 7-segment display. Features: hunger, joy, indigestion, mortality. Known errata: dies. Workaround: reset."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  tiles: "1x1"
+
+  top_module: "tt_um_poket_animal"
+
+  source_files:
+    - "project.v"
+
+pinout:
+  # Inputs
+  ui[0]: "feed button (rising edge = one meal)"
+  ui[1]: "pet/affection button (rising edge = one pat)"
+  ui[2]: "speed select bit 0 (00 real ~1.9h/tick, 01 needy ~27s, 10 demo ~0.4s, 11 sim)"
+  ui[3]: "speed select bit 1"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs (7-segment face)
+  uo[0]: "segment a"
+  uo[1]: "segment b"
+  uo[2]: "segment c"
+  uo[3]: "segment d"
+  uo[4]: "segment e"
+  uo[5]: "segment f"
+  uo[6]: "segment g"
+  uo[7]: "decimal point (nom indicator; queasy blink when sick; permanent tear when dead)"
+
+  # Bidirectional pins (all outputs)
+  uio[0]: "alive"
+  uio[1]: "heartbeat (speeds up with hunger, stops when dead)"
+  uio[2]: "cause of death (0: starved, 1: overfed)"
+  uio[3]: "sick"
+  uio[4]: "hunger bit 0"
+  uio[5]: "hunger bit 1"
+  uio[6]: "wiggle (petting animation active)"
+  uio[7]: "hunger tick (debug pulse)"
+
+yaml_version: 6
