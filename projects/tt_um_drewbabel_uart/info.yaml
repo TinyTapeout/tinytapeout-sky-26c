@@ -1,0 +1,50 @@
+project:
+  title:        "Configurable FIFO-buffered UART with APB CSR"
+  author:       "Drew Babel"
+  discord:      ""
+  description:  "A configurable, FIFO-buffered UART with an AMBA-APB register block, hardened to silicon on SkyWater SKY130 for the Tiny Tapeout shuttle."
+  language:     "SystemVerilog"
+  clock_hz:     50000000
+  tiles: "1x2"
+  top_module:  "tt_um_drewbabel_uart"
+  source_files:
+    - "project.sv"
+    - "uart.sv"
+    - "uart_tx.sv"
+    - "uart_rx.sv"
+    - "tick_gen.sv"
+    - "synchronizer.sv"
+    - "sync_fifo.sv"
+    - "parity.sv"
+    - "apb_csr.sv"
+    - "csr_pin_adapter.sv"
+
+pinout:
+  ui[0]: "tx_data[0] / csr_mosi"
+  ui[1]: "tx_data[1]"
+  ui[2]: "tx_data[2]"
+  ui[3]: "tx_data[3]"
+  ui[4]: "tx_data[4]"
+  ui[5]: "tx_data[5]"
+  ui[6]: "tx_data[6]"
+  ui[7]: "tx_data[7]"
+
+  uo[0]: "rx_data[0] / csr_rdata[0]"
+  uo[1]: "rx_data[1] / csr_rdata[1]"
+  uo[2]: "rx_data[2] / csr_rdata[2]"
+  uo[3]: "rx_data[3] / csr_rdata[3]"
+  uo[4]: "rx_data[4] / csr_rdata[4]"
+  uo[5]: "rx_data[5] / csr_rdata[5]"
+  uo[6]: "rx_data[6] / csr_rdata[6]"
+  uo[7]: "rx_data[7] / csr_rdata[7]"
+
+  uio[0]: "rx_serial (in)"
+  uio[1]: "tx_push / csr_sclk (in)"
+  uio[2]: "rx_pop (in)"
+  uio[3]: "tx_serial (out)"
+  uio[4]: "tx_full (out)"
+  uio[5]: "rx_empty (out)"
+  uio[6]: "rx_error (out)"
+  uio[7]: "csr_mode (in)"
+
+yaml_version: 6
