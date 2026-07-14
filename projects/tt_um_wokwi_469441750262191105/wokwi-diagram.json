@@ -1,0 +1,1101 @@
+{
+  "version": 1,
+  "author": "Claude + user",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "vcc1",
+      "type": "wokwi-vcc",
+      "top": -60,
+      "left": -520,
+      "attrs": {}
+    },
+    {
+      "id": "gnd1",
+      "type": "wokwi-gnd",
+      "top": 40,
+      "left": -520,
+      "attrs": {}
+    },
+    {
+      "id": "clock1",
+      "type": "wokwi-clock-generator",
+      "top": -160,
+      "left": -520,
+      "attrs": {
+        "frequency": "5"
+      }
+    },
+    {
+      "id": "btn_beat",
+      "type": "wokwi-pushbutton",
+      "top": 140,
+      "left": -520,
+      "attrs": {
+        "label": "Beat"
+      }
+    },
+    {
+      "id": "ttin",
+      "type": "board-tt-block-input",
+      "top": -40,
+      "left": -360,
+      "attrs": {
+        "verilogRole": "input"
+      }
+    },
+    {
+      "id": "ttout",
+      "type": "board-tt-block-output",
+      "top": -300,
+      "left": 1040,
+      "attrs": {
+        "verilogRole": "output"
+      }
+    },
+    {
+      "id": "not_pulse",
+      "type": "wokwi-gate-not",
+      "top": 140,
+      "left": -220,
+      "attrs": {}
+    },
+    {
+      "id": "c0",
+      "type": "wokwi-flip-flop-d",
+      "top": -200,
+      "left": -60,
+      "attrs": {}
+    },
+    {
+      "id": "clr_c0",
+      "type": "wokwi-gate-and-2",
+      "top": -200,
+      "left": -160,
+      "attrs": {}
+    },
+    {
+      "id": "c1",
+      "type": "wokwi-flip-flop-d",
+      "top": -120,
+      "left": -60,
+      "attrs": {}
+    },
+    {
+      "id": "clr_c1",
+      "type": "wokwi-gate-and-2",
+      "top": -120,
+      "left": -160,
+      "attrs": {}
+    },
+    {
+      "id": "c2",
+      "type": "wokwi-flip-flop-d",
+      "top": -40,
+      "left": -60,
+      "attrs": {}
+    },
+    {
+      "id": "clr_c2",
+      "type": "wokwi-gate-and-2",
+      "top": -40,
+      "left": -160,
+      "attrs": {}
+    },
+    {
+      "id": "r0",
+      "type": "wokwi-flip-flop-d",
+      "top": -200,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-flip-flop-d",
+      "top": -120,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "id": "r2",
+      "type": "wokwi-flip-flop-d",
+      "top": -40,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "id": "sub0_or",
+      "type": "wokwi-gate-or-2",
+      "top": -40,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "id": "sub0_xor",
+      "type": "wokwi-gate-xor-2",
+      "top": -160,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "id": "sub0_not",
+      "type": "wokwi-gate-not",
+      "top": -220,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "id": "sub1_axb",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "id": "sub1_sum",
+      "type": "wokwi-gate-xor-2",
+      "top": -220,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "id": "sub1_aandb",
+      "type": "wokwi-gate-and-2",
+      "top": -160,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "id": "sub1_axbandc",
+      "type": "wokwi-gate-and-2",
+      "top": -100,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "id": "sub1_cout",
+      "type": "wokwi-gate-or-2",
+      "top": -40,
+      "left": 420,
+      "attrs": {}
+    },
+    {
+      "id": "sub2_axb",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "id": "sub2_sum",
+      "type": "wokwi-gate-xor-2",
+      "top": -220,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "id": "sub2_aandb",
+      "type": "wokwi-gate-and-2",
+      "top": -160,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "id": "sub2_axbandc",
+      "type": "wokwi-gate-and-2",
+      "top": -100,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "id": "sub2_cout",
+      "type": "wokwi-gate-or-2",
+      "top": -40,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "id": "sign_not",
+      "type": "wokwi-gate-not",
+      "top": -40,
+      "left": 580,
+      "attrs": {}
+    },
+    {
+      "id": "absx0",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "absx1",
+      "type": "wokwi-gate-xor-2",
+      "top": -220,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "absx2",
+      "type": "wokwi-gate-xor-2",
+      "top": -160,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "absinc0_sum",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "absinc0_car",
+      "type": "wokwi-gate-and-2",
+      "top": -220,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "absinc1_sum",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 820,
+      "attrs": {}
+    },
+    {
+      "id": "absinc1_car",
+      "type": "wokwi-gate-and-2",
+      "top": -220,
+      "left": 820,
+      "attrs": {}
+    },
+    {
+      "id": "absinc2_sum",
+      "type": "wokwi-gate-xor-2",
+      "top": -280,
+      "left": 900,
+      "attrs": {}
+    },
+    {
+      "id": "dec_or_a",
+      "type": "wokwi-gate-or-2",
+      "top": 40,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "dec_ge1",
+      "type": "wokwi-gate-or-2",
+      "top": 40,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "dec_and_b",
+      "type": "wokwi-gate-and-2",
+      "top": 100,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "dec_ge3",
+      "type": "wokwi-gate-or-2",
+      "top": 100,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "dec_or_c",
+      "type": "wokwi-gate-or-2",
+      "top": 160,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "dec_ge5",
+      "type": "wokwi-gate-and-2",
+      "top": 160,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "dec_ge6",
+      "type": "wokwi-gate-and-2",
+      "top": 220,
+      "left": 660,
+      "attrs": {}
+    },
+    {
+      "id": "dec_ge7",
+      "type": "wokwi-gate-and-2",
+      "top": 220,
+      "left": 740,
+      "attrs": {}
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "top": -400,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led2",
+      "type": "wokwi-led",
+      "top": -350,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led3",
+      "type": "wokwi-led",
+      "top": -300,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led4",
+      "type": "wokwi-led",
+      "top": -250,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led5",
+      "type": "wokwi-led",
+      "top": -200,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led6",
+      "type": "wokwi-led",
+      "top": -150,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led7",
+      "type": "wokwi-led",
+      "top": -100,
+      "left": 1160,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "id": "led8",
+      "type": "wokwi-led",
+      "top": -50,
+      "left": 1160,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "id": "ttio0",
+      "type": "board-tt-block-bidirectional-io",
+      "top": -200,
+      "left": 1320,
+      "attrs": {
+        "verilogRole": "bidirectional",
+        "verilogBit": "0"
+      }
+    },
+    {
+      "id": "ttio1",
+      "type": "board-tt-block-bidirectional-io",
+      "top": -140,
+      "left": 1320,
+      "attrs": {
+        "verilogRole": "bidirectional",
+        "verilogBit": "1"
+      }
+    },
+    {
+      "id": "ttio2",
+      "type": "board-tt-block-bidirectional-io",
+      "top": -80,
+      "left": 1320,
+      "attrs": {
+        "verilogRole": "bidirectional",
+        "verilogBit": "2"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "vcc1:VCC",
+      "btn_beat:1.r",
+      "red",
+      []
+    ],
+    [
+      "btn_beat:2.r",
+      "ttin:EXTIN0",
+      "green",
+      []
+    ],
+    [
+      "clock1:CLK",
+      "ttin:EXTCLK",
+      "yellow",
+      []
+    ],
+    [
+      "ttin:IN0",
+      "not_pulse:IN",
+      "green",
+      []
+    ],
+    [
+      "c0:NOTQ",
+      "clr_c0:A",
+      "blue",
+      []
+    ],
+    [
+      "not_pulse:OUT",
+      "clr_c0:B",
+      "yellow",
+      []
+    ],
+    [
+      "clr_c0:OUT",
+      "c0:D",
+      "blue",
+      []
+    ],
+    [
+      "c1:NOTQ",
+      "clr_c1:A",
+      "blue",
+      []
+    ],
+    [
+      "not_pulse:OUT",
+      "clr_c1:B",
+      "yellow",
+      []
+    ],
+    [
+      "clr_c1:OUT",
+      "c1:D",
+      "blue",
+      []
+    ],
+    [
+      "c2:NOTQ",
+      "clr_c2:A",
+      "blue",
+      []
+    ],
+    [
+      "not_pulse:OUT",
+      "clr_c2:B",
+      "yellow",
+      []
+    ],
+    [
+      "clr_c2:OUT",
+      "c2:D",
+      "blue",
+      []
+    ],
+    [
+      "ttin:CLK",
+      "c0:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c0:Q",
+      "c1:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c1:Q",
+      "c2:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c0:Q",
+      "r0:D",
+      "blue",
+      []
+    ],
+    [
+      "ttin:IN0",
+      "r0:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c1:Q",
+      "r1:D",
+      "blue",
+      []
+    ],
+    [
+      "ttin:IN0",
+      "r1:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c2:Q",
+      "r2:D",
+      "blue",
+      []
+    ],
+    [
+      "ttin:IN0",
+      "r2:CLK",
+      "yellow",
+      []
+    ],
+    [
+      "c0:Q",
+      "sub0_or:A",
+      "green",
+      []
+    ],
+    [
+      "r0:NOTQ",
+      "sub0_or:B",
+      "green",
+      []
+    ],
+    [
+      "c0:Q",
+      "sub0_xor:A",
+      "green",
+      []
+    ],
+    [
+      "r0:NOTQ",
+      "sub0_xor:B",
+      "green",
+      []
+    ],
+    [
+      "sub0_xor:OUT",
+      "sub0_not:IN",
+      "green",
+      []
+    ],
+    [
+      "c1:Q",
+      "sub1_axb:A",
+      "green",
+      []
+    ],
+    [
+      "r1:NOTQ",
+      "sub1_axb:B",
+      "green",
+      []
+    ],
+    [
+      "sub1_axb:OUT",
+      "sub1_sum:A",
+      "green",
+      []
+    ],
+    [
+      "sub0_or:OUT",
+      "sub1_sum:B",
+      "green",
+      []
+    ],
+    [
+      "c1:Q",
+      "sub1_aandb:A",
+      "green",
+      []
+    ],
+    [
+      "r1:NOTQ",
+      "sub1_aandb:B",
+      "green",
+      []
+    ],
+    [
+      "sub1_axb:OUT",
+      "sub1_axbandc:A",
+      "green",
+      []
+    ],
+    [
+      "sub0_or:OUT",
+      "sub1_axbandc:B",
+      "green",
+      []
+    ],
+    [
+      "sub1_aandb:OUT",
+      "sub1_cout:A",
+      "green",
+      []
+    ],
+    [
+      "sub1_axbandc:OUT",
+      "sub1_cout:B",
+      "green",
+      []
+    ],
+    [
+      "c2:Q",
+      "sub2_axb:A",
+      "green",
+      []
+    ],
+    [
+      "r2:NOTQ",
+      "sub2_axb:B",
+      "green",
+      []
+    ],
+    [
+      "sub2_axb:OUT",
+      "sub2_sum:A",
+      "green",
+      []
+    ],
+    [
+      "sub1_cout:OUT",
+      "sub2_sum:B",
+      "green",
+      []
+    ],
+    [
+      "c2:Q",
+      "sub2_aandb:A",
+      "green",
+      []
+    ],
+    [
+      "r2:NOTQ",
+      "sub2_aandb:B",
+      "green",
+      []
+    ],
+    [
+      "sub2_axb:OUT",
+      "sub2_axbandc:A",
+      "green",
+      []
+    ],
+    [
+      "sub1_cout:OUT",
+      "sub2_axbandc:B",
+      "green",
+      []
+    ],
+    [
+      "sub2_aandb:OUT",
+      "sub2_cout:A",
+      "green",
+      []
+    ],
+    [
+      "sub2_axbandc:OUT",
+      "sub2_cout:B",
+      "green",
+      []
+    ],
+    [
+      "sub2_cout:OUT",
+      "sign_not:IN",
+      "green",
+      []
+    ],
+    [
+      "sub0_not:OUT",
+      "absx0:A",
+      "green",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "absx0:B",
+      "green",
+      []
+    ],
+    [
+      "sub1_sum:OUT",
+      "absx1:A",
+      "green",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "absx1:B",
+      "green",
+      []
+    ],
+    [
+      "sub2_sum:OUT",
+      "absx2:A",
+      "green",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "absx2:B",
+      "green",
+      []
+    ],
+    [
+      "absx0:OUT",
+      "absinc0_sum:A",
+      "green",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "absinc0_sum:B",
+      "green",
+      []
+    ],
+    [
+      "absx0:OUT",
+      "absinc0_car:A",
+      "green",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "absinc0_car:B",
+      "green",
+      []
+    ],
+    [
+      "absx1:OUT",
+      "absinc1_sum:A",
+      "green",
+      []
+    ],
+    [
+      "absinc0_car:OUT",
+      "absinc1_sum:B",
+      "green",
+      []
+    ],
+    [
+      "absx1:OUT",
+      "absinc1_car:A",
+      "green",
+      []
+    ],
+    [
+      "absinc0_car:OUT",
+      "absinc1_car:B",
+      "green",
+      []
+    ],
+    [
+      "absx2:OUT",
+      "absinc2_sum:A",
+      "green",
+      []
+    ],
+    [
+      "absinc1_car:OUT",
+      "absinc2_sum:B",
+      "green",
+      []
+    ],
+    [
+      "absinc2_sum:OUT",
+      "dec_or_a:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc1_sum:OUT",
+      "dec_or_a:B",
+      "violet",
+      []
+    ],
+    [
+      "dec_or_a:OUT",
+      "dec_ge1:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc0_sum:OUT",
+      "dec_ge1:B",
+      "violet",
+      []
+    ],
+    [
+      "absinc1_sum:OUT",
+      "dec_and_b:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc0_sum:OUT",
+      "dec_and_b:B",
+      "violet",
+      []
+    ],
+    [
+      "absinc2_sum:OUT",
+      "dec_ge3:A",
+      "violet",
+      []
+    ],
+    [
+      "dec_and_b:OUT",
+      "dec_ge3:B",
+      "violet",
+      []
+    ],
+    [
+      "absinc1_sum:OUT",
+      "dec_or_c:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc0_sum:OUT",
+      "dec_or_c:B",
+      "violet",
+      []
+    ],
+    [
+      "absinc2_sum:OUT",
+      "dec_ge5:A",
+      "violet",
+      []
+    ],
+    [
+      "dec_or_c:OUT",
+      "dec_ge5:B",
+      "violet",
+      []
+    ],
+    [
+      "absinc2_sum:OUT",
+      "dec_ge6:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc1_sum:OUT",
+      "dec_ge6:B",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge6:OUT",
+      "dec_ge7:A",
+      "violet",
+      []
+    ],
+    [
+      "absinc0_sum:OUT",
+      "dec_ge7:B",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge1:OUT",
+      "ttout:OUT0",
+      "violet",
+      []
+    ],
+    [
+      "dec_or_a:OUT",
+      "ttout:OUT1",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge3:OUT",
+      "ttout:OUT2",
+      "violet",
+      []
+    ],
+    [
+      "absinc2_sum:OUT",
+      "ttout:OUT3",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge5:OUT",
+      "ttout:OUT4",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge6:OUT",
+      "ttout:OUT5",
+      "violet",
+      []
+    ],
+    [
+      "dec_ge7:OUT",
+      "ttout:OUT6",
+      "violet",
+      []
+    ],
+    [
+      "sign_not:OUT",
+      "ttout:OUT7",
+      "red",
+      []
+    ],
+    [
+      "ttout:EXTOUT0",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT1",
+      "led2:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT2",
+      "led3:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT3",
+      "led4:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT4",
+      "led5:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT5",
+      "led6:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT6",
+      "led7:A",
+      "green",
+      []
+    ],
+    [
+      "ttout:EXTOUT7",
+      "led8:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "led2:C",
+      "black",
+      []
+    ],
+    [
+      "led2:C",
+      "led3:C",
+      "black",
+      []
+    ],
+    [
+      "led3:C",
+      "led4:C",
+      "black",
+      []
+    ],
+    [
+      "led4:C",
+      "led5:C",
+      "black",
+      []
+    ],
+    [
+      "led5:C",
+      "led6:C",
+      "black",
+      []
+    ],
+    [
+      "led6:C",
+      "led7:C",
+      "black",
+      []
+    ],
+    [
+      "led7:C",
+      "led8:C",
+      "black",
+      []
+    ],
+    [
+      "led8:C",
+      "gnd1:GND",
+      "black",
+      []
+    ],
+    [
+      "vcc1:VCC",
+      "ttio0:OE",
+      "red",
+      []
+    ],
+    [
+      "r0:Q",
+      "ttio0:OUT",
+      "green",
+      []
+    ],
+    [
+      "vcc1:VCC",
+      "ttio1:OE",
+      "red",
+      []
+    ],
+    [
+      "r1:Q",
+      "ttio1:OUT",
+      "green",
+      []
+    ],
+    [
+      "vcc1:VCC",
+      "ttio2:OE",
+      "red",
+      []
+    ],
+    [
+      "r2:Q",
+      "ttio2:OUT",
+      "green",
+      []
+    ]
+  ]
+}
