@@ -1,0 +1,50 @@
+# Tiny Tapeout project information
+project:
+  title:        "Dual Port RAM"
+  author:       "Veda Mouktika Boddanapalli"
+  discord:      "yoyo1203"      # optional
+  description:  "8-bit 16-word dual-port RAM with arbitration and collision detect"
+  language:     "SystemVerilog"
+  clock_hz:     50000000            # 50 MHz — adjust to what you test at
+
+  tiles: "1x1"
+
+  top_module:  "tt_um_vedam_dual_port_ram"
+
+  source_files:
+    - "tt_um_vedam_dual_port_ram.v"
+    - "dual_port_ram_top.sv"
+    - "clock_gating.sv"
+
+pinout:
+  # Inputs — shared control for both ports (PORT_SEL picks A or B)
+  ui[0]: "PORT_SEL"     # 0 = Port A, 1 = Port B
+  ui[1]: "ALE_N"        # Address latch enable (active low)
+  ui[2]: "RD_N"         # Read enable (active low)
+  ui[3]: "WR_N"         # Write enable (active low)
+  ui[4]: "CS_N"         # Chip select (active low)
+  ui[5]: "SLEEP"        # Sleep / clock-gate enable
+  ui[6]: "RETENTION"    # Retention init mode
+  ui[7]: ""
+
+  # Outputs — status (read data comes out on uio during reads)
+  uo[0]: "COLLISION"
+  uo[1]: "GRANT_A"
+  uo[2]: "GRANT_B"
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional — multiplexed address/data bus
+  uio[0]: "AD0"
+  uio[1]: "AD1"
+  uio[2]: "AD2"
+  uio[3]: "AD3"
+  uio[4]: "AD4"
+  uio[5]: "AD5"
+  uio[6]: "AD6"
+  uio[7]: "AD7"
+
+yaml_version: 6
