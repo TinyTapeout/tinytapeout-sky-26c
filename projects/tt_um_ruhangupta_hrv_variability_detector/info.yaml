@@ -1,0 +1,48 @@
+# Tiny Tapeout project information
+project:
+  title:        "HRV Variability Detector (sample stage)"
+  author:       "Ruhan Gupta"
+  discord:      ""
+  description:  "Toolchain bring-up sample: measures the change in pulse-to-pulse interval between two detected beats and shows |difference| and direction. Not the full fatigue-monitor ASIC."
+  language:     "Verilog"
+  clock_hz:     5
+
+  tiles: "1x1"
+
+  top_module: "tt_um_ruhangupta_hrv_variability_detector"
+
+  source_files:
+    - "project.v"
+
+pinout:
+  # Inputs
+  ui[0]: "beat pulse in (one detected heartbeat = one pulse, active high)"
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "|interval difference| >= 1"
+  uo[1]: "|interval difference| >= 2"
+  uo[2]: "|interval difference| >= 3"
+  uo[3]: "|interval difference| >= 4"
+  uo[4]: "|interval difference| >= 5"
+  uo[5]: "|interval difference| >= 6"
+  uo[6]: "|interval difference| >= 7 (max, saturates)"
+  uo[7]: "direction (1 = elapsed time still short of previous interval)"
+
+  # Bidirectional pins
+  uio[0]: "previous interval bit 0 (out, debug)"
+  uio[1]: "previous interval bit 1 (out, debug)"
+  uio[2]: "previous interval bit 2 (out, debug)"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
