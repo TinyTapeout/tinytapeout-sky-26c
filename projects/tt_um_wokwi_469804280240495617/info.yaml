@@ -1,0 +1,48 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id: "469804280240495617" # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title: "Zetterling SRAM UB Tiny Tapeout Advanced Template (bidir)" # Project title
+  author: "Carl-Mikael Zetterling" # Your name
+  discord: "Bellmanz" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "32 bit SRAM" # One line description of what your project does
+  language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 100000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "RW"
+  ui[1]: "A0"
+  ui[2]: "A1"
+  ui[3]: "A2"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "a"
+  uo[1]: "b"
+  uo[2]: "c"
+  uo[3]: "d"
+  uo[4]: "e"
+  uo[5]: "f"
+  uo[6]: "g"
+  uo[7]: "DP"
+
+  # Bidirectional pins
+  uio[0]: "D0"
+  uio[1]: "D1"
+  uio[2]: "D2"
+  uio[3]: "D3"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
