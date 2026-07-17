@@ -1,0 +1,48 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id: "469629799092815873" # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title: "2:1 Mux with differential outputs" # Project title
+  author: "Victor Suarez Rovere" # Your name
+  discord: "suarezvictor" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "4 instances of 2:1 mux which tries to minimize logic hazards" # One line description of what your project does
+  language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 0 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "mux0a"
+  ui[1]: "mux0b"
+  ui[2]: "mux1a"
+  ui[3]: "mux1b"
+  ui[4]: "mux2a"
+  ui[5]: "mux2b"
+  ui[6]: ""
+  ui[7]: "sel"
+
+  # Outputs
+  uo[0]: "o0n"
+  uo[1]: "o0p"
+  uo[2]: "o1n"
+  uo[3]: "o1p"
+  uo[4]: "o2n"
+  uo[5]: "o2p"
+  uo[6]: "o3n"
+  uo[7]: "o3p"
+
+  # Bidirectional pins
+  uio[0]: "mux3a"
+  uio[1]: "mux3b"
+  uio[2]: "fixp"
+  uio[3]: "fixn"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
