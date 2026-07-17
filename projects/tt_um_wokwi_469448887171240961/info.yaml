@@ -1,0 +1,49 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id: "469448887171240961" # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title: "Tiny Tapeout - Mini CORDIC" # Project title
+  author: "Daniel Riquelme" # Your name
+  discord: "DanielR" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "A 4 iteration rotation mode CORDIC that computes sin and cos of a
+    6-bit angle" # One line description of what your project does
+  language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 10000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "angle bit 0, 0–63 = 0°–90° (1 LSB = 1.40625°)"
+  ui[1]: "angle bit 1, 0–63 = 0°–90° (1 LSB = 1.40625°)"
+  ui[2]: "angle bit 2, 0–63 = 0°–90° (1 LSB = 1.40625°)"
+  ui[3]: "angle bit 3, 0–63 = 0°–90° (1 LSB = 1.40625°)"
+  ui[4]: "angle bit 4, 0–63 = 0°–90° (1 LSB = 1.40625°)"
+  ui[5]: "angle bit 5, after loading: 0 = cos, 1 = sin"
+  ui[6]: "displayed nibble: 0 = low, 1 = high"
+  ui[7]: "START: hold high to load the angle, release to compute"
+
+  # Outputs
+  uo[0]: "7-segment a–g bit 0"
+  uo[1]: "7-segment a–g bit 1"
+  uo[2]: "7-segment a–g bit 2"
+  uo[3]: "7-segment a–g bit 3"
+  uo[4]: "7-segment a–g bit 4"
+  uo[5]: "7-segment a–g bit 5"
+  uo[6]: "7-segment a–g bit 6"
+  uo[7]: "decimal point = DONE flag"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
