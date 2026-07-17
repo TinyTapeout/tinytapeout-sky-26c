@@ -1,0 +1,71 @@
+# Tiny Tapeout project information
+project:
+  title:        "S/PDIF to I2S receiver"
+  author:       "Jussi Kilpelainen"
+  discord:      ""
+  description:  "S/PDIF (AES3 consumer) receiver converting to an I2S master output, with clock recovery from a single free-running clock"
+  language:     "Analog"
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"
+
+  analog_pins: 1
+  uses_vapwr: false
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_spdif_to_i2s_kilpelaj"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "spdif_rx.sv"
+    - "i2s_tx.sv"
+    - "mute_detect.sv"
+    - "pwm_audio.sv"
+    - "spdif_to_i2s.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "spdif_in"
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "i2s_bclk"
+  uo[1]: "i2s_ws"
+  uo[2]: "i2s_sd"
+  uo[3]: "mute"
+  uo[4]: "locked"
+  uo[5]: "block_start"
+  uo[6]: "comp_out"
+  uo[7]: "pwm_audio"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  ua[0]: "comp_in"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
