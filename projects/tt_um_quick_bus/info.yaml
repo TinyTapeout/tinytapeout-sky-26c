@@ -1,0 +1,64 @@
+# Tiny Tapeout project information
+project:
+  title:        "quick_bus"      # Project title
+  author:       "Paul Campbell"      # Your name
+  discord:      "Taniwha"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "PLL/CDR/QuickBus test chip"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_quick_bus"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "quickbus_test.v"
+    - "upstream.sv"
+    - "downstream.sv"
+    - "lfsr8b10b.sv"
+    - "up_des8b10.sv"
+    - "up_ser8b10.sv"
+    - "down_des8b10.sv"
+    - "down_ser8b10.sv"
+    - "mgmt.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "din0"
+  ui[1]: "din1"
+  ui[2]: "din2"
+  ui[3]: "din3"
+  ui[4]: "din4"
+  ui[5]: "din5"
+  ui[6]: "din6"
+  ui[7]: "din7"
+
+  # Outputs
+  uo[0]: "dout0"
+  uo[1]: "dout1"
+  uo[2]: "dout2"
+  uo[3]: "dout3"
+  uo[4]: "dout4"
+  uo[5]: "dout5"
+  uo[6]: "dout6"
+  uo[7]: "dout7"
+
+  # Bidirectional pins
+  uio[0]: "kin"
+  uio[1]: "kout"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: "mode0"
+  uio[7]: "mode1"
+
+# Do not change!
+yaml_version: 6
