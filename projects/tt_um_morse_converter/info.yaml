@@ -1,0 +1,60 @@
+# Tiny Tapeout project information
+project:
+  title:        "ASCII to Morse Code Converter"
+  author:       "Vladimir Velikanov"
+  discord:      ""
+  description:  "Streams ASCII characters as ITU Morse code: key line, PWM sidetone for the Audio Pmod, and status on the 7-segment display"
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_morse_converter"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "morse_rom.v"
+    - "dit_timer.v"
+    - "morse_fsm.v"
+    - "sidetone_pwm.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "char_in[0]"
+  ui[1]: "char_in[1]"
+  ui[2]: "char_in[2]"
+  ui[3]: "char_in[3]"
+  ui[4]: "char_in[4]"
+  ui[5]: "char_in[5]"
+  ui[6]: "char_in[6]"
+  ui[7]: "load"
+
+  # Outputs
+  uo[0]: "key"
+  uo[1]: "ready"
+  uo[2]: "busy"
+  uo[3]: "element"
+  uo[4]: "char_done"
+  uo[5]: "invalid"
+  uo[6]: "tick"
+  uo[7]: "audio_pwm"
+
+  # Bidirectional pins
+  uio[0]: "wpm_sel[0]"
+  uio[1]: "wpm_sel[1]"
+  uio[2]: "wpm_sel[2]"
+  uio[3]: "audio_en"
+  uio[4]: "tone_sel[0]"
+  uio[5]: "tone_sel[1]"
+  uio[6]: "display_en"
+  uio[7]: "auto_repeat"
+
+# Do not change!
+yaml_version: 6
