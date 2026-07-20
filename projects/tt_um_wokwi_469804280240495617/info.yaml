@@ -1,10 +1,10 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
   wokwi_id: "469804280240495617" # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title: "Zetterling SRAM UB Tiny Tapeout Advanced Template (bidir)" # Project title
+  title: "Zetterling SRAM" # Project title
   author: "Carl-Mikael Zetterling" # Your name
   discord: "Bellmanz" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "32 bit SRAM" # One line description of what your project does
+  description: "128 bit SRAM" # One line description of what your project does
   language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz: 100000 # Clock frequency in Hz (or 0 if not applicable)
 
@@ -19,7 +19,7 @@ pinout:
   ui[1]: "A0"
   ui[2]: "A1"
   ui[3]: "A2"
-  ui[4]: ""
+  ui[4]: "A3"
   ui[5]: ""
   ui[6]: ""
   ui[7]: ""
@@ -39,10 +39,10 @@ pinout:
   uio[1]: "D1"
   uio[2]: "D2"
   uio[3]: "D3"
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[4]: "D4"
+  uio[5]: "D5"
+  uio[6]: "D6"
+  uio[7]: "D7"
 
 # Do not change!
 yaml_version: 6
