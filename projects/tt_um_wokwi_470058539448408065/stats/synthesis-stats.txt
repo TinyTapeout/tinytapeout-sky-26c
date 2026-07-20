@@ -1,0 +1,132 @@
+101. Printing statistics.
+
+=== and_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+        3        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        1    7.507 cells
+        1    7.507   sky130_fd_sc_hd__and2_2
+
+   Chip area for module '\and_cell': 7.507200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== not_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        2        - wires
+        2        - wire bits
+        2        - public wires
+        2        - public wire bits
+        2        - ports
+        2        - port bits
+        1    3.754 cells
+        1    3.754   sky130_fd_sc_hd__inv_2
+
+   Chip area for module '\not_cell': 3.753600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_wokwi_470058539448408065 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       12        - wires
+       47        - wire bits
+       12        - public wires
+       47        - public wire bits
+        8        - ports
+       43        - port bits
+       24   96.342 cells
+        5   25.024   sky130_fd_sc_hd__buf_2
+       19   71.318   sky130_fd_sc_hd__conb_1
+        4        - submodules
+        1        -   and_cell
+        1        -   not_cell
+        1        -   xnor_cell
+        1        -   xor_cell
+
+   Chip area for module '\tt_um_wokwi_470058539448408065': 96.342400
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== xnor_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+        3        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        1   16.266 cells
+        1   16.266   sky130_fd_sc_hd__xnor2_2
+
+   Chip area for module '\xnor_cell': 16.265600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== xor_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+        3        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        1   16.266 cells
+        1   16.266   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\xor_cell': 16.265600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+       28  140.134 tt_um_wokwi_470058539448408065
+        1    7.507 and_cell
+        1    3.754 not_cell
+        1   16.266 xnor_cell
+        1   16.266 xor_cell
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+       23        - wires
+       58        - wire bits
+       23        - public wires
+       58        - public wire bits
+       19        - ports
+       54        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+       28  140.134 cells
+        1    7.507   sky130_fd_sc_hd__and2_2
+        5   25.024   sky130_fd_sc_hd__buf_2
+       19   71.318   sky130_fd_sc_hd__conb_1
+        1    3.754   sky130_fd_sc_hd__inv_2
+        1   16.266   sky130_fd_sc_hd__xnor2_2
+        1   16.266   sky130_fd_sc_hd__xor2_2
+        4   43.792 submodules
+        1    7.507   and_cell
+        1    3.754   not_cell
+        1   16.266   xnor_cell
+        1   16.266   xor_cell
+
+   Chip area for top module '\tt_um_wokwi_470058539448408065': 140.134400
+     of which used for sequential elements: 0.000000 (0.00%)
+
