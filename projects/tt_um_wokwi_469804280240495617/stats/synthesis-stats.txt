@@ -108,24 +108,23 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      155        - wires
-      190        - wire bits
-      153        - public wires
-      188        - public wire bits
+      561        - wires
+      596        - wire bits
+      561        - public wires
+      596        - public wire bits
         8        - ports
        43        - port bits
-       26  113.859 cells
-       13   65.062   sky130_fd_sc_hd__buf_2
-       13   48.797   sky130_fd_sc_hd__conb_1
-      145        - submodules
-       46        -   and_cell
-        3        -   buffer_cell
-       32        -   dff_cell
-       32        -   mux_cell
-        4        -   not_cell
-       28        -   or_cell
+       24  120.115 cells
+       24  120.115   sky130_fd_sc_hd__buf_2
+      553        - submodules
+      168        -   and_cell
+        4        -   buffer_cell
+      128        -   dff_cell
+      128        -   mux_cell
+        5        -   not_cell
+      120        -   or_cell
 
-   Chip area for module '\tt_um_wokwi_469804280240495617': 113.859200
+   Chip area for module '\tt_um_wokwi_469804280240495617': 120.115200
      of which used for sequential elements: 0.000000 (0.00%)
 
 === design hierarchy ===
@@ -133,7 +132,7 @@
         +----------Count including submodules.
         |        +-Area including submodules.
         |        | 
-      203 1.83E+03 tt_um_wokwi_469804280240495617
+      705 6.82E+03 tt_um_wokwi_469804280240495617
         1    7.507 and_cell
         1    5.005 buffer_cell
         2   25.024 dff_cell
@@ -144,31 +143,30 @@
         +----------Count including submodules.
         |        +-Area including submodules.
         |        | 
-      647        - wires
-      682        - wire bits
-      645        - public wires
-      680        - public wire bits
-      500        - ports
-      535        - port bits
+     2467        - wires
+     2502        - wire bits
+     2467        - public wires
+     2502        - public wire bits
+     1914        - ports
+     1949        - port bits
         -        - memories
         -        - memory bits
         -        - processes
-      203 1.83E+03 cells
-       46  345.331   sky130_fd_sc_hd__and2_2
-       16   80.077   sky130_fd_sc_hd__buf_2
-       13   48.797   sky130_fd_sc_hd__conb_1
-       32  680.653   sky130_fd_sc_hd__dfxtp_2
-       36   135.13   sky130_fd_sc_hd__inv_2
-       32  360.346   sky130_fd_sc_hd__mux2_1
-       28  175.168   sky130_fd_sc_hd__or2_2
-      145 1.71E+03 submodules
-       46  345.331   and_cell
-        3   15.014   buffer_cell
-       32  800.768   dff_cell
-       32  360.346   mux_cell
-        4   15.014   not_cell
-       28  175.168   or_cell
+      705 6.82E+03 cells
+      168  1261.21   sky130_fd_sc_hd__and2_2
+       28  140.134   sky130_fd_sc_hd__buf_2
+      128 2.72E+03   sky130_fd_sc_hd__dfxtp_2
+      133  499.229   sky130_fd_sc_hd__inv_2
+      128 1.44E+03   sky130_fd_sc_hd__mux2_1
+      120   750.72   sky130_fd_sc_hd__or2_2
+      553  6.7E+03 submodules
+      168  1261.21   and_cell
+        4   20.019   buffer_cell
+      128  3.2E+03   dff_cell
+      128 1.44E+03   mux_cell
+        5   18.768   not_cell
+      120   750.72   or_cell
 
-   Chip area for top module '\tt_um_wokwi_469804280240495617': 1825.500800
-     of which used for sequential elements: 680.652800 (37.29%)
+   Chip area for top module '\tt_um_wokwi_469804280240495617': 6815.286400
+     of which used for sequential elements: 2722.611200 (39.95%)
 
