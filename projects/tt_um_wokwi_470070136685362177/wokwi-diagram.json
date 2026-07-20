@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-dip-switch-8",
+      "id": "sw1",
+      "top": -176.5,
+      "left": -142.5,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "pwr1", "top": -239.24, "left": -163.2, "attrs": {} },
+    {
+      "type": "board-tt-block-input",
+      "id": "ttin",
+      "top": -228.13,
+      "left": 24,
+      "attrs": { "verilogRole": "input" }
+    },
+    {
+      "type": "board-tt-block-output",
+      "id": "ttout",
+      "top": -208.93,
+      "left": 571.2,
+      "attrs": { "verilogRole": "output" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": -96,
+      "left": -144,
+      "attrs": { "text": "2. Change input values" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -432,
+      "left": -230.4,
+      "attrs": { "text": "1. Simulate with the green ▶ button" }
+    },
+    { "type": "wokwi-gate-xor-2", "id": "xor1", "top": -201.6, "left": 153.6, "attrs": {} },
+    { "type": "wokwi-gate-and-2", "id": "and1", "top": -9.6, "left": 144, "attrs": {} },
+    { "type": "wokwi-gate-and-2", "id": "and2", "top": -115.2, "left": 268.8, "attrs": {} },
+    { "type": "wokwi-gate-xor-2", "id": "xor2", "top": -201.6, "left": 278.4, "attrs": {} },
+    { "type": "wokwi-gate-or-2", "id": "or1", "top": -48, "left": 364.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led2", "top": -70.8, "left": 839, "attrs": { "color": "cyan" } },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -301.2,
+      "left": 810.2,
+      "attrs": { "color": "orange" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -96, "left": 1017, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -349.2,
+      "left": -5.8,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -349.2,
+      "left": -63.4,
+      "attrs": { "color": "magenta" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -349.2,
+      "left": -34.6,
+      "attrs": { "color": "purple" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -288, "left": 76.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "pwr1:VCC", "sw1:8a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:7a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:6a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:5a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:4a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:1a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:2a", "red", [ "v0" ] ],
+    [ "pwr1:VCC", "sw1:3a", "red", [ "v0" ] ],
+    [ "sw1:1b", "ttin:EXTIN0", "green", [ "h0" ] ],
+    [ "sw1:2b", "ttin:EXTIN1", "green", [ "h0" ] ],
+    [ "ttin:EXTIN2", "sw1:3b", "green", [ "h0" ] ],
+    [ "ttin:EXTIN3", "sw1:4b", "green", [ "h0" ] ],
+    [ "sw1:5b", "ttin:EXTIN4", "green", [ "h0" ] ],
+    [ "ttin:EXTIN5", "sw1:6b", "green", [ "h0" ] ],
+    [ "sw1:7b", "ttin:EXTIN6", "green", [ "h0" ] ],
+    [ "sw1:8b", "ttin:EXTIN7", "green", [ "v0" ] ],
+    [ "ttin:IN0", "xor1:A", "green", [ "h0" ] ],
+    [ "ttin:IN1", "xor1:B", "green", [ "h0" ] ],
+    [ "ttin:IN0", "and1:A", "green", [ "h0" ] ],
+    [ "ttin:IN1", "and1:B", "green", [ "h19.2", "v86.4" ] ],
+    [ "xor1:OUT", "and2:A", "green", [ "v0" ] ],
+    [ "ttin:IN2", "and2:B", "green", [ "h28.8", "v86.4" ] ],
+    [ "xor1:OUT", "xor2:A", "green", [ "v0" ] ],
+    [ "ttin:IN2", "xor2:B", "green", [ "h0" ] ],
+    [ "and1:OUT", "or1:B", "green", [ "v-28.8", "h124.8" ] ],
+    [ "and2:OUT", "or1:A", "green", [ "v0" ] ],
+    [ "xor2:OUT", "ttout:OUT0", "green", [ "v0" ] ],
+    [ "or1:OUT", "ttout:OUT1", "green", [ "v0" ] ],
+    [ "ttout:EXTOUT1", "led2:A", "green", [ "h0" ] ],
+    [ "ttout:EXTOUT0", "led1:A", "green", [ "v-9.6", "h163.2" ] ],
+    [ "led1:C", "gnd2:GND", "green", [ "v0", "h182.8" ] ],
+    [ "led2:C", "gnd2:GND", "green", [ "v0" ] ],
+    [ "led4:A", "sw1:1b", "green", [ "v0" ] ],
+    [ "led5:A", "sw1:2b", "green", [ "v0" ] ],
+    [ "led3:A", "sw1:3b", "green", [ "v0" ] ],
+    [ "led4:C", "gnd1:GND", "green", [ "v0" ] ],
+    [ "led5:C", "gnd1:GND", "green", [ "v0" ] ],
+    [ "led3:C", "gnd1:GND", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
