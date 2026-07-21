@@ -1,0 +1,22 @@
+110. Printing statistics.
+
+=== tt_um_pump_out ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       22        - wires
+       57        - wire bits
+       15        - public wires
+       50        - public wire bits
+        8        - ports
+       43        - port bits
+       38  300.288 cells
+        7    52.55   sky130_fd_sc_hd__and2_2
+        7   35.034   sky130_fd_sc_hd__buf_2
+       17   63.811   sky130_fd_sc_hd__conb_1
+        7  148.893   sky130_fd_sc_hd__dfxtp_2
+
+   Chip area for module '\tt_um_pump_out': 300.288000
+     of which used for sequential elements: 148.892800 (49.58%)
+
