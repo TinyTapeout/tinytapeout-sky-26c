@@ -1,0 +1,207 @@
+156. Printing statistics.
+
+=== clock_divider_stage ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        4        - wires
+        4        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        2   25.024 cells
+        1    21.27   sky130_fd_sc_hd__dfxtp_2
+        1    3.754   sky130_fd_sc_hd__inv_2
+
+   Chip area for module '\clock_divider_stage': 25.024000
+     of which used for sequential elements: 21.270400 (85.00%)
+
+=== inverter ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        2        - wires
+        2        - wire bits
+        2        - public wires
+        2        - public wire bits
+        2        - ports
+        2        - port bits
+        1    3.754 cells
+        1    3.754   sky130_fd_sc_hd__inv_2
+
+   Chip area for module '\inverter': 3.753600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_urish_simon ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      975        - wires
+     1010        - wire bits
+      193        - public wires
+      228        - public wire bits
+        8        - ports
+       43        - port bits
+      964 1.05E+04 cells
+        1   12.512   sky130_fd_sc_hd__a2111o_2
+        1   15.014   sky130_fd_sc_hd__a2111oi_2
+       13  130.125   sky130_fd_sc_hd__a211o_2
+        3   37.536   sky130_fd_sc_hd__a211oi_2
+        1    10.01   sky130_fd_sc_hd__a21bo_2
+        2   22.522   sky130_fd_sc_hd__a21boi_2
+       17  148.893   sky130_fd_sc_hd__a21o_2
+       18  157.651   sky130_fd_sc_hd__a21oi_2
+        2   22.522   sky130_fd_sc_hd__a221o_2
+       15  150.144   sky130_fd_sc_hd__a22o_2
+        1   15.014   sky130_fd_sc_hd__a2bb2oi_2
+        5   56.304   sky130_fd_sc_hd__a311o_2
+        1   15.014   sky130_fd_sc_hd__a311oi_2
+       22  192.685   sky130_fd_sc_hd__a31o_2
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        7   78.826   sky130_fd_sc_hd__a32o_2
+        4   45.043   sky130_fd_sc_hd__a41o_2
+       58  435.418   sky130_fd_sc_hd__and2_2
+        5   43.792   sky130_fd_sc_hd__and2b_2
+       26  195.187   sky130_fd_sc_hd__and3_2
+        6   60.058   sky130_fd_sc_hd__and3b_2
+        6   60.058   sky130_fd_sc_hd__and4_2
+        1   11.261   sky130_fd_sc_hd__and4b_2
+        1   12.512   sky130_fd_sc_hd__and4bb_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+        9   33.782   sky130_fd_sc_hd__conb_1
+      169 3.59E+03   sky130_fd_sc_hd__dfxtp_2
+       35  131.376   sky130_fd_sc_hd__inv_2
+       78  878.342   sky130_fd_sc_hd__mux2_1
+       56  350.336   sky130_fd_sc_hd__nand2_2
+        2   17.517   sky130_fd_sc_hd__nand2b_2
+        6   60.058   sky130_fd_sc_hd__nand3_2
+        1   12.512   sky130_fd_sc_hd__nand4_2
+       57  356.592   sky130_fd_sc_hd__nor2_2
+        2   20.019   sky130_fd_sc_hd__nor3_2
+        1   12.512   sky130_fd_sc_hd__nor3b_2
+        3   37.536   sky130_fd_sc_hd__nor4_2
+        2   25.024   sky130_fd_sc_hd__o2111a_2
+        1   15.014   sky130_fd_sc_hd__o2111ai_2
+       56  560.538   sky130_fd_sc_hd__o211a_2
+        2   25.024   sky130_fd_sc_hd__o211ai_2
+       18  157.651   sky130_fd_sc_hd__o21a_2
+       17  148.893   sky130_fd_sc_hd__o21ai_2
+        1   11.261   sky130_fd_sc_hd__o21bai_2
+       17  191.434   sky130_fd_sc_hd__o221a_2
+        3   30.029   sky130_fd_sc_hd__o22a_2
+        2   25.024   sky130_fd_sc_hd__o22ai_2
+        9  101.347   sky130_fd_sc_hd__o2bb2a_2
+        5   56.304   sky130_fd_sc_hd__o311a_2
+        5   50.048   sky130_fd_sc_hd__o31a_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        2   22.522   sky130_fd_sc_hd__o32a_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+       97  606.832   sky130_fd_sc_hd__or2_2
+       16  120.115   sky130_fd_sc_hd__or3_2
+        8   70.067   sky130_fd_sc_hd__or3b_2
+       25   218.96   sky130_fd_sc_hd__or4_2
+        5   50.048   sky130_fd_sc_hd__or4b_2
+        2   25.024   sky130_fd_sc_hd__or4bb_2
+       17  276.515   sky130_fd_sc_hd__xnor2_2
+       13  211.453   sky130_fd_sc_hd__xor2_2
+       27        - submodules
+       14        -   clock_divider_stage
+       13        -   inverter
+
+   Chip area for module '\tt_um_urish_simon': 10492.563200
+     of which used for sequential elements: 3594.697600 (34.26%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     1005 1.09E+04 tt_um_urish_simon
+        2   25.024 clock_divider_stage
+        1    3.754 inverter
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     1057        - wires
+     1092        - wire bits
+      261        - public wires
+      296        - public wire bits
+       76        - ports
+      111        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+     1005 1.09E+04 cells
+        1   12.512   sky130_fd_sc_hd__a2111o_2
+        1   15.014   sky130_fd_sc_hd__a2111oi_2
+       13  130.125   sky130_fd_sc_hd__a211o_2
+        3   37.536   sky130_fd_sc_hd__a211oi_2
+        1    10.01   sky130_fd_sc_hd__a21bo_2
+        2   22.522   sky130_fd_sc_hd__a21boi_2
+       17  148.893   sky130_fd_sc_hd__a21o_2
+       18  157.651   sky130_fd_sc_hd__a21oi_2
+        2   22.522   sky130_fd_sc_hd__a221o_2
+       15  150.144   sky130_fd_sc_hd__a22o_2
+        1   15.014   sky130_fd_sc_hd__a2bb2oi_2
+        5   56.304   sky130_fd_sc_hd__a311o_2
+        1   15.014   sky130_fd_sc_hd__a311oi_2
+       22  192.685   sky130_fd_sc_hd__a31o_2
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        7   78.826   sky130_fd_sc_hd__a32o_2
+        4   45.043   sky130_fd_sc_hd__a41o_2
+       58  435.418   sky130_fd_sc_hd__and2_2
+        5   43.792   sky130_fd_sc_hd__and2b_2
+       26  195.187   sky130_fd_sc_hd__and3_2
+        6   60.058   sky130_fd_sc_hd__and3b_2
+        6   60.058   sky130_fd_sc_hd__and4_2
+        1   11.261   sky130_fd_sc_hd__and4b_2
+        1   12.512   sky130_fd_sc_hd__and4bb_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+        9   33.782   sky130_fd_sc_hd__conb_1
+      183 3.89E+03   sky130_fd_sc_hd__dfxtp_2
+       62  232.723   sky130_fd_sc_hd__inv_2
+       78  878.342   sky130_fd_sc_hd__mux2_1
+       56  350.336   sky130_fd_sc_hd__nand2_2
+        2   17.517   sky130_fd_sc_hd__nand2b_2
+        6   60.058   sky130_fd_sc_hd__nand3_2
+        1   12.512   sky130_fd_sc_hd__nand4_2
+       57  356.592   sky130_fd_sc_hd__nor2_2
+        2   20.019   sky130_fd_sc_hd__nor3_2
+        1   12.512   sky130_fd_sc_hd__nor3b_2
+        3   37.536   sky130_fd_sc_hd__nor4_2
+        2   25.024   sky130_fd_sc_hd__o2111a_2
+        1   15.014   sky130_fd_sc_hd__o2111ai_2
+       56  560.538   sky130_fd_sc_hd__o211a_2
+        2   25.024   sky130_fd_sc_hd__o211ai_2
+       18  157.651   sky130_fd_sc_hd__o21a_2
+       17  148.893   sky130_fd_sc_hd__o21ai_2
+        1   11.261   sky130_fd_sc_hd__o21bai_2
+       17  191.434   sky130_fd_sc_hd__o221a_2
+        3   30.029   sky130_fd_sc_hd__o22a_2
+        2   25.024   sky130_fd_sc_hd__o22ai_2
+        9  101.347   sky130_fd_sc_hd__o2bb2a_2
+        5   56.304   sky130_fd_sc_hd__o311a_2
+        5   50.048   sky130_fd_sc_hd__o31a_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        2   22.522   sky130_fd_sc_hd__o32a_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+       97  606.832   sky130_fd_sc_hd__or2_2
+       16  120.115   sky130_fd_sc_hd__or3_2
+        8   70.067   sky130_fd_sc_hd__or3b_2
+       25   218.96   sky130_fd_sc_hd__or4_2
+        5   50.048   sky130_fd_sc_hd__or4b_2
+        2   25.024   sky130_fd_sc_hd__or4bb_2
+       17  276.515   sky130_fd_sc_hd__xnor2_2
+       13  211.453   sky130_fd_sc_hd__xor2_2
+       27  399.133 submodules
+       14  350.336   clock_divider_stage
+       13   48.797   inverter
+
+   Chip area for top module '\tt_um_urish_simon': 10891.696000
+     of which used for sequential elements: 3892.483200 (35.74%)
+
