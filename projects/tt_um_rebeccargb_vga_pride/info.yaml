@@ -1,0 +1,144 @@
+# Tiny Tapeout project information
+project:
+  title:        "VGA Pride"                                 # Project title
+  author:       "Rebecca G. Bettencourt"                    # Your name
+  discord:      "YoukaiRempeka"                             # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A VGA demo for showing pride flags"        # One line description of what your project does
+  language:     "Verilog"                                   # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0                                           # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_rebeccargb_vga_pride"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "hvsync_generator.v"
+    - "flag_index.v"
+    - "flag_rainbow_6.v"
+    - "flag_rainbow_7.v"
+    - "flag_rainbow_8.v"
+    - "flag_rainbow_9.v"
+    - "flag_rainbow_philly.v"
+    - "flag_rainbow_progress.v"
+    - "flag_rainbow_progress_2021.v"
+    - "flag_trans.v"
+    - "flag_abrosexual.v"
+    - "flag_aceflux.v"
+    - "flag_aegosexual.v"
+    - "flag_agender.v"
+    - "flag_androgyne.v"
+    - "flag_androsexual.v"
+    - "flag_aporagender.v"
+    - "flag_aroace.v"
+    - "flag_aroflux.v"
+    - "flag_aromantic.v"
+    - "flag_asexual.v"
+    - "flag_aspec.v"
+    - "flag_bigender_v1.v"
+    - "flag_bigender_v2.v"
+    - "flag_bigender_v3.v"
+    - "flag_bisexual.v"
+    - "flag_ceterosexual.v"
+    - "flag_demiandrogyne_v1.v"
+    - "flag_demiandrogyne_v2.v"
+    - "flag_demiboy.v"
+    - "flag_demifluid.v"
+    - "flag_demiflux.v"
+    - "flag_demigender.v"
+    - "flag_demigirl.v"
+    - "flag_demiromantic.v"
+    - "flag_demisexual.v"
+    - "flag_disability_tricolor.v"
+    - "flag_disability_rainbow.v"
+    - "flag_gender_neutral.v"
+    - "flag_genderfluid.v"
+    - "flag_genderflux.v"
+    - "flag_genderqueer.v"
+    - "flag_greygender.v"
+    - "flag_greysexual.v"
+    - "flag_gynosexual.v"
+    - "flag_intersex_v1.v"
+    - "flag_intersex_v2.v"
+    - "flag_lesbian_thislesbianlife.v"
+    - "flag_lesbian_sadlesbeandisaster_7.v"
+    - "flag_lesbian_sadlesbeandisaster_5.v"
+    - "flag_lesbian_lydiandragon.v"
+    - "flag_lesbian_maya_kern.v"
+    - "flag_lesbian_femme.v"
+    - "flag_littleender.v"
+    - "flag_maverique.v"
+    - "flag_mlm_leonis_ignis.v"
+    - "flag_mlm_vincian_v1.v"
+    - "flag_mlm_vincian_v2.v"
+    - "flag_mlm_vincian_v3.v"
+    - "flag_multigender.v"
+    - "flag_multisexual.v"
+    - "flag_neptunic.v"
+    - "flag_neutrois.v"
+    - "flag_nonbinary.v"
+    - "flag_objectum.v"
+    - "flag_omnisexual.v"
+    - "flag_pangender.v"
+    - "flag_pansexual.v"
+    - "flag_poly_pi.v"
+    - "flag_poly_tricolor.v"
+    - "flag_polygender.v"
+    - "flag_polysexual.v"
+    - "flag_pomosexual.v"
+    - "flag_proculsexual.v"
+    - "flag_ps2.v"
+    - "flag_queer.v"
+    - "flag_trains.v"
+    - "flag_transfeminine.v"
+    - "flag_transmasculine.v"
+    - "flag_transneutral.v"
+    - "flag_trigender.v"
+    - "flag_unlabeled.v"
+    - "flag_uranic.v"
+    - "flag_voidpunk.v"
+    - "flag_lesbian_butch_v1.v"
+    - "flag_lesbian_butch_v2.v"
+    - "flag_sapiosexual_v1.v"
+    - "flag_sapiosexual_v2.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "address mode"
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: "set"
+  ui[5]: "prev"
+  ui[6]: "next"
+  ui[7]: "reset"
+
+  # Outputs
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "VSync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "HSync"
+
+  # Bidirectional pins
+  uio[0]: "A0"
+  uio[1]: "A1"
+  uio[2]: "A2"
+  uio[3]: "A3"
+  uio[4]: "A4"
+  uio[5]: "A5"
+  uio[6]: "A6"
+  uio[7]: "A7"
+
+# Do not change!
+yaml_version: 6
