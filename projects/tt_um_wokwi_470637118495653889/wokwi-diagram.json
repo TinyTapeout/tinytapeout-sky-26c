@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-tt-block-output",
+      "id": "ttout1",
+      "top": 242.27,
+      "left": 302.4,
+      "attrs": { "verilogRole": "output" }
+    },
+    {
+      "type": "board-tt-block-input",
+      "id": "ttin4",
+      "top": 223.07,
+      "left": -72,
+      "attrs": { "verilogRole": "input" }
+    },
+    {
+      "type": "wokwi-clock-generator",
+      "id": "clk1",
+      "top": 96,
+      "left": -163.2,
+      "attrs": { "frequency": "1k" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 157.6,
+      "left": 481.1,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 297.6, "left": 489, "attrs": {} },
+    { "type": "wokwi-flip-flop-d", "id": "flop1", "top": 182.4, "left": 163.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 323,
+      "left": -182.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 330.35,
+      "left": -268.8,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 288.76, "left": -297.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 364.8, "left": -221.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "ttout1:EXTOUT1", "rgb1:G", "green", [ "h105.6" ] ],
+    [ "ttout1:EXTOUT2", "rgb1:B", "blue", [ "h115.2" ] ],
+    [ "gnd1:GND", "rgb1:COM", "black", [ "v0" ] ],
+    [ "rgb1:R", "ttout1:EXTOUT0", "red", [ "v0" ] ],
+    [ "clk1:CLK", "ttin4:EXTCLK", "cyan", [ "v0" ] ],
+    [ "ttin4:CLK", "flop1:CLK", "cyan", [ "v0", "h115.2", "v28.8" ] ],
+    [ "flop1:Q", "ttout1:OUT0", "red", [ "v0", "h28.8", "v76.8" ] ],
+    [ "btn1:1.r", "ttin4:EXTIN7", "green", [ "v0" ] ],
+    [ "r1:2", "btn1:1.l", "green", [ "v0" ] ],
+    [ "vcc1:VCC", "r1:1", "red", [ "v19.2", "h19.2" ] ],
+    [ "gnd2:GND", "btn1:2.l", "black", [ "v0" ] ],
+    [ "ttin4:IN7", "flop1:D", "green", [ "h86.4", "v-115.2", "h0", "v-28.8" ] ],
+    [ "flop1:NOTQ", "ttout1:OUT2", "blue", [ "h19.2", "v67.2" ] ]
+  ],
+  "dependencies": {}
+}
