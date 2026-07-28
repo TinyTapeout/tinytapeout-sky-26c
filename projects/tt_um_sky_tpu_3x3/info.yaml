@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "Sky TPU 3x3"
+  author:       "DashLegion"
+  discord:      ""
+  description:  "int4 systolic-array band-engine TPU: dual-plane 3x3 MACs, 8-deep accumulator, requant+ReLU, autonomous SPI-RAM DMA, on-chip layer chaining"
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "4x2"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_sky_tpu_3x3"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "pe_44_sIuI_pipelined.v"
+    - "systolic_3x3_4bit_v1.v"
+    - "accum_bank_3col.v"
+    - "requant_lane.v"
+    - "relu.v"
+    - "spi_master.v"
+    - "mem_fetch.v"
+    - "cfg_decoder.v"
+    - "sequencer.v"
+    - "wb_engine.v"
+    - "chip_core.v"
+    - "tt_top.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "BEAT0 (command/payload beat bus, NOP=0x00)"
+  ui[1]: "BEAT1"
+  ui[2]: "BEAT2"
+  ui[3]: "BEAT3"
+  ui[4]: "BEAT4"
+  ui[5]: "BEAT5"
+  ui[6]: "BEAT6"
+  ui[7]: "BEAT7"
+
+  # Outputs
+  uo[0]: "FRAME0 (12-bit output frame, count-deterministic offsets)"
+  uo[1]: "FRAME1"
+  uo[2]: "FRAME2"
+  uo[3]: "FRAME3"
+  uo[4]: "FRAME4"
+  uo[5]: "FRAME5"
+  uo[6]: "FRAME6"
+  uo[7]: "FRAME7"
+
+  # Bidirectional pins
+  uio[0]: "SPI_CS_N (out, to SPI RAM)"
+  uio[1]: "SPI_MOSI (out)"
+  uio[2]: "SPI_MISO (in)"
+  uio[3]: "SPI_SCK (out)"
+  uio[4]: "FRAME8 (out)"
+  uio[5]: "FRAME9 (out)"
+  uio[6]: "FRAME10 (out)"
+  uio[7]: "FRAME11 (out)"
+
+# Do not change!
+yaml_version: 6
