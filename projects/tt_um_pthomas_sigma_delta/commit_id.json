@@ -1,0 +1,9 @@
+{
+  "app": "custom_gds action",
+  "repo": "https://github.com/pthomas/ttsky-sigma-delta",
+  "commit": "251d7e55c212f8d3f01014120011d0c1584bc717",
+  "workflow_url": "https://github.com/pthomas/ttsky-sigma-delta/actions/runs/30231953737",
+  "project_id": 5413,
+  "sort_id": 1785111862030,
+  "analog": true
+}
