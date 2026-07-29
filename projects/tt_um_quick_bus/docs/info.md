@@ -117,6 +117,7 @@ The byte level interface is the same on both sides, it looks like:
 
 System:
 * CLK - 1/10 the PLL clock
+* MGMT\_OK - the link is up, you can now transmit - hen MGMT\_OK is 0 RCV\_READY will not be asserted and transmit requests will be ignored
 
 Outgoing (outputs):
 * XMT\_D[7:0] - outgoing data
@@ -124,9 +125,9 @@ Outgoing (outputs):
 * XMT\_READY - data is sent when this is asserted, if not set an IDLE symbol is sent, IDLEs are swallowed by the remote receiver
 
 Incoming (inputs):
-* RCV\_D[7:0] - ingoing data
-* RCV\_K      - ingoing symbol
-* RCV\_READY - data is ready when this is asserted there is no flow control so you must do something with the data or drop it
+* RCV\_D[7:0] - incoming data
+* RCV\_K      - incoming symbol
+* RCV\_READY - data is ready when this is asserted, there is no flow control so you must do something with the data or drop it
 * RCV\_ALIGN - this is set when EIE/END/EDB symbols are received or an error is detected - it is optional and is intended for systems where a fifo is used where the read port is multiple bytes wide
 
 TBD - an upper level protocol for register/memory access (similar to existing SPI systems).
@@ -145,15 +146,22 @@ to N devices while Downstream devices continue to need 2 pairs.
 ## Implementation
 
 This is a 2x2 TT tile.
-with the PLL laid along the bottom, the tile connects RESET\_N to the TT rst\_n and COUNT to ui\_in\[3:0\]. ui\_in\[7:4\] are connected to a down counter from the TT clk, the output is used to drive REFCLK (unless ui\_in\[7:4\]==0 in which case REFCLK is driven directly from the TT clk.
 
-The output CLK is connected to uo\_out\[0\] a 4 bit counter driven from CLK is connected to uo\_out\[5:2\] finally RESET\_OUT\_N is connected to uo\_out\[1\]. It is expected that at many frequencies the upper bits of the counter and the output clock wont make it to the TT pins.
+![TILE](tile.png)
+
+The Upstream side consists of two macros (lower left hand side), the PLL mentioned above and a standard cell macro called "deskew" which contains all the logic that has to run at the full speed clock (2-300MHz).
+
+Deskew is sized to be the same width as the PLL and sits above it. Deskew contains the 1/10 clock generator and the output shift register,  it also contains a variable length delay chain (lots of buffers and a mux tree) and a bang-bang phase discriminator, this feed a variable length shift register to do symbol alignment to the 1/10 clock.
+
+The Downstream side also contains 2 macros, a Clock Data Recovery unit which consists of the charge pump from the PLL along with a modified 4 stage VCO that generates a quadrature clock signal,  ....
+![CDR](cdr.png)
+....and a standard cell macro called "CDRS" that contains logic to sync to the incoming frequency and a bang-bang phase detector for station keeping, it also contains the high freq portion of the 8b10 encoders/decoders and generates the 1/10 clock synchronized to the symbols in the received bit stream.
+
+The rest of the 8b10 logic (in the 1/10 clock domains), the management units and the logic to connect them to the external pins for test are synthesized into the remaining TT standard cell gates.
 
 ## How to test
 
 Drive ui\_in with 8'n0000\_0001 (2 times freq), Set the TT clock to 25MHz. Assert reset, uo\_out\[1\] should go low, clear reset, uo\_out\[1\] should high. If we get this far the PLL is making a good clock. You can now look at the uo\_out pins on a scope to check the freqs (should be 50MHz though that's at the tough lower end of the final VCO, 8'n0000\_0010 will give you 75MHz, try looking at uo\_out\[3:2\]which should be 1/2 and 1/4 the internal clock freq)
-
-
 
 ## External hardware
 
