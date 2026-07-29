@@ -1,0 +1,9 @@
+{
+  "app": "custom_gds action",
+  "repo": "https://github.com/SemiQa/Diff-In-Diff-Out-OpAmp",
+  "commit": "5f6f3b571b9ea783400d6e559f5974d05c63d5d5",
+  "workflow_url": "https://github.com/SemiQa/Diff-In-Diff-Out-OpAmp/actions/runs/30446951443",
+  "project_id": 5422,
+  "sort_id": 1785310150005,
+  "analog": true
+}
