@@ -9,14 +9,21 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is a simple 4-bit counter.
-The counter value is converted to the symbol for 7 segment display.
+This is a simple 8-bit counter with a display showing counter 16 value.
+The input switches set the reset value of the counter.
+Counter reset is synchronous.
+The lower 4 bits of the counter value is converted to the symbol for 7 segment display.
 Will be improved in the future.
 
 ## How to test
 
-Reset the device, set the clock to 1 Hz, put the input #0 to "on".
+Set the input switches to value 0 (all off).
+Reset the device, set the clock to 1 Hz.
 Each second the 7 segment display should show a new symbol from "0" to "F".
+
+Set the input switches to value 11. Reset the device.
+Send one clock pulse, the display should show 'b'.
+Enable 1 Hz clock, the display will continue showing hex numbers starting from 'b';
 
 ## External hardware
 
