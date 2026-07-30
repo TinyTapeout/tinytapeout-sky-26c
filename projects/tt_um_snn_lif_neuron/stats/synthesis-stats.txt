@@ -1,0 +1,82 @@
+142. Printing statistics.
+
+=== tt_um_snn_lif_neuron ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1839        - wires
+     1874        - wire bits
+      196        - public wires
+      231        - public wire bits
+        8        - ports
+       43        - port bits
+     1855 1.87E+04 cells
+        3   37.536   sky130_fd_sc_hd__a2111o_2
+        2   30.029   sky130_fd_sc_hd__a2111oi_2
+       47  470.451   sky130_fd_sc_hd__a211o_2
+        6   75.072   sky130_fd_sc_hd__a211oi_2
+       10  100.096   sky130_fd_sc_hd__a21bo_2
+        8   90.086   sky130_fd_sc_hd__a21boi_2
+       72  630.605   sky130_fd_sc_hd__a21o_2
+       88  770.739   sky130_fd_sc_hd__a21oi_2
+       11  123.869   sky130_fd_sc_hd__a221o_2
+        2   30.029   sky130_fd_sc_hd__a221oi_2
+       56  560.538   sky130_fd_sc_hd__a22o_2
+        2   25.024   sky130_fd_sc_hd__a22oi_2
+       13   146.39   sky130_fd_sc_hd__a2bb2o_2
+       20  225.216   sky130_fd_sc_hd__a311o_2
+        1   15.014   sky130_fd_sc_hd__a311oi_2
+       38  332.819   sky130_fd_sc_hd__a31o_2
+        4   50.048   sky130_fd_sc_hd__a31oi_2
+       16  180.173   sky130_fd_sc_hd__a32o_2
+        2   22.522   sky130_fd_sc_hd__a41o_2
+       72  540.518   sky130_fd_sc_hd__and2_2
+       30  262.752   sky130_fd_sc_hd__and2b_2
+      111  833.299   sky130_fd_sc_hd__and3_2
+       40  400.384   sky130_fd_sc_hd__and3b_2
+       13  130.125   sky130_fd_sc_hd__and4_2
+        7   78.826   sky130_fd_sc_hd__and4b_2
+        9  112.608   sky130_fd_sc_hd__and4bb_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+       19   71.318   sky130_fd_sc_hd__conb_1
+      191 4.06E+03   sky130_fd_sc_hd__dfxtp_2
+      102  382.867   sky130_fd_sc_hd__inv_2
+       85  957.168   sky130_fd_sc_hd__mux2_1
+      112  700.672   sky130_fd_sc_hd__nand2_2
+       33  289.027   sky130_fd_sc_hd__nand2b_2
+       12  120.115   sky130_fd_sc_hd__nand3_2
+        3   33.782   sky130_fd_sc_hd__nand3b_2
+        4   50.048   sky130_fd_sc_hd__nand4_2
+      103  644.368   sky130_fd_sc_hd__nor2_2
+       12  120.115   sky130_fd_sc_hd__nor3_2
+        5    62.56   sky130_fd_sc_hd__nor4_2
+        7   87.584   sky130_fd_sc_hd__o2111a_2
+       38  380.365   sky130_fd_sc_hd__o211a_2
+        9  112.608   sky130_fd_sc_hd__o211ai_2
+       54  472.954   sky130_fd_sc_hd__o21a_2
+       76  665.638   sky130_fd_sc_hd__o21ai_2
+       12  120.115   sky130_fd_sc_hd__o21ba_2
+        5   56.304   sky130_fd_sc_hd__o21bai_2
+        4   45.043   sky130_fd_sc_hd__o221a_2
+       14  140.134   sky130_fd_sc_hd__o22a_2
+        1   12.512   sky130_fd_sc_hd__o22ai_2
+        7   78.826   sky130_fd_sc_hd__o2bb2a_2
+        7   78.826   sky130_fd_sc_hd__o311a_2
+        1   16.266   sky130_fd_sc_hd__o311ai_2
+        7   70.067   sky130_fd_sc_hd__o31a_2
+        8  100.096   sky130_fd_sc_hd__o31ai_2
+        4   45.043   sky130_fd_sc_hd__o32a_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+       68  425.408   sky130_fd_sc_hd__or2_2
+       48  360.346   sky130_fd_sc_hd__or3_2
+        8   70.067   sky130_fd_sc_hd__or3b_2
+       17  148.893   sky130_fd_sc_hd__or4_2
+        8   80.077   sky130_fd_sc_hd__or4b_2
+        5    62.56   sky130_fd_sc_hd__or4bb_2
+       65 1.06E+03   sky130_fd_sc_hd__xnor2_2
+       14  227.718   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_snn_lif_neuron': 18719.203200
+     of which used for sequential elements: 4062.646400 (21.70%)
+
