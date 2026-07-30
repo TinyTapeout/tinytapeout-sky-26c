@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "snn_lif_neurons"
+  author:       "david"
+  discord:      ""
+  description:  "SNN heart-monitor classifier using banded LIF neurons"
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  tiles: "1x2"
+
+  top_module:  "tt_um_snn_lif_neuron"
+
+  source_files:
+    - "project.v"
+    - "SNN_Heart_Monitor_Top.v"
+    - "Delta_Encoder.v"
+    - "Heartbeat_Segmenter.v"
+    - "Parallel_SNN_Matrix.v"
+    - "Heart_Monitor_Neuron.v"
+    - "MultiClass_SNN_Voter.v"
+
+pinout:
+  # Inputs
+  ui[0]: "adc[0]"
+  ui[1]: "adc[1]"
+  ui[2]: "adc[2]"
+  ui[3]: "adc[3]"
+  ui[4]: "adc[4]"
+  ui[5]: "adc[5]"
+  ui[6]: "adc[6]"
+  ui[7]: "adc[7]"
+
+  # Outputs
+  uo[0]: "class[0]"
+  uo[1]: "class[1]"
+  uo[2]: "class[2]"
+  uo[3]: "diag_valid"
+  uo[4]: "alarm"
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "adc[8]"
+  uio[1]: "adc[9]"
+  uio[2]: "adc[10]"
+  uio[3]: "adc[11]"
+  uio[4]: "sample_en"
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
