@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "An WIP Online Workshop 2026 project"      # Project title
+  title:        "A WIP Online Workshop 2026 project"      # Project title
   author:       "Airat Galiamov"      # Your name
   discord:      "DuzaBF"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "An WIP Online Workshop 2026 project with something nice"      # One line description of what your project does
+  description:  "A WIP Online Workshop 2026 project with something nice"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     1       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -26,14 +26,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "Enable counter"
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "Counter reset value [0]"
+  ui[1]: "Counter reset value [1]"
+  ui[2]: "Counter reset value [2]"
+  ui[3]: "Counter reset value [3]"
+  ui[4]: "Counter reset value [4]"
+  ui[5]: "Counter reset value [5]"
+  ui[6]: "Counter reset value [6]"
+  ui[7]: "Counter reset value [7]"
 
   # Outputs
   uo[0]: "Outputs to the 7 segment display"
@@ -43,7 +43,7 @@ pinout:
   uo[4]: "Outputs to the 7 segment display"
   uo[5]: "Outputs to the 7 segment display"
   uo[6]: "Outputs to the 7 segment display"
-  uo[7]: "DP on the display, toggles every clock"
+  uo[7]: "DP on the display, shows clock signal"
 
   # Bidirectional pins
   uio[0]: ""
