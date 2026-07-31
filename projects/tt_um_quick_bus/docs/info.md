@@ -7,7 +7,7 @@ hopefully up to 350MHz.
 
 QuickBus is a prototype on-board chip to chip bus, think of it as SPI but up to 100 times faster - it's
 a 4-wire bus 2 bits each way with LVDS signalling. In this case the upstream and downstream are both in the
-same TT tile, no actual LVDS but full speed data tests.
+same TT tile, no actual LVDS but full speed data tests, and tests for handling swapped LVDS pins.
 
 ## How the PLL works
 
@@ -147,22 +147,94 @@ to N devices while Downstream devices continue to need 2 pairs.
 
 This is a 2x2 TT tile.
 
-![TILE](tile.png)
+![TILE](diag5.png)
 
 The Upstream side consists of two macros (lower left hand side), the PLL mentioned above and a standard cell macro called "deskew" which contains all the logic that has to run at the full speed clock (2-300MHz).
 
 Deskew is sized to be the same width as the PLL and sits above it. Deskew contains the 1/10 clock generator and the output shift register,  it also contains a variable length delay chain (lots of buffers and a mux tree) and a bang-bang phase discriminator, this feed a variable length shift register to do symbol alignment to the 1/10 clock.
 
-The Downstream side also contains 2 macros, a Clock Data Recovery unit which consists of the charge pump from the PLL along with a modified 4 stage VCO that generates a quadrature clock signal,  ....
+The Downstream side also contains 2 macros, a Clock Data Recovery unit which consists of the charge pump from the PLL along with a modified 4 stage VCO that generates a quadrature clock signal, (upside down in the above image) ....
 ![CDR](cdr.png)
 ....and a standard cell macro called "CDRS" that contains logic to sync to the incoming frequency and a bang-bang phase detector for station keeping, it also contains the high freq portion of the 8b10 encoders/decoders and generates the 1/10 clock synchronized to the symbols in the received bit stream.
 
 The rest of the 8b10 logic (in the 1/10 clock domains), the management units and the logic to connect them to the external pins for test are synthesized into the remaining TT standard cell gates.
 
-## How to test
+# How to test
+
+## Interface
+
+The Tiny Tapeout ui\_in pins are sampled at the rising edge of rst\_n. bits [7:6] determine the test mode:
+
+- 0: PLL test - in this mode we just test the PLL - uii\_in[3:0] are fed directly to the PLL and I/O mode 0 gives you access to the PLL's output
+- 1: QuickBus simple - both upstream and downstream are connected to the I/O modes of the TT interface
+- 2: QuickBus data - downstream generates a data stream
+- 3: QuickBus registers - downstream has a simple register file
+
+In the last three mode the lower 6 bits of ui\_in are used for:
+
+- 5: injects errors into the serial data streams depending on the I/O prog values
+- 4: inverts the pins on the upstream-\>downstream link
+- 3: injects errors on 300MHz streams
+- 2:0 chooses the freq mask used for upstream
+	- 0: 100MHz
+	- 1: 100MHz
+	- 2: 100, 200MHz
+	- 3: 100, 200, 300MHz
+	- 4: 50, 100, 150, 200, 300MHz
+	- 5: 50, 100, 150, 200, 300, 500MHz
+	- 6: 50MHz
+	- 7: undefined
+
+The top 2 pins of uio\_in[7:6] choose the I/O mode, they can be changed on the fly once the system
+is running:
+
+
+I/O mode 0:
+
+- uo\_out[7] - pll\_clk
+- uo\_out[5] - upstream 1/10 clk
+- uo\_out[4] - downstream 1/10 clk
+- uo\_out[3:0] - counter clocked by pll\_clk
+- uio\_out[5] - upstream 1/10 clk
+- uio\_out[4] - downstream 1/10 clk
+- uio\_out[3] - down\_mgmt\_ok - downstream link management is done
+- uio\_out[2] - up\_mgmt\_ok - upstream link management is done
+- uio\_out[1] - down\_reset\_n - downstream generated reset
+- uio\_out[0] - up\_reset\_n - upstream generated reset
+ 
+I/O mode 1:
+
+- in  - downstream
+- out - upstream
+
+I/O mode 2:
+
+- in  - upstream
+- out - downstream
+
+I/O mode 3:
+
+- in  - upstream
+- out - upstream
+
+For the last 3 modes:
+
+- uo\_out - data out
+- ui\_in - data in
+- uio\_in[0] - k in
+- uio\_out[1] - k out
+- uio\_out[2] - in data ready
+- uio\_in[3] - out ready (see below)
+- uio\_out[4] - downstream clock
+- uio\_out[5] - upstream clock
+
+Out ready is used to signal that new data is available, it's signaled by uio\_in[5] being inverted from its previous state (so that it can be done manually from the TT test board)
+
+
+## simple test of PLL
 
 Drive ui\_in with 8'n0000\_0001 (2 times freq), Set the TT clock to 25MHz. Assert reset, uo\_out\[1\] should go low, clear reset, uo\_out\[1\] should high. If we get this far the PLL is making a good clock. You can now look at the uo\_out pins on a scope to check the freqs (should be 50MHz though that's at the tough lower end of the final VCO, 8'n0000\_0010 will give you 75MHz, try looking at uo\_out\[3:2\]which should be 1/2 and 1/4 the internal clock freq)
 
-## External hardware
+# External hardware
 
 a scope to look at the output signals
