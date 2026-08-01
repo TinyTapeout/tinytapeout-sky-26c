@@ -519,8 +519,6 @@ MACRO tt_um_pthomas_sigma_delta
         RECT 98.830 0.000 116.450 1.400 ;
         RECT 118.150 0.000 135.770 1.400 ;
         RECT 137.470 0.000 309.300 1.400 ;
-        RECT 116.700 -0.300 117.300 0.000 ;
-        RECT 136.700 -0.300 137.300 0.000 ;
   END
 END tt_um_pthomas_sigma_delta
 END LIBRARY
