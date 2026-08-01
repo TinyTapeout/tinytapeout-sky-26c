@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "The Fed Model (F1/F2)"      # Project title
+  author:       "Shaun M. Rowles"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A Fed rate-cycle risk model in silicon: count the cuts, exit at the threshold, stay out 12 months, stay invested through tightening. A trend-gate pin selects the 2006 original (F1) or the trend-gated revision (F2)"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_rowles_fedmodel"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "N0 (cut-threshold value for LOAD_N strobe)"
+  ui[1]: "N1"
+  ui[2]: "N2"
+  ui[3]: "N3 (4 = 2006 original, 6 = optimized variant)"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "CUT_COUNT0 (cuts this easing cycle)"
+  uo[1]: "CUT_COUNT1"
+  uo[2]: "CUT_COUNT2"
+  uo[3]: "CUT_COUNT3"
+  uo[4]: "CYCLE_ALIVE (easing cycle in progress)"
+  uo[5]: "OUT_STATE (serving the 12-month stay-out)"
+  uo[6]: "WINDOW_ARMED (inside cuts N..N+2)"
+  uo[7]: "INVESTED (the call: 1 = in the market)"
+
+  # Bidirectional pins
+  uio[0]: "CUT (strobe: the Fed cut rates)"
+  uio[1]: "HIKE (strobe: the Fed raised rates)"
+  uio[2]: "MONTH (strobe: one month passed)"
+  uio[3]: "TREND_OK (level: price above its 10-month average)"
+  uio[4]: "F2_MODE (level: 1 = trend-gated F2, 0 = 2006 original F1)"
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: "LOAD_N (strobe: latch ui as cut threshold)"
+
+# Do not change!
+yaml_version: 6
