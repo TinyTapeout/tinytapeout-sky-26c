@@ -1,0 +1,64 @@
+114. Printing statistics.
+
+=== tt_um_fwilson12_mac ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      694        - wires
+      729        - wire bits
+       41        - public wires
+       76        - public wire bits
+        8        - ports
+       43        - port bits
+      710 7.66E+03 cells
+        1    10.01   sky130_fd_sc_hd__a211o_2
+        1    10.01   sky130_fd_sc_hd__a21bo_2
+        4   45.043   sky130_fd_sc_hd__a21boi_2
+       38  332.819   sky130_fd_sc_hd__a21o_2
+       32  280.269   sky130_fd_sc_hd__a21oi_2
+        3   33.782   sky130_fd_sc_hd__a221o_2
+       23  230.221   sky130_fd_sc_hd__a22o_2
+       11  137.632   sky130_fd_sc_hd__a22oi_2
+        5   56.304   sky130_fd_sc_hd__a2bb2o_2
+        1   11.261   sky130_fd_sc_hd__a311o_2
+       19   166.41   sky130_fd_sc_hd__a31o_2
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        8   90.086   sky130_fd_sc_hd__a32o_2
+       40  300.288   sky130_fd_sc_hd__and2_2
+       20  175.168   sky130_fd_sc_hd__and2b_2
+       12   90.086   sky130_fd_sc_hd__and3_2
+        2   20.019   sky130_fd_sc_hd__and3b_2
+        9   90.086   sky130_fd_sc_hd__and4_2
+        1   12.512   sky130_fd_sc_hd__and4bb_2
+        8   30.029   sky130_fd_sc_hd__conb_1
+       33  701.923   sky130_fd_sc_hd__dfxtp_2
+       13   48.797   sky130_fd_sc_hd__inv_2
+       18  202.694   sky130_fd_sc_hd__mux2_1
+       55   344.08   sky130_fd_sc_hd__nand2_2
+       17  148.893   sky130_fd_sc_hd__nand2b_2
+        3   30.029   sky130_fd_sc_hd__nand3_2
+        2   25.024   sky130_fd_sc_hd__nand4_2
+       78  487.968   sky130_fd_sc_hd__nor2_2
+        2   20.019   sky130_fd_sc_hd__nor3_2
+        5   50.048   sky130_fd_sc_hd__o211a_2
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+        9   78.826   sky130_fd_sc_hd__o21a_2
+        8   70.067   sky130_fd_sc_hd__o21ai_2
+        4   40.038   sky130_fd_sc_hd__o21ba_2
+        1   11.261   sky130_fd_sc_hd__o21bai_2
+        1   11.261   sky130_fd_sc_hd__o221a_2
+        3   30.029   sky130_fd_sc_hd__o22a_2
+        1   12.512   sky130_fd_sc_hd__o22ai_2
+        1   11.261   sky130_fd_sc_hd__o2bb2a_2
+        1   15.014   sky130_fd_sc_hd__o2bb2ai_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        1   11.261   sky130_fd_sc_hd__o32a_2
+       27  168.912   sky130_fd_sc_hd__or2_2
+        5   37.536   sky130_fd_sc_hd__or3_2
+      125   2033.2   sky130_fd_sc_hd__xnor2_2
+       56  910.874   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_fwilson12_mac': 7661.097600
+     of which used for sequential elements: 701.923200 (9.16%)
+

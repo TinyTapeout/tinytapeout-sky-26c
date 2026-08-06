@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title: "int8 MAC" # Project title
+  author: "Fletcher Wilson" # Your name
+  discord: "fletcher2958" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "A multiply-accumulate unit that computes the dot product of two signed int8 vectors, time-multiplexing the operands onto a single 8-bit port and reading its 24-bit signed accumulator back over two clock cycles." # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 50000000 # Clock frequency in Hz (or 0 if not applicable)
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_fwilson12_mac"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs: one signed int8 operand per clock edge, time-multiplexed between the two vectors
+  ui[0]: "operand[0]"
+  ui[1]: "operand[1]"
+  ui[2]: "operand[2]"
+  ui[3]: "operand[3]"
+  ui[4]: "operand[4]"
+  ui[5]: "operand[5]"
+  ui[6]: "operand[6]"
+  ui[7]: "operand[7]"
+
+  # Outputs: accumulator low byte in phase 0, middle byte in phase 1
+  uo[0]: "acc[0] p0 / acc[8] p1"
+  uo[1]: "acc[1] p0 / acc[9] p1"
+  uo[2]: "acc[2] p0 / acc[10] p1"
+  uo[3]: "acc[3] p0 / acc[11] p1"
+  uo[4]: "acc[4] p0 / acc[12] p1"
+  uo[5]: "acc[5] p0 / acc[13] p1"
+  uo[6]: "acc[6] p0 / acc[14] p1"
+  uo[7]: "acc[7] p0 / acc[15] p1"
+
+  # Bidirectional pins (always outputs): accumulator middle byte in phase 0, high byte in phase 1
+  uio[0]: "acc[8] p0 / acc[16] p1"
+  uio[1]: "acc[9] p0 / acc[17] p1"
+  uio[2]: "acc[10] p0 / acc[18] p1"
+  uio[3]: "acc[11] p0 / acc[19] p1"
+  uio[4]: "acc[12] p0 / acc[20] p1"
+  uio[5]: "acc[13] p0 / acc[21] p1"
+  uio[6]: "acc[14] p0 / acc[22] p1"
+  uio[7]: "acc[15] p0 / acc[23] p1"
+
+# Do not change!
+yaml_version: 6
