@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "heart_monitor_adc_art"
+  author:       "davidbroughsmyth"
+  discord:      ""
+  description:  "12-bit ~500 SPS SAR ADC + decorative met4 silicon art (cats/hearts/DBS)"
+  language:     "Analog"
+  clock_hz:     50000000
+
+  tiles: "2x2"
+  analog_pins: 2
+  uses_vapwr: false
+
+  top_module:  "tt_um_davidbroughsmyth_ecg_sar12"
+
+  source_files:
+    - "project.v"
+    - "rate_divider.v"
+    - "sar_fsm.v"
+    - "analog_frontend_stub.v"
+
+pinout:
+  # Inputs — simulation / config: 12-bit vin code into digital comparator model
+  ui[0]: "vin[0]"
+  ui[1]: "vin[1]"
+  ui[2]: "vin[2]"
+  ui[3]: "vin[3]"
+  ui[4]: "vin[4]"
+  ui[5]: "vin[5]"
+  ui[6]: "vin[6]"
+  ui[7]: "vin[7]"
+
+  # Outputs — mirrors SNN heart-monitor ADC consumer bus
+  uo[0]: "adc[0]"
+  uo[1]: "adc[1]"
+  uo[2]: "adc[2]"
+  uo[3]: "adc[3]"
+  uo[4]: "adc[4]"
+  uo[5]: "adc[5]"
+  uo[6]: "adc[6]"
+  uo[7]: "adc[7]"
+
+  # Bidirectional pins
+  uio[0]: "adc[8]"
+  uio[1]: "adc[9]"
+  uio[2]: "adc[10]"
+  uio[3]: "adc[11]"
+  uio[4]: "sample_en"
+  uio[5]: "vin[8]"
+  uio[6]: "vin[9]"
+  uio[7]: "vin[10]"
+
+  # Analog pins (silicon)
+  ua[0]: "vin_ecg"
+  ua[1]: "vref"
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+yaml_version: 6
