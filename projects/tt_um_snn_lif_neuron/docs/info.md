@@ -1,5 +1,11 @@
 # Tiny Tapeout SNN Heart Monitor
 
+Architecture: [ARCHITECTURE.md](ARCHITECTURE.md) ·
+Component datasheet: [DATASHEET.md](DATASHEET.md) ·
+User manual (demoboard / HIL): [USER_MANUAL.md](USER_MANUAL.md) ·
+Companion ADC manual: [ADC USER_MANUAL](https://github.com/davidbroughsmyth/heart_monitor_adc_art_ttsky26c/blob/main/docs/USER_MANUAL.md)
+([`heart_monitor_adc_art_ttsky26c`](https://github.com/davidbroughsmyth/heart_monitor_adc_art_ttsky26c) — fabrication companion)
+
 ## How it works
 
 This design is a compact spiking neural network (SNN) heart-beat classifier for Tiny Tapeout.
@@ -35,6 +41,11 @@ The cocotb suite checks:
 - steep rise → class 2
 - zigzag → class 4
 - alarm quiet for 2 ventricular beats, fires on the 3rd, clears on Normal
+- **MIT-BIH stream** — plays `test/data/mitbih_100_excerpt.csv` into the ADC pins,
+  requires several `diag_valid` detections, and logs a class histogram plus optional
+  annotation agreement (informational; not a hard accuracy gate)
+
+See [`test/data/README.md`](../test/data/README.md) for PhysioNet citation and scaling.
 
 On hardware / FPGA:
 
@@ -45,5 +56,6 @@ On hardware / FPGA:
 
 ## External hardware
 
-- Optional: external ADC or microcontroller streaming 12-bit samples into the pin-mapped ADC bus, with a sample strobe on `uio[4]`.
+- Optional: external ADC or microcontroller streaming 12-bit samples into the pin-mapped ADC bus, with a sample strobe on `uio[4]`. Setup and test: [USER_MANUAL.md §4](USER_MANUAL.md#4-setup-and-test-with-an-external-adc-chip).
+- Optional: companion Tiny Tapeout SAR ADC [`heart_monitor_adc_art_ttsky26c`](https://github.com/davidbroughsmyth/heart_monitor_adc_art_ttsky26c) (12-bit ~500 SPS + decorative met4 art; electrically same as the pristine ADC); wire per its `docs/INTEGRATION.md`.
 - Optional: LED on `uo[4]` for the anomaly alarm.
