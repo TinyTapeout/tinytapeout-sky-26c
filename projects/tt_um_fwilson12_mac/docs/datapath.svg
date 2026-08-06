@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 92 1240 498" width="1240" height="498" role="img" aria-label="MAC unit datapath schematic">
+  <title>MAC unit datapath</title>
+  <desc>ui_in feeds an 8-bit operand register and a combinational signed multiplier; the product is added into a 24-bit accumulator register, which is read out 16 bits at a time through a phase-selected multiplexer.</desc>
+
+  <style>
+    .w  { stroke: #000; stroke-width: 1.5; fill: none; stroke-linejoin: miter; }
+    .c  { stroke: #000; stroke-width: 1.1; fill: none; }
+    .b  { stroke: #000; stroke-width: 1.5; fill: none; }
+    .d  { fill: #000; stroke: none; }
+    text { font-family: Helvetica, Arial, "Liberation Sans", sans-serif; font-size: 13px; fill: #000; }
+    .s  { font-size: 10px; }
+    .n  { font-size: 10px; font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+    .p  { font-size: 8.5px; }
+    .op { font-size: 26px; }
+  </style>
+
+  <rect x="0" y="0" width="1240" height="590" fill="#ffffff"/>
+
+  <!-- ==================== ui_in ==================== -->
+  <polygon class="b" points="60,234 60,270 96,252"/>
+  <text x="54" y="257" text-anchor="end">ui_in</text>
+  <path class="w" d="M96,252 H145"/>
+  <path class="w" d="M116,259 L128,245"/>
+  <text class="s" x="124" y="240">8</text>
+
+  <circle class="d" cx="145" cy="252" r="3.5"/>
+  <path class="w" d="M145,140 V292"/>
+  <path class="w" d="M145,140 H210"/>
+  <path class="w" d="M145,292 H430"/>
+  <path class="w" d="M394,299 L406,285"/>
+  <text class="s" x="402" y="280">8</text>
+
+  <!-- ==================== operand register ==================== -->
+  <rect class="b" x="210" y="106" width="110" height="68"/>
+  <polyline class="b" points="210,154 220,160 210,166"/>
+  <text x="265" y="136" text-anchor="middle">a [7:0]</text>
+  <circle class="b" cx="250" cy="170" r="4"/>
+  <circle class="b" cx="290" cy="170" r="4"/>
+  <text class="p" x="259" y="169">EN</text>
+  <text class="p" x="299" y="169">R</text>
+
+  <path class="w" d="M320,140 H370 V225 H430"/>
+  <path class="w" d="M394,232 L406,218"/>
+  <text class="s" x="402" y="213">8</text>
+
+  <!-- ==================== multiplier ==================== -->
+  <rect class="b" x="430" y="196" width="90" height="112"/>
+  <text class="op" x="475" y="258" text-anchor="middle">&#215;</text>
+  <text class="n" x="475" y="288" text-anchor="middle">$mul</text>
+
+  <path class="w" d="M520,252 H600"/>
+  <path class="w" d="M549,259 L561,245"/>
+  <text class="s" x="557" y="240">16</text>
+
+  <!-- ==================== adder ==================== -->
+  <rect class="b" x="600" y="196" width="90" height="112"/>
+  <text class="op" x="645" y="258" text-anchor="middle">+</text>
+  <text class="n" x="645" y="288" text-anchor="middle">$add</text>
+
+  <path class="w" d="M690,252 H740"/>
+  <path class="w" d="M697,259 L709,245"/>
+  <text class="s" x="705" y="240">24</text>
+
+  <!-- ==================== accumulator ==================== -->
+  <rect class="b" x="740" y="214" width="130" height="76"/>
+  <polyline class="b" points="740,266 750,272 740,278"/>
+  <text x="805" y="246" text-anchor="middle">acc [23:0]</text>
+  <circle class="b" cx="830" cy="286" r="4"/>
+  <text class="p" x="774" y="285">EN</text>
+  <text class="p" x="839" y="285">R</text>
+
+  <path class="w" d="M870,252 H935"/>
+  <path class="w" d="M906,259 L918,245"/>
+  <text class="s" x="914" y="240">24</text>
+
+  <!-- accumulate feedback into the adder -->
+  <circle class="d" cx="890" cy="252" r="3.5"/>
+  <path class="w" d="M890,252 V150 H645 V196"/>
+  <path class="w" d="M754,157 L766,143"/>
+  <text class="s" x="762" y="138">24</text>
+
+  <!-- ==================== read-out mux ==================== -->
+  <path class="w" d="M935,222 V282"/>
+  <circle class="d" cx="935" cy="252" r="3.5"/>
+  <path class="w" d="M935,222 H985"/>
+  <path class="w" d="M935,282 H985"/>
+  <text class="s" x="982" y="214" text-anchor="end">acc[15:0]</text>
+  <text class="s" x="982" y="302" text-anchor="end">acc[23:8]</text>
+
+  <polygon class="b" points="985,192 1030,220 1030,284 985,312"/>
+  <text class="s" x="995" y="228">0</text>
+  <text class="s" x="995" y="290">1</text>
+
+  <path class="w" d="M1030,252 H1075"/>
+  <path class="w" d="M1046,259 L1058,245"/>
+  <text class="s" x="1054" y="240">16</text>
+
+  <polygon class="b" points="1075,234 1075,270 1111,252"/>
+  <text x="1118" y="257">{uio_out, uo_out}</text>
+
+  <!-- ==================== phase flip-flop ==================== -->
+  <rect class="b" x="440" y="374" width="150" height="70"/>
+  <polyline class="b" points="440,414 450,420 440,426"/>
+  <text x="515" y="414" text-anchor="middle">phase</text>
+  <circle class="b" cx="560" cy="440" r="4"/>
+  <text class="p" x="569" y="439">R</text>
+
+  <!-- phase distribution -->
+  <path class="c" d="M590,410 H1007"/>
+  <circle class="d" cx="780" cy="410" r="3"/>
+  <path class="c" d="M780,410 V290"/>
+  <path class="c" d="M1007,410 V298"/>
+  <path class="c" d="M500,374 V350 H250 V174"/>
+
+  <!-- ==================== clock net ==================== -->
+  <polygon class="b" points="60,477 60,513 96,495"/>
+  <text x="54" y="500" text-anchor="end">clk</text>
+  <path class="w" d="M96,495 H712"/>
+  <circle class="d" cx="172" cy="495" r="3"/>
+  <circle class="d" cx="410" cy="495" r="3"/>
+  <path class="w" d="M172,495 V160 H210"/>
+  <path class="w" d="M410,495 V420 H440"/>
+  <path class="w" d="M712,495 V272 H740"/>
+
+  <!-- ==================== reset net ==================== -->
+  <polygon class="b" points="60,532 60,568 96,550"/>
+  <text x="54" y="555" text-anchor="end">rst_n</text>
+  <path class="w" d="M96,550 H830"/>
+  <circle class="d" cx="290" cy="550" r="3"/>
+  <circle class="d" cx="560" cy="550" r="3"/>
+  <path class="w" d="M290,550 V174"/>
+  <path class="w" d="M560,550 V444"/>
+  <path class="w" d="M830,550 V290"/>
+</svg>
