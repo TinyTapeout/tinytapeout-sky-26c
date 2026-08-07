@@ -1,0 +1,63 @@
+# TinyTapeout manifest — TTSKY26c.
+# Schema authority is tt-support-tools/project_info.py; yaml_version MUST be 6.
+# Validator foot-guns respected here, each one deliberately:
+#   * clock_hz must be a Python int -- 25e6 would be a float and fails
+#   * source_files may not use wildcards; every file listed one per line
+#   * all 24 pinout keys must be present (may be empty) and >=1 non-empty
+#   * top_module must start with tt_um_
+# ⚠️ source_files must be kept in sync BY HAND with PROJECT_SOURCES in
+#    test/Makefile -- nothing checks that they agree.
+yaml_version: 6
+
+project:
+  title:       "Verified 8x8 bit-serial banyan switch"
+  author:      "Jason Hickey"
+  discord:     ""
+  description: "A self-routing 8x8 packet switch fabric whose gate netlist is proved equivalent to its Lean specification inside the Lean kernel. Recreates the banyan half of US Patent 4,910,730 (1988)."
+  language:    "Verilog"
+  clock_hz:    25000000
+
+  # 12% of one tile is the logic; 2x2 buys headroom for the stretch goals.
+  tiles: "2x2"
+
+  top_module: "tt_um_saltworks_banyan"
+
+  source_files:
+    - "project.v"
+    - "banyan_fabric.v"
+    - "bitserial_switch.v"
+
+# Frame format (docs/silicon-frame-protocol-0806.md):
+#   cycle 0 ACT, 1 a2 | cycle 2 ACT, 3 a1 | cycle 4 ACT, 5 a0 | cycle 6+ payload
+# The activity bit is repeated once per stage because an interior stage can only
+# latch a ROUTED activity bit and upstream has not decided at cycle 0.
+pinout:
+  ui[0]: "serial in, line 0"
+  ui[1]: "serial in, line 1"
+  ui[2]: "serial in, line 2"
+  ui[3]: "serial in, line 3"
+  ui[4]: "serial in, line 4"
+  ui[5]: "serial in, line 5"
+  ui[6]: "serial in, line 6"
+  ui[7]: "serial in, line 7"
+
+  uo[0]: "serial out, line 0"
+  uo[1]: "serial out, line 1"
+  uo[2]: "serial out, line 2"
+  uo[3]: "serial out, line 3"
+  uo[4]: "serial out, line 4"
+  uo[5]: "serial out, line 5"
+  uo[6]: "serial out, line 6"
+  uo[7]: "serial out, line 7"
+
+  uio[0]: "sof (in): start of frame, re-aligns the counter to cycle 0"
+  uio[1]: "frame counter bit 0 (out)"
+  uio[2]: "frame counter bit 1 (out)"
+  uio[3]: "frame counter bit 2 (out)"
+  uio[4]: "valid (out): high during the payload window, cycle >= 6"
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# The shuttle to be submitted to.
+tt_shuttle: ttsky26c
