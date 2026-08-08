@@ -1,0 +1,9 @@
+{
+  "app": "custom_gds action",
+  "repo": "https://github.com/TilesOS/tt_um_tilesos_dual_adc",
+  "commit": "962431c30c598903ea9602bd98356baea4bdaacd",
+  "workflow_url": "https://github.com/TilesOS/tt_um_tilesos_dual_adc/actions/runs/31274499411",
+  "project_id": 5471,
+  "sort_id": 1786217509779,
+  "analog": true
+}

@@ -1,0 +1,66 @@
+# Tiny Tapeout project information
+project:
+  title: "VCO-Based Noise-Shaping ADC"
+  author: "Tyler McClure"
+  discord: "tiles_os"
+  description: "A voltage-controlled ring oscillator converts one analog input into a buffered pulse train for off-chip frequency measurement."
+  language: "Analog"
+  clock_hz: 1000000
+
+  # A SKY130 2x2 analog template has a 334.88 x 225.76 um die area.
+  tiles: "2x2"
+
+  # Only ua[0] is purchased/used. The physical ua[1] template pin stays
+  # isolated so a later delta-sigma option remains a localized route change.
+  analog_pins: 1
+  uses_vapwr: false
+
+  top_module: "tt_um_tilesos_dual_adc"
+
+  # Source files must be in ./src and listed separately.
+  source_files:
+    - "project.v"
+
+# Pinout for the datasheet/website. Leave unused pins blank. Do not add or
+# remove entries.
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "VCO-ADC pulse train"
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  # Analog pins
+  ua[0]: "Shared analog input"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
