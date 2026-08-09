@@ -15,34 +15,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "Switch I/P 0"
+  ui[1]: "Switch I/P 1"
+  ui[2]: "Switch I/P 2"
+  ui[3]: "Switch I/P 3"
+  ui[4]: "Switch I/P 4"
+  ui[5]: "Switch I/P 5"
+  ui[6]: "Switch I/P 6"
+  ui[7]: "Switch I/P 7"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "Panel 0 O/P"
+  uo[1]: "Panel 1 O/P"
+  uo[2]: "Panel 2 O/P"
+  uo[3]: "Panel 3 O/P"
+  uo[4]: "Panel 4 O/P"
+  uo[5]: "Panel 5 O/P"
+  uo[6]: "Panel 6 O/P"
+  uo[7]: "Panel 7 O/P"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "NA"
+  uio[1]: "NA"
+  uio[2]: "NA"
+  uio[3]: "NA"
+  uio[4]: "NA"
+  uio[5]: "NA"
+  uio[6]: "NA"
+  uio[7]: "NA"
 
 # Do not change!
 yaml_version: 6
