@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "FP8 (E4M3) Floating-Point Unit"
+  author:       "Raphael Lopes Pinheiro"
+  discord:      ""
+  description:  "8-bit IEEE FP8 E4M3 FPU: add/sub/mul/div/sqrt (iterative variable-latency div & sqrt) + min/max/abs/neg/copysign/classify/compare/scalb/roundToIntegral, streaming valid/ready I/O (pipelined, multiple ops in flight)"
+  language:     "Verilog"
+  clock_hz: 10000000
+
+  # How many tiles your design occupies. A single tile is about 167x108 uM.
+  # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "1x2"
+
+  # Top module name. Must start with "tt_um_".
+  top_module:  "tt_um_fp8_fpu"
+
+  # List your project's source files here, one per line.
+  # All source files live in ./src (header_fp8.v is `included by them and is
+  # resolved via -I in test/Makefile, so it is not listed separately).
+  source_files:
+    - "tt_um_fp8_fpu.v"
+    - "tiny_fp8_unit.v"
+    - "fp8_controller.v"
+    - "fp8_elastic_pipeline.v"
+    - "fp8_handshake_reg.v"
+    - "fp8_pre_execute.v"
+    - "fp8_unpack.v"
+    - "fp8_execute_comb.v"
+    - "fp8_normalize.v"
+    - "fp8_round.v"
+    - "fp8_div_iter.v"
+    - "fp8_direct_ops.v"
+
+# The pinout of your project. Leave unused pins blank.
+pinout:
+  # Inputs
+  ui[0]: "DATA_IN[0] (operand / control byte)"
+  ui[1]: "DATA_IN[1]"
+  ui[2]: "DATA_IN[2]"
+  ui[3]: "DATA_IN[3]"
+  ui[4]: "DATA_IN[4]"
+  ui[5]: "DATA_IN[5]"
+  ui[6]: "DATA_IN[6]"
+  ui[7]: "DATA_IN[7]"
+
+  # Outputs
+  uo[0]: "DATA_OUT[0] (result / flags / exceptions)"
+  uo[1]: "DATA_OUT[1]"
+  uo[2]: "DATA_OUT[2]"
+  uo[3]: "DATA_OUT[3]"
+  uo[4]: "DATA_OUT[4]"
+  uo[5]: "DATA_OUT[5]"
+  uo[6]: "DATA_OUT[6]"
+  uo[7]: "DATA_OUT[7]"
+
+  # Bidirectional pins (streaming handshake)
+  uio[0]: "IN_VALID (input: host has a DATA_IN byte)"
+  uio[1]: "IN_READY (output: core can accept a byte)"
+  uio[2]: "OUT_VALID (output: DATA_OUT byte is valid)"
+  uio[3]: "OUT_READY (input: host consumed DATA_OUT byte)"
+  uio[4]: "STICKY_CTRL (input: reuse last rm/opcode)"
+  uio[5]: "STICKY_B (input: reuse last B operand)"
+  uio[6]: "READ_FULL (input: output result+flags+exc)"
+  uio[7]: "FPU_BUSY (output)"
+
+# Do not change!
+yaml_version: 6
