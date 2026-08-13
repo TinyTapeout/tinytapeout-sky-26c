@@ -1,0 +1,47 @@
+# Tiny Tapeout project information
+project:
+  title:        "leanSilicon LSC-1 Micro arithmetic kernel"
+  author:       "LFG Labs"
+  discord:      ""
+  description:  "LSC-1 Micro (LSC-1u): reduced Tiny Tapeout arithmetic sub-core of LSC-1, not LSC-2."
+  language:     "SystemVerilog"
+  clock_hz:     25000000
+  # 1x1 measured 128.237% GPL utilization; 1x2 is the smallest evidence-based
+  # follow-up that can retain the serial multiplier.
+  tiles:        "1x2"
+  top_module:   "tt_um_lfglabs_lsc1u"
+  source_files:
+    - "tt_um_lfglabs_lsc1u.sv"
+    - "lsc1u_core.sv"
+    - "../asic_core/rtl/gf2n_mul_bitstream.sv"
+    - "../asic_core/rtl/gf128_mul_bitstream.sv"
+
+pinout:
+  ui[0]: "REQUEST_BYTE[0]"
+  ui[1]: "REQUEST_BYTE[1]"
+  ui[2]: "REQUEST_BYTE[2]"
+  ui[3]: "REQUEST_BYTE[3]"
+  ui[4]: "REQUEST_BYTE[4]"
+  ui[5]: "REQUEST_BYTE[5]"
+  ui[6]: "REQUEST_BYTE[6]"
+  ui[7]: "REQUEST_BYTE[7]"
+
+  uo[0]: "RESPONSE_BYTE[0]"
+  uo[1]: "RESPONSE_BYTE[1]"
+  uo[2]: "RESPONSE_BYTE[2]"
+  uo[3]: "RESPONSE_BYTE[3]"
+  uo[4]: "RESPONSE_BYTE[4]"
+  uo[5]: "RESPONSE_BYTE[5]"
+  uo[6]: "RESPONSE_BYTE[6]"
+  uo[7]: "RESPONSE_BYTE[7]"
+
+  uio[0]: "RX_VALID"
+  uio[1]: "RX_READY"
+  uio[2]: "TX_VALID"
+  uio[3]: "TX_READY"
+  uio[4]: "BUSY"
+  uio[5]: "FAULT"
+  uio[6]: "RESERVED"
+  uio[7]: "DONE_PULSE"
+
+yaml_version: 6
