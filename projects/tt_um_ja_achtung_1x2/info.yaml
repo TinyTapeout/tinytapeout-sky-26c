@@ -1,0 +1,62 @@
+# Tiny Tapeout project information
+project:
+  title:        "JA Achtung Full"      # Project title
+  author:       "Joel Kaplan and Amit Elmaliach"      # Your name
+  discord:      "Amite1000 , Venus-Joel"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Two-player Achtung die Kurve: VGA output, QSPI PSRAM framebuffer, gamepad input"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_ja_achtung_1x2"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "tt_um_ja_achtung_1x2.v"
+    - "psram_controller.v"
+    - "display_streamer.v"
+    - "game_fsm.v"
+    - "vga_sync.v"
+    - "gamepad_pmod.v"
+    
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: "Gamepad PMOD latch"
+  ui[5]: "Gamepad PMOD clock"
+  ui[6]: "Gamepad PMOD data"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "VGA R1"
+  uo[1]: "VGA G1"
+  uo[2]: "VGA B1"
+  uo[3]: "VGA VSync"
+  uo[4]: "VGA R0"
+  uo[5]: "VGA G0"
+  uo[6]: "VGA B0"
+  uo[7]: "VGA HSync"
+
+  # Bidirectional pins
+  uio[0]: "Flash CS# (unused, high)"
+  uio[1]: "QSPI PSRAM IO0"
+  uio[2]: "QSPI PSRAM IO1"
+  uio[3]: "QSPI PSRAM SCK"
+  uio[4]: "QSPI PSRAM IO2"
+  uio[5]: "QSPI PSRAM IO3"
+  uio[6]: "QSPI PSRAM CS#"
+  uio[7]: "PSRAM B CS# (unused, high)"
+
+# Do not change!
+yaml_version: 6
