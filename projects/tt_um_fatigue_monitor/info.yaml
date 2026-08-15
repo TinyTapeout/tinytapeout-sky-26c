@@ -1,0 +1,45 @@
+# Tiny Tapeout project information
+project:
+  title:        "Fatigue Monitor (PPG Pulse-Interval Variability)"
+  author:       "Ruhan Gupta"
+  discord:      ""
+  description:  "Reads IR PPG samples from a MAX30102 over I2C, detects pulse peaks, and raises an alert on a sustained drop in pulse-interval variability"
+  language:     "Verilog"
+  clock_hz:     10000000
+  tiles: "1x2"
+  top_module:  "tt_um_fatigue_monitor"
+  source_files:
+    - "project.v"
+    - "supporting_modules.v"
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+  # Outputs
+  uo[0]: "alert_out"
+  uo[1]: "sensor_fault"
+  uo[2]: "calibrated"
+  uo[3]: "beat_debug"
+  uo[4]: "calibrating_init"
+  uo[5]: "sample_valid"
+  uo[6]: "variability_valid"
+  uo[7]: "rising_seen_debug (bring-up only)"
+  # Bidirectional pins
+  uio[0]: "I2C SDA"
+  uio[1]: "I2C SCL"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+# Do not change!
+yaml_version: 6
