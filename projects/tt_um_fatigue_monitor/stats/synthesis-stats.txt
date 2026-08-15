@@ -1,0 +1,87 @@
+152. Printing statistics.
+
+=== tt_um_fatigue_monitor ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1980        - wires
+     2015        - wire bits
+      372        - public wires
+      407        - public wire bits
+        8        - ports
+       43        - port bits
+     1996 2.44E+04 cells
+        3   37.536   sky130_fd_sc_hd__a2111o_2
+       14  140.134   sky130_fd_sc_hd__a211o_2
+        4   50.048   sky130_fd_sc_hd__a211oi_2
+        9   90.086   sky130_fd_sc_hd__a21bo_2
+        7   78.826   sky130_fd_sc_hd__a21boi_2
+       45  394.128   sky130_fd_sc_hd__a21o_2
+       54  472.954   sky130_fd_sc_hd__a21oi_2
+       14  157.651   sky130_fd_sc_hd__a221o_2
+        2   30.029   sky130_fd_sc_hd__a221oi_2
+       60  600.576   sky130_fd_sc_hd__a22o_2
+        4   50.048   sky130_fd_sc_hd__a22oi_2
+       10  112.608   sky130_fd_sc_hd__a2bb2o_2
+        5   56.304   sky130_fd_sc_hd__a311o_2
+        1   15.014   sky130_fd_sc_hd__a311oi_2
+       50   437.92   sky130_fd_sc_hd__a31o_2
+        4   50.048   sky130_fd_sc_hd__a31oi_2
+       31  349.085   sky130_fd_sc_hd__a32o_2
+        1   16.266   sky130_fd_sc_hd__a32oi_2
+        3   33.782   sky130_fd_sc_hd__a41o_2
+       85  638.112   sky130_fd_sc_hd__and2_2
+       69   604.33   sky130_fd_sc_hd__and2b_2
+       41  307.795   sky130_fd_sc_hd__and3_2
+        7   70.067   sky130_fd_sc_hd__and3b_2
+        8   80.077   sky130_fd_sc_hd__and4_2
+        8   90.086   sky130_fd_sc_hd__and4b_2
+        3   37.536   sky130_fd_sc_hd__and4bb_2
+       10   50.048   sky130_fd_sc_hd__buf_2
+       14    52.55   sky130_fd_sc_hd__conb_1
+      361 9.49E+03   sky130_fd_sc_hd__dfrtp_2
+        3   78.826   sky130_fd_sc_hd__dfstp_2
+       73  274.013   sky130_fd_sc_hd__inv_2
+      179 2.02E+03   sky130_fd_sc_hd__mux2_1
+      112  700.672   sky130_fd_sc_hd__nand2_2
+       44   385.37   sky130_fd_sc_hd__nand2b_2
+       13  130.125   sky130_fd_sc_hd__nand3_2
+        2   22.522   sky130_fd_sc_hd__nand3b_2
+        3   37.536   sky130_fd_sc_hd__nand4_2
+      138  863.328   sky130_fd_sc_hd__nor2_2
+       12  120.115   sky130_fd_sc_hd__nor3_2
+        3   37.536   sky130_fd_sc_hd__nor4_2
+        1   15.014   sky130_fd_sc_hd__nor4b_2
+        2   25.024   sky130_fd_sc_hd__o2111a_2
+        1   15.014   sky130_fd_sc_hd__o2111ai_2
+       13  130.125   sky130_fd_sc_hd__o211a_2
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+       48  420.403   sky130_fd_sc_hd__o21a_2
+       34  297.786   sky130_fd_sc_hd__o21ai_2
+       11  110.106   sky130_fd_sc_hd__o21ba_2
+        8   90.086   sky130_fd_sc_hd__o21bai_2
+        9  101.347   sky130_fd_sc_hd__o221a_2
+        1   15.014   sky130_fd_sc_hd__o221ai_2
+       11  110.106   sky130_fd_sc_hd__o22a_2
+        7   87.584   sky130_fd_sc_hd__o22ai_2
+        6   67.565   sky130_fd_sc_hd__o2bb2a_2
+        5   56.304   sky130_fd_sc_hd__o311a_2
+       11  110.106   sky130_fd_sc_hd__o31a_2
+        3   37.536   sky130_fd_sc_hd__o31ai_2
+        2   22.522   sky130_fd_sc_hd__o32a_2
+        2   32.531   sky130_fd_sc_hd__o32ai_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+        2   32.531   sky130_fd_sc_hd__o41ai_2
+       95   594.32   sky130_fd_sc_hd__or2_2
+       34  255.245   sky130_fd_sc_hd__or3_2
+       19   166.41   sky130_fd_sc_hd__or3b_2
+       27  236.477   sky130_fd_sc_hd__or4_2
+        6   60.058   sky130_fd_sc_hd__or4b_2
+        1   12.512   sky130_fd_sc_hd__or4bb_2
+       85 1.38E+03   sky130_fd_sc_hd__xnor2_2
+       40  650.624   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_fatigue_monitor': 24427.177600
+     of which used for sequential elements: 9564.172800 (39.15%)
+
