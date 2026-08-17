@@ -9,12 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Shows H-O-L-A in 7-segment display.
-
+Shows "DESIGN YOUR OWN CHIP" in VGA display.
 ## How to test
 
-Just press reset and the letters will show in the 7-segment display.
+Connect VGA display thru Tiny VGA Pmod.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Tiny VGA Pmod.
