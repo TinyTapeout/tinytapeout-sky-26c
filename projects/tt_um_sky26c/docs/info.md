@@ -15,8 +15,8 @@ integrate-and-fire membrane.
 - coefficients stored as their exponentials in Q0.16, not as rates
 - one 16x16 multiply covers both branches; only the offset differs
 
-**Membrane** — `g = g_max * r`, `I_syn = g * (E_rev - V)`, and `V` integrates
-`I_syn` less a linear leak:
+**Membrane** — `g = g_max * r` with `g_max = 255/256`, `I_syn = g * (E_rev - V)`,
+and `V` integrates `I_syn` less a linear leak:
 
 - `I_syn` is signed, so it always pulls `V` toward `E_rev`
 - `E_rev` above `V_threshold` = excitatory; below = inhibitory, same path
@@ -29,6 +29,18 @@ integrate-and-fire membrane.
 - `r` needs the extra width or a slow tau decays by < ½ LSB of Q0.8 and latches
 - every rescale is a power-of-two slice with round-to-nearest, never a divider
 - every stage saturates instead of wrapping
+
+### Timing and reset
+
+- one clock cycle = one model timestep; there is no multi-cycle update
+- the coefficients are per-timestep, so Δt is whatever the clock says it is —
+  the defaults above are the rates per cycle, not per second
+- the cocotb suite clocks at 1 kHz, i.e. Δt = 1 ms of model time; silicon runs
+  the same recurrence at 20 MHz
+- `rst_n` low clears `r`, `V`, `spike` and the coefficient chain, so the part
+  comes out of reset at rest on the default coefficients
+- `ui[5:2]` and `uio_in` are unused; `uio_oe` is tied high, so the bidir bus is
+  an output at all times
 
 ### Coefficient load port
 
