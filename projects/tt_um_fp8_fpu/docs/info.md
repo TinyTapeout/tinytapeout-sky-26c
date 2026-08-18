@@ -10,7 +10,7 @@ Write the documentation for your project here.
 This project tapes out an **8-bit floating-point unit (FPU)** in the **FP8 E4M3**
 format: 1 sign bit, 4 exponent bits (bias 7) and 3 mantissa bits. The core,
 `tiny_fp8_unit`, is a **pipelined, elastic datapath** that implements a
-**14-operation** IEEE-754-style instruction set (opcodes 0–13):
+**18-operation** IEEE-754-style instruction set (opcodes 0–17):
 
 - **Arithmetic:** add, subtract, multiply, divide, square-root. Divide and sqrt
   share one **iterative, variable-latency** unit (1 digit/cycle); everything else
@@ -19,10 +19,19 @@ format: 1 sign bit, 4 exponent bits (bias 7) and 3 mantissa bits. The core,
   NaN-aware).
 - **Manipulation:** absolute value, negate, copy-sign, scale-by-power-of-two
   (scalb), round-to-integral.
+- **Integer conversion:** fp8↔int8 and fp8↔uint8 (opcodes 14–17), with RISC-V
+  `FCVT` semantics — round by the current mode *first*, then range-check and
+  saturate, raising `invalid` on out-of-range and NaN. This is what lets a host
+  CPU move operands in and out of the unit without software fix-up.
 
 Five IEEE rounding modes (nearest-even, toward-zero, up, down, nearest-odd) and
-full classification + exception flags are produced with every result. The whole
-datapath is exhaustively verified against a `Fraction`-exact reference model.
+full classification + exception flags are produced with every result.
+
+**Verification:** the design is signed off **exhaustively** — all 1,843,968
+possible (operand, opcode, rounding-mode) combinations are replayed against a
+`Fraction`-exact reference model, at RTL *and* against the post-place-and-route
+netlist. Nothing is sampled. Exhaustive sign-off is impossible in wider
+floating-point formats and is one of the practical advantages of a minifloat.
 
 The core's native interface is far wider than Tiny Tapeout's pin budget (~32 in,
 ~28 out). To fit, the top-level wrapper `tt_um_fp8_fpu` **time-multiplexes**

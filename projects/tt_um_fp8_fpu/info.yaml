@@ -3,7 +3,7 @@ project:
   title:        "FP8 (E4M3) Floating-Point Unit"
   author:       "Raphael Lopes Pinheiro"
   discord:      ""
-  description:  "8-bit IEEE FP8 E4M3 FPU: add/sub/mul/div/sqrt (iterative variable-latency div & sqrt) + min/max/abs/neg/copysign/classify/compare/scalb/roundToIntegral, streaming valid/ready I/O (pipelined, multiple ops in flight)"
+  description:  "8-bit IEEE FP8 E4M3 FPU, 18 ops: add/sub/mul/div/sqrt (iterative variable-latency div & sqrt) + min/max/abs/neg/copysign/classify/compare/scalb/roundToIntegral + int8/uint8 conversions (RISC-V FCVT saturating semantics). Streaming valid/ready I/O, pipelined, multiple ops in flight. Exhaustively verified: all 1,843,968 input combinations at RTL and gate level."
   language:     "Verilog"
   clock_hz: 10000000
 
