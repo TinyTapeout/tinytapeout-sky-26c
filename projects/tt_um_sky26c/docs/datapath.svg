@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 640" width="1300" height="640" font-family="Inter,Helvetica Neue,Arial,sans-serif">
+<defs>
+<marker id="aS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#2a78d6"/></marker>
+<marker id="aM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#c2570f"/></marker>
+<marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#52514e"/></marker>
+</defs>
+<rect width="1300" height="640" fill="#fcfcfb"/>
+<text x="20" y="30" font-size="16" font-weight="700" fill="#0b0b0b">tt_um_sky26c — first-order kinetic synapse driving a conductance-based LIF membrane</text>
+<text x="20" y="54" font-size="10.5" font-weight="700" fill="#0b0b0b">ui_in[7]</text>
+<text x="20" y="66" font-size="9.5" fill="#52514e">pre-synaptic spike</text>
+<text x="20" y="82" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#2a78d6">SYNAPTIC KINETICS</text>
+<text x="20" y="94" font-size="9.5" fill="#52514e">exact dr/dt = α(1−r) − βr</text>
+<polyline points="150,100 200,100" fill="none" stroke="#52514e" stroke-width="1.4" marker-end="url(#aG)"/>
+<rect x="200" y="77.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="270.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">sel e^−rate</text>
+<text x="270.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">spike ? e^−(α+β) : e^−β</text>
+<rect x="360" y="77.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="430.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">× 16×16</text>
+<text x="430.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">r × mat_exp</text>
+<rect x="520" y="77.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="590.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">round ≫16</text>
+<text x="590.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">Q0.32 → Q0.16</text>
+<rect x="680" y="77.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="750.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">+ B_SPK</text>
+<text x="750.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">spike branch only</text>
+<rect x="840" y="77.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="910.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">saturate</text>
+<text x="910.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">clamp at Q0.16 max</text>
+<rect x="1000" y="77.0" width="140" height="46" rx="4" fill="#eef4fc" stroke="#2a78d6" stroke-width="2.0"/>
+<path d="M1006,123.0 l7,-7 l7,7" fill="none" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="1070.0" y="97" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">REG  r</text>
+<text x="1070.0" y="112" text-anchor="middle" font-size="10" fill="#52514e">Q0.16 open fraction</text>
+<polyline points="340,100 360,100" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="500,100 520,100" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="660,100 680,100" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="820,100 840,100" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="980,100 1000,100" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="1070.0,77.0 1070.0,46 430.0,46 430.0,77.0" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<text x="750.0" y="41" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">r  (Q0.16)</text>
+<text x="20" y="242" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#2a78d6">CONDUCTANCE &amp; CURRENT</text>
+<text x="20" y="254" font-size="9.5" fill="#52514e">g = g_max·r</text>
+<rect x="200" y="237.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="270.0" y="257" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">× g_max</text>
+<text x="270.0" y="272" text-anchor="middle" font-size="10" fill="#52514e">g_max = 255</text>
+<rect x="360" y="237.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="430.0" y="257" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">round ≫8</text>
+<text x="430.0" y="272" text-anchor="middle" font-size="10" fill="#52514e">→ g  Q0.16</text>
+<rect x="520" y="237.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="590.0" y="257" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">× signed</text>
+<text x="590.0" y="272" text-anchor="middle" font-size="10" fill="#52514e">g × driving force</text>
+<rect x="680" y="237.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="750.0" y="257" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">round ≫16</text>
+<text x="750.0" y="272" text-anchor="middle" font-size="10" fill="#52514e">Q0.24 → Q0.8 signed</text>
+<rect x="840" y="237.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.3"/>
+<text x="910.0" y="257" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">saturate</text>
+<text x="910.0" y="272" text-anchor="middle" font-size="10" fill="#52514e">negative → 0</text>
+<polyline points="340,260 360,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="500,260 520,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="660,260 680,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="820,260 840,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<polyline points="910.0,123.0 910.0,178 95,178 95,260 200,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<text x="480" y="173" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">r_next</text>
+<polyline points="980,260 1270,260" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<text x="1205" y="250" text-anchor="middle" font-size="11" font-weight="600" fill="#0b0b0b">uo_out[7:0]</text>
+<text x="1205" y="278" text-anchor="middle" font-size="9.5" fill="#52514e">I_syn  Q0.8</text>
+<text x="20" y="374" font-size="10.5" font-weight="700" fill="#0b0b0b">ui_in[6]</text>
+<text x="20" y="386" font-size="9.5" fill="#52514e">voltage clamp</text>
+<text x="20" y="402" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#c2570f">MEMBRANE &amp; SPIKE</text>
+<text x="20" y="414" font-size="9.5" fill="#52514e">integrate, fire, reset</text>
+<polyline points="150,420 200,420" fill="none" stroke="#52514e" stroke-width="1.4" marker-end="url(#aG)"/>
+<rect x="200" y="397.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#c2570f" stroke-width="1.3"/>
+<text x="270.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">E_rev − V</text>
+<text x="270.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">clamp ? +256 : signed</text>
+<rect x="360" y="397.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#c2570f" stroke-width="1.3"/>
+<text x="430.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">× LEAK</text>
+<text x="430.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">→ I_leak  Q0.8</text>
+<rect x="520" y="397.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#c2570f" stroke-width="1.3"/>
+<text x="590.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">V + I_syn − I_leak</text>
+<text x="590.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">13-bit signed</text>
+<rect x="680" y="397.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#c2570f" stroke-width="1.3"/>
+<text x="750.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">saturate</text>
+<text x="750.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">0 … 255</text>
+<rect x="840" y="397.0" width="140" height="46" rx="4" fill="#ffffff" stroke="#c2570f" stroke-width="1.3"/>
+<text x="910.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">&gt; V_threshold</text>
+<text x="910.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">192  (Q0.8)</text>
+<rect x="1000" y="397.0" width="140" height="46" rx="4" fill="#fdf1e8" stroke="#c2570f" stroke-width="2.0"/>
+<path d="M1006,443.0 l7,-7 l7,7" fill="none" stroke="#c2570f" stroke-width="1.3"/>
+<text x="1070.0" y="417" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0b0b0b">REG  V, spike</text>
+<text x="1070.0" y="432" text-anchor="middle" font-size="10" fill="#52514e">fire &amp; reset</text>
+<polyline points="500,420 520,420" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<text x="510.0" y="389.0" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">I_leak</text>
+<polyline points="660,420 680,420" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<polyline points="820,420 840,420" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<polyline points="980,420 1000,420" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<polyline points="270.0,397.0 270.0,330 580,330 580,283.0" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<text x="400" y="325" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">E_rev − V  (signed Q0.8)</text>
+<polyline points="750.0,283.0 750.0,360 610,360 610,397.0" fill="none" stroke="#2a78d6" stroke-width="1.4" marker-end="url(#aS)"/>
+<text x="700" y="355" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">I_syn</text>
+<polyline points="1070.0,443.0 1070.0,505 270.0,505 270.0,443.0" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<text x="670.0" y="518" text-anchor="middle" font-size="9.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#52514e">V  (Q0.8)</text>
+<polyline points="430.0,505 430.0,443.0" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<circle cx="430.0" cy="505" r="3" fill="#c2570f"/>
+<polyline points="1140,420 1270,420" fill="none" stroke="#c2570f" stroke-width="1.4" marker-end="url(#aM)"/>
+<text x="1205" y="410" text-anchor="middle" font-size="11" font-weight="600" fill="#0b0b0b">uio_out[7:0]</text>
+<text x="1205" y="438" text-anchor="middle" font-size="9.5" fill="#52514e">{V[7:1], spike}</text>
+<text x="20" y="606" font-size="10" fill="#52514e">All rescales are power-of-two slices with round-to-nearest; every stage saturates rather than wraps. Coefficients are compile-time constants (shift-in registers once the load path exists).</text>
+<text x="20" y="622" font-size="10" fill="#52514e">α = 25/256, β = 56/256, r_inf = 25/81 · g_max = 255 · E_rev = 255 · LEAK = 16 · V_threshold = 192 · Under voltage clamp V is held and the driving force is unity, so uo_out reports g directly.</text>
+</svg>
