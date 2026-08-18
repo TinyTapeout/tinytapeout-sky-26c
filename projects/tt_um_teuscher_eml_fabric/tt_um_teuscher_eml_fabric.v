@@ -53,7 +53,7 @@ module tt_um_teuscher_eml_fabric (
     input  wire [7:0] uio_in,
     output wire [7:0] uio_out,
     output wire [7:0] uio_oe,
-    inout  wire [5:0] ua,
+    inout  wire [7:0] ua,
     input  wire       ena,
     input  wire       clk,
     input  wire       rst_n
