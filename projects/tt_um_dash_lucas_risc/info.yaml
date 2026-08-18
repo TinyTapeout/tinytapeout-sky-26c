@@ -1,0 +1,73 @@
+# Tiny Tapeout project information
+project:
+  title:        "risc_processor"      # Project title
+  author:       "Priyabrata Dash & Lucas Unruh"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "16-bit multicycle RISC CPU with 32x16 on-chip RAM, boot-loaded over a 2-pin serial link by the demo board RP2040, then runs standalone"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     20000000  # 10 MHz claim; multicycle core - confirm against hardening timing report
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2"          # 885 flip-flops measured at synthesis - needs 4 tiles
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_dash_lucas_risc"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "risc_machine2.v"
+    - "ControlUnit2.v"
+    - "ProcessingUnit.v"
+    - "alu.v"
+    - "mux.v"
+    - "decoder.v"
+    - "main_memory.v"
+    - "RegisterFile.v"
+    - "ProgramCounter.v"
+    - "InstructionRegister.v"
+    - "AddressRegister.v"
+    - "CheckZero.v"
+    - "D_flop.v"
+    - "compute_offset.v"
+    - "increment.v"
+    - "sign_ext_immediate.v"
+    - "loader.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "load_req"
+  ui[1]: "run"
+  ui[2]: "load_strobe"
+  ui[3]: "load_data"
+  ui[4]: "obs_sel[0]"
+  ui[5]: "obs_sel[1]"
+  ui[6]: "obs_sel[2]"
+  ui[7]: "byte_sel"
+
+  # Outputs
+  uo[0]: "obs_byte[0]"
+  uo[1]: "obs_byte[1]"
+  uo[2]: "obs_byte[2]"
+  uo[3]: "obs_byte[3]"
+  uo[4]: "obs_byte[4]"
+  uo[5]: "obs_byte[5]"
+  uo[6]: "obs_byte[6]"
+  uo[7]: "obs_byte[7]"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: "boot_done"
+
+# Do not change!
+yaml_version: 6
