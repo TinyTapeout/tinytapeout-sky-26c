@@ -23,4 +23,4 @@ Try any other combination, such as 111, 001, or 100, and OUT0 should remain LOW.
 No clock or reset is required because this is a purely combinational circuit.
 
 ## External hardware
-No external hardware is required. The design can be tested using the input switches and output indicators provided by the Tiny Tapeout demo board.
+No external hardware is required. The design can be tested using the input switches and output indicators provided by the Tiny Tapeout demo board. 
