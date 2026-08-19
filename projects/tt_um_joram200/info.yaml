@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "Kalman Filter Hardware Accelerator"      # Project title
+  author:       "Jose Ramirez"      # Your name
+  discord:      "epitimosellinas"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A hardware accelerator for the measurement update in the basic kalman filter algorithm"      # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_joram200"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "top.sv"
+    - "interface.sv"
+    - "compute_core.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs — 8-bit write data byte (MSB first)
+  ui[0]: "WR_DATA[0]"
+  ui[1]: "WR_DATA[1]"
+  ui[2]: "WR_DATA[2]"
+  ui[3]: "WR_DATA[3]"
+  ui[4]: "WR_DATA[4]"
+  ui[5]: "WR_DATA[5]"
+  ui[6]: "WR_DATA[6]"
+  ui[7]: "WR_DATA[7]"
+
+  # Outputs — 8-bit read data byte (addressed register, byte selected)
+  uo[0]: "RD_DATA[0]"
+  uo[1]: "RD_DATA[1]"
+  uo[2]: "RD_DATA[2]"
+  uo[3]: "RD_DATA[3]"
+  uo[4]: "RD_DATA[4]"
+  uo[5]: "RD_DATA[5]"
+  uo[6]: "RD_DATA[6]"
+  uo[7]: "RD_DATA[7]"
+
+  # Bidirectional pins (all configured as inputs)
+  uio[0]: "ADDR[0] (register address bit 0)"
+  uio[1]: "ADDR[1] (register address bit 1)"
+  uio[2]: "ADDR[2] (register address bit 2)"
+  uio[3]: "BYTE_SEL (0=MSB byte, 1=LSB byte)"
+  uio[4]: "WR_EN (write enable, rising-edge triggered)"
+  uio[5]: "SW_RST (software reset, active high level)"
+  uio[6]: "START (start trigger, rising-edge one-shot)"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
