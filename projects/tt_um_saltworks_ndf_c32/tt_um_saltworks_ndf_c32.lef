@@ -2,11 +2,11 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_saltworks_banyan
+MACRO tt_um_saltworks_ndf_c32
   CLASS BLOCK ;
-  FOREIGN tt_um_saltworks_banyan ;
+  FOREIGN tt_um_saltworks_ndf_c32 ;
   ORIGIN 0.000 0.000 ;
-  SIZE 334.880 BY 225.760 ;
+  SIZE 1030.400 BY 225.760 ;
   PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
@@ -41,6 +41,78 @@ MACRO tt_um_saltworks_banyan
     PORT
       LAYER met4 ;
         RECT 293.670 2.480 295.270 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 332.540 2.480 334.140 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 371.410 2.480 373.010 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 410.280 2.480 411.880 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 449.150 2.480 450.750 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 488.020 2.480 489.620 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 526.890 2.480 528.490 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 565.760 2.480 567.360 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 604.630 2.480 606.230 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 643.500 2.480 645.100 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 682.370 2.480 683.970 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 721.240 2.480 722.840 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 760.110 2.480 761.710 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 798.980 2.480 800.580 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 837.850 2.480 839.450 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 876.720 2.480 878.320 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 915.590 2.480 917.190 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 954.460 2.480 956.060 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 993.330 2.480 994.930 223.280 ;
     END
   END VGND
   PIN VPWR
@@ -82,11 +154,80 @@ MACRO tt_um_saltworks_banyan
       LAYER met4 ;
         RECT 329.240 2.480 330.840 223.280 ;
     END
+    PORT
+      LAYER met4 ;
+        RECT 368.110 2.480 369.710 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 406.980 2.480 408.580 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 445.850 2.480 447.450 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 484.720 2.480 486.320 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 523.590 2.480 525.190 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 562.460 2.480 564.060 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 601.330 2.480 602.930 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 640.200 2.480 641.800 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 679.070 2.480 680.670 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 717.940 2.480 719.540 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 756.810 2.480 758.410 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 795.680 2.480 797.280 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 834.550 2.480 836.150 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 873.420 2.480 875.020 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 912.290 2.480 913.890 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 951.160 2.480 952.760 223.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 990.030 2.480 991.630 223.280 ;
+    END
   END VPWR
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.852000 ;
+    ANTENNAGATEAREA 1.286700 ;
+    ANTENNADIFFAREA 0.434700 ;
     PORT
       LAYER met4 ;
         RECT 143.830 224.760 144.130 225.760 ;
@@ -121,7 +262,7 @@ MACRO tt_um_saltworks_banyan
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 135.550 224.760 135.850 225.760 ;
@@ -184,7 +325,6 @@ MACRO tt_um_saltworks_banyan
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 224.760 116.530 225.760 ;
@@ -201,6 +341,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 110.710 224.760 111.010 225.760 ;
@@ -233,6 +374,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 99.670 224.760 99.970 225.760 ;
@@ -313,6 +455,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.453750 ;
     PORT
       LAYER met4 ;
         RECT 72.070 224.760 72.370 225.760 ;
@@ -321,7 +464,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.462000 ;
     PORT
       LAYER met4 ;
         RECT 69.310 224.760 69.610 225.760 ;
@@ -330,7 +473,6 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 66.550 224.760 66.850 225.760 ;
@@ -339,7 +481,6 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 63.790 224.760 64.090 225.760 ;
@@ -357,6 +498,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 58.270 224.760 58.570 225.760 ;
@@ -373,6 +515,7 @@ MACRO tt_um_saltworks_banyan
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 52.750 224.760 53.050 225.760 ;
@@ -399,7 +542,7 @@ MACRO tt_um_saltworks_banyan
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.577500 ;
     PORT
       LAYER met4 ;
         RECT 88.630 224.760 88.930 225.760 ;
@@ -408,7 +551,7 @@ MACRO tt_um_saltworks_banyan
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 85.870 224.760 86.170 225.760 ;
@@ -417,7 +560,7 @@ MACRO tt_um_saltworks_banyan
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 83.110 224.760 83.410 225.760 ;
@@ -426,7 +569,7 @@ MACRO tt_um_saltworks_banyan
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.577500 ;
     PORT
       LAYER met4 ;
         RECT 80.350 224.760 80.650 225.760 ;
@@ -435,7 +578,7 @@ MACRO tt_um_saltworks_banyan
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.577500 ;
     PORT
       LAYER met4 ;
         RECT 77.590 224.760 77.890 225.760 ;
@@ -452,15 +595,15 @@ MACRO tt_um_saltworks_banyan
   END uo_out[7]
   OBS
       LAYER nwell ;
-        RECT 2.570 2.635 332.310 223.230 ;
+        RECT 2.570 2.635 1027.830 223.230 ;
       LAYER li1 ;
-        RECT 2.760 2.635 332.120 223.125 ;
+        RECT 2.760 2.635 1027.640 223.125 ;
       LAYER met1 ;
-        RECT 2.760 2.480 332.120 223.280 ;
+        RECT 2.760 1.060 1027.640 224.700 ;
       LAYER met2 ;
-        RECT 18.310 2.535 330.810 224.925 ;
+        RECT 4.700 1.030 994.900 224.925 ;
       LAYER met3 ;
-        RECT 18.290 2.555 330.830 224.905 ;
+        RECT 13.405 2.555 994.920 224.905 ;
       LAYER met4 ;
         RECT 31.370 224.360 33.030 224.905 ;
         RECT 34.130 224.360 35.790 224.905 ;
@@ -503,15 +646,55 @@ MACRO tt_um_saltworks_banyan
         RECT 136.250 224.360 137.910 224.905 ;
         RECT 139.010 224.360 140.670 224.905 ;
         RECT 141.770 224.360 143.430 224.905 ;
-        RECT 30.655 223.680 144.145 224.360 ;
-        RECT 30.655 175.615 56.750 223.680 ;
-        RECT 59.150 175.615 60.050 223.680 ;
-        RECT 62.450 175.615 95.620 223.680 ;
-        RECT 98.020 175.615 98.920 223.680 ;
-        RECT 101.320 175.615 134.490 223.680 ;
-        RECT 136.890 175.615 137.790 223.680 ;
-        RECT 140.190 175.615 144.145 223.680 ;
+        RECT 144.530 224.360 146.190 224.905 ;
+        RECT 147.290 224.360 880.145 224.905 ;
+        RECT 30.655 223.680 880.145 224.360 ;
+        RECT 30.655 6.295 56.750 223.680 ;
+        RECT 59.150 6.295 60.050 223.680 ;
+        RECT 62.450 6.295 95.620 223.680 ;
+        RECT 98.020 6.295 98.920 223.680 ;
+        RECT 101.320 6.295 134.490 223.680 ;
+        RECT 136.890 6.295 137.790 223.680 ;
+        RECT 140.190 6.295 173.360 223.680 ;
+        RECT 175.760 6.295 176.660 223.680 ;
+        RECT 179.060 6.295 212.230 223.680 ;
+        RECT 214.630 6.295 215.530 223.680 ;
+        RECT 217.930 6.295 251.100 223.680 ;
+        RECT 253.500 6.295 254.400 223.680 ;
+        RECT 256.800 6.295 289.970 223.680 ;
+        RECT 292.370 6.295 293.270 223.680 ;
+        RECT 295.670 6.295 328.840 223.680 ;
+        RECT 331.240 6.295 332.140 223.680 ;
+        RECT 334.540 6.295 367.710 223.680 ;
+        RECT 370.110 6.295 371.010 223.680 ;
+        RECT 373.410 6.295 406.580 223.680 ;
+        RECT 408.980 6.295 409.880 223.680 ;
+        RECT 412.280 6.295 445.450 223.680 ;
+        RECT 447.850 6.295 448.750 223.680 ;
+        RECT 451.150 6.295 484.320 223.680 ;
+        RECT 486.720 6.295 487.620 223.680 ;
+        RECT 490.020 6.295 523.190 223.680 ;
+        RECT 525.590 6.295 526.490 223.680 ;
+        RECT 528.890 6.295 562.060 223.680 ;
+        RECT 564.460 6.295 565.360 223.680 ;
+        RECT 567.760 6.295 600.930 223.680 ;
+        RECT 603.330 6.295 604.230 223.680 ;
+        RECT 606.630 6.295 639.800 223.680 ;
+        RECT 642.200 6.295 643.100 223.680 ;
+        RECT 645.500 6.295 678.670 223.680 ;
+        RECT 681.070 6.295 681.970 223.680 ;
+        RECT 684.370 6.295 717.540 223.680 ;
+        RECT 719.940 6.295 720.840 223.680 ;
+        RECT 723.240 6.295 756.410 223.680 ;
+        RECT 758.810 6.295 759.710 223.680 ;
+        RECT 762.110 6.295 795.280 223.680 ;
+        RECT 797.680 6.295 798.580 223.680 ;
+        RECT 800.980 6.295 834.150 223.680 ;
+        RECT 836.550 6.295 837.450 223.680 ;
+        RECT 839.850 6.295 873.020 223.680 ;
+        RECT 875.420 6.295 876.320 223.680 ;
+        RECT 878.720 6.295 880.145 223.680 ;
   END
-END tt_um_saltworks_banyan
+END tt_um_saltworks_ndf_c32
 END LIBRARY
 
