@@ -1,0 +1,47 @@
+# Tiny Tapeout project information
+project:
+  title:        "QKT MAC Accelerator"
+  author:       "Pratibha Munnangi"
+  discord:      ""
+  description:  "INT8 signed 1x4 dot-product MAC with INT32 accumulator and streaming byte interface - a scaled-down demonstrator of a transformer QK^T attention kernel."
+  language:     "Verilog"
+  clock_hz:     100000000
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_pratibha_munnangi_qkt_mac"
+  # List your project's source files here.
+  source_files:
+    - "tt_um_pratibha_munnangi_qkt_mac.v"
+    - "qkt_mac_core.v"
+# The pinout of your project.
+pinout:
+  # Inputs
+  ui[0]: "data_in[0]"
+  ui[1]: "data_in[1]"
+  ui[2]: "data_in[2]"
+  ui[3]: "data_in[3]"
+  ui[4]: "data_in[4]"
+  ui[5]: "data_in[5]"
+  ui[6]: "data_in[6]"
+  ui[7]: "data_in[7]"
+  # Outputs
+  uo[0]: "data_out[0]"
+  uo[1]: "data_out[1]"
+  uo[2]: "data_out[2]"
+  uo[3]: "data_out[3]"
+  uo[4]: "data_out[4]"
+  uo[5]: "data_out[5]"
+  uo[6]: "data_out[6]"
+  uo[7]: "data_out[7]"
+  # Bidirectional pins
+  uio[0]: "cmd[0]"
+  uio[1]: "cmd[1]"
+  uio[2]: "cmd[2]"
+  uio[3]: "valid_in"
+  uio[4]: "ready_out"
+  uio[5]: "busy"
+  uio[6]: "overflow"
+  uio[7]: "done"
+# Do not change!
+yaml_version: 6
