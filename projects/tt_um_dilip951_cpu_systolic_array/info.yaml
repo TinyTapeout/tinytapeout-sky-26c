@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "Reconfigurable mixed-precision 2x2 systolic MAC array"
+  author:       "Dilip C, Aneesh, Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "A 2x2 weight-stationary systolic multiply-accumulate array with 4-bit/2-bit configurable precision and zero-operand skip."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_dilip951_cpu_systolic_array"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+    - "systolic_pe.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "act_row0[0]"
+  ui[1]: "act_row0[1]"
+  ui[2]: "act_row0[2]"
+  ui[3]: "act_row0[3]"
+  ui[4]: "act_row1[0]"
+  ui[5]: "act_row1[1]"
+  ui[6]: "act_row1[2]"
+  ui[7]: "act_row1[3]"
+
+  # Outputs
+  uo[0]: "psum_out[0]"
+  uo[1]: "psum_out[1]"
+  uo[2]: "psum_out[2]"
+  uo[3]: "psum_out[3]"
+  uo[4]: "psum_out[4]"
+  uo[5]: "psum_out[5]"
+  uo[6]: "psum_out[6]"
+  uo[7]: "psum_out[7]"
+
+  # Bidirectional pins
+  uio[0]: "weight_in[0]"
+  uio[1]: "weight_in[1]"
+  uio[2]: "weight_in[2]"
+  uio[3]: "weight_in[3]"
+  uio[4]: "weight_load"
+  uio[5]: "precision_sel"
+  uio[6]: "valid_out"
+  uio[7]: "col_id"
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,61 @@
+123. Printing statistics.
+
+=== tt_um_dilip951_cpu_systolic_array ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      523        - wires
+      558        - wire bits
+       71        - public wires
+      106        - public wire bits
+        8        - ports
+       43        - port bits
+      539 5.78E+03 cells
+        2   20.019   sky130_fd_sc_hd__a211o_2
+        2   20.019   sky130_fd_sc_hd__a21bo_2
+        1   11.261   sky130_fd_sc_hd__a21boi_2
+       17  148.893   sky130_fd_sc_hd__a21o_2
+       10   87.584   sky130_fd_sc_hd__a21oi_2
+        4   40.038   sky130_fd_sc_hd__a22o_2
+        5    62.56   sky130_fd_sc_hd__a22oi_2
+        2   22.522   sky130_fd_sc_hd__a2bb2o_2
+       13  113.859   sky130_fd_sc_hd__a31o_2
+        2   25.024   sky130_fd_sc_hd__a31oi_2
+        2   22.522   sky130_fd_sc_hd__a32o_2
+        1   16.266   sky130_fd_sc_hd__a32oi_2
+       46  345.331   sky130_fd_sc_hd__and2_2
+       13  113.859   sky130_fd_sc_hd__and2b_2
+       15  112.608   sky130_fd_sc_hd__and3_2
+       12  120.115   sky130_fd_sc_hd__and3b_2
+        5   50.048   sky130_fd_sc_hd__and4_2
+        2   25.024   sky130_fd_sc_hd__and4bb_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+       14    52.55   sky130_fd_sc_hd__conb_1
+       62 1.32E+03   sky130_fd_sc_hd__dfxtp_2
+        7   26.275   sky130_fd_sc_hd__inv_2
+       25   281.52   sky130_fd_sc_hd__mux2_1
+       55   344.08   sky130_fd_sc_hd__nand2_2
+       14  122.618   sky130_fd_sc_hd__nand2b_2
+        8   80.077   sky130_fd_sc_hd__nand3_2
+        2   25.024   sky130_fd_sc_hd__nand4_2
+       16  100.096   sky130_fd_sc_hd__nor2_2
+       35  350.336   sky130_fd_sc_hd__o211a_2
+        9   78.826   sky130_fd_sc_hd__o21a_2
+       13  113.859   sky130_fd_sc_hd__o21ai_2
+        3   30.029   sky130_fd_sc_hd__o21ba_2
+        1   11.261   sky130_fd_sc_hd__o21bai_2
+        2   22.522   sky130_fd_sc_hd__o2bb2a_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+       38  237.728   sky130_fd_sc_hd__or2_2
+        2   15.014   sky130_fd_sc_hd__or3_2
+        3   26.275   sky130_fd_sc_hd__or3b_2
+        1    8.758   sky130_fd_sc_hd__or4_2
+        1    10.01   sky130_fd_sc_hd__or4b_2
+        1   12.512   sky130_fd_sc_hd__or4bb_2
+       44  715.686   sky130_fd_sc_hd__xnor2_2
+       25   406.64   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_dilip951_cpu_systolic_array': 5783.046400
+     of which used for sequential elements: 1318.764800 (22.80%)
+
