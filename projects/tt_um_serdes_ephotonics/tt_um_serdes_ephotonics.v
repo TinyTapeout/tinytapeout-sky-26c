@@ -15,10 +15,8 @@
 `default_nettype none
 
 module tt_um_serdes_ephotonics (
-`ifdef USE_POWER_PINS
     inout  wire       VDPWR,    // 1.8V power  (template stripe port)
     inout  wire       VGND,     // ground      (template stripe port)
-`endif
     input  wire [7:0] ui_in,
     output wire [7:0] uo_out,
     input  wire [7:0] uio_in,
