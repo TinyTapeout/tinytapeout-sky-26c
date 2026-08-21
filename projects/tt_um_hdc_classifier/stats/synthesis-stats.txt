@@ -1,0 +1,54 @@
+129. Printing statistics.
+
+=== tt_um_hdc_classifier ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      462        - wires
+      497        - wire bits
+      155        - public wires
+      190        - public wire bits
+        8        - ports
+       43        - port bits
+      478 7.16E+03 cells
+        5   50.048   sky130_fd_sc_hd__a211o_2
+        4   50.048   sky130_fd_sc_hd__a211oi_2
+        2   20.019   sky130_fd_sc_hd__a21bo_2
+        3   26.275   sky130_fd_sc_hd__a21o_2
+        4   35.034   sky130_fd_sc_hd__a21oi_2
+        2   22.522   sky130_fd_sc_hd__a221o_2
+        2   20.019   sky130_fd_sc_hd__a22o_2
+        2   22.522   sky130_fd_sc_hd__a2bb2o_2
+        4   35.034   sky130_fd_sc_hd__a31o_2
+        7   78.826   sky130_fd_sc_hd__a32o_2
+        1   11.261   sky130_fd_sc_hd__a41o_2
+        7    52.55   sky130_fd_sc_hd__and2_2
+        2   17.517   sky130_fd_sc_hd__and2b_2
+        5   37.536   sky130_fd_sc_hd__and3_2
+        1    10.01   sky130_fd_sc_hd__and3b_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+       16   60.058   sky130_fd_sc_hd__conb_1
+      146 3.84E+03   sky130_fd_sc_hd__dfrtp_2
+       13   48.797   sky130_fd_sc_hd__inv_2
+      151  1.7E+03   sky130_fd_sc_hd__mux2_1
+       20   125.12   sky130_fd_sc_hd__nand2_2
+        1   11.261   sky130_fd_sc_hd__nand3b_2
+       16  100.096   sky130_fd_sc_hd__nor2_2
+        1    10.01   sky130_fd_sc_hd__nor3_2
+        1    10.01   sky130_fd_sc_hd__o211a_2
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+        3   26.275   sky130_fd_sc_hd__o21a_2
+        7   61.309   sky130_fd_sc_hd__o21ai_2
+        3   33.782   sky130_fd_sc_hd__o221a_2
+        1    10.01   sky130_fd_sc_hd__o22a_2
+        1   15.014   sky130_fd_sc_hd__o2bb2ai_2
+        1    10.01   sky130_fd_sc_hd__o31a_2
+        9   56.304   sky130_fd_sc_hd__or2_2
+        2   15.014   sky130_fd_sc_hd__or3_2
+       19  309.046   sky130_fd_sc_hd__xnor2_2
+       13  211.453   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_hdc_classifier': 7161.868800
+     of which used for sequential elements: 3836.179200 (53.56%)
+
