@@ -1,0 +1,45 @@
+# Tiny Tapeout project information
+project:
+  title:        "Fault-Aware Constant-Time FO Backend for ML-KEM"
+  author:       "Yashwanth M ,Vijay Sudarshan B, Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "Divider-free ML-KEM ciphertext codec and Fujisaki-Okamoto integrity checker for ML-KEM-512/768/1024"
+  language:     "Verilog"
+  clock_hz:     40000000
+
+  tiles: "1x1"
+
+  top_module:  "tt_um_mlkem_coefficient_integrity"
+
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "DIN0"
+  ui[1]: "DIN1"
+  ui[2]: "DIN2"
+  ui[3]: "DIN3"
+  ui[4]: "DIN4"
+  ui[5]: "DIN5"
+  ui[6]: "DIN6"
+  ui[7]: "DIN7"
+
+  uo[0]: "DOUT0 / MATCH"
+  uo[1]: "DOUT1 / FAULT"
+  uo[2]: "DOUT2"
+  uo[3]: "DOUT3"
+  uo[4]: "DOUT4"
+  uo[5]: "DOUT5"
+  uo[6]: "DOUT6"
+  uo[7]: "DOUT7"
+
+  uio[0]: "WR"
+  uio[1]: "START"
+  uio[2]: "RD"
+  uio[3]: "PHASE"
+  uio[4]: "PARAM0"
+  uio[5]: "PARAM1"
+  uio[6]: "BUSY"
+  uio[7]: "FAULT"
+
+yaml_version: 6
