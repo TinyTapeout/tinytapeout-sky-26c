@@ -1,0 +1,46 @@
+# Tiny Tapeout project information
+project:
+  title:        "RTFCE - Reconfigurable Temporal Fault/Constraint Engine"
+  author:       "Preetham Madhukar, Tejasvi Mallaiah, Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "Multi-context temporal latency monitor (PASS/EARLY/TIMEOUT + near-miss diagnostic) with shared classification datapath via selectable fixed-priority/round-robin arbitration"
+  language:     "Verilog"
+  clock_hz:     50000000
+  tiles: "1x1"
+  top_module:  "tt_um_rtfce"
+  source_files:
+    - "project.v"
+    - "monitor_ctx_rtfce.v"
+    - "classify_arbiter_heavy.v"
+    - "shared_classifier_heavy.v"
+    - "result_arbiter_heavy.v"
+pinout:
+  # Inputs
+  ui[0]: "strobe (event strobe / cfg strobe)"
+  ui[1]: "cfg_mode (0=normal, 1=config)"
+  ui[2]: "cfg_rw (0=write, 1=read)"
+  ui[3]: "cfg_byte_sel"
+  ui[4]: "addr_sel[0]"
+  ui[5]: "addr_sel[1]"
+  ui[6]: "event_code[0]"
+  ui[7]: "event_code[1]"
+  # Outputs
+  uo[0]: "result[0]"
+  uo[1]: "result[1]"
+  uo[2]: "context_id[0]"
+  uo[3]: "context_id[1]"
+  uo[4]: "result_valid"
+  uo[5]: "busy"
+  uo[6]: "fault"
+  uo[7]: "reserved"
+  # Bidirectional pins
+  uio[0]: "cfg_data[0]"
+  uio[1]: "cfg_data[1]"
+  uio[2]: "cfg_data[2]"
+  uio[3]: "cfg_data[3]"
+  uio[4]: "cfg_data[4]"
+  uio[5]: "cfg_data[5]"
+  uio[6]: "cfg_data[6]"
+  uio[7]: "cfg_data[7]"
+# Do not change!
+yaml_version: 6
