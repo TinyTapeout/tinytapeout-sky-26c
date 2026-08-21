@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "BF16 Fused Multiply-Add (FMA)"
+  author:       "Kaan Akan"    
+  discord:      "akakaa"
+  description:  "Single-rounded bfloat16 fused multiply-add (a*b + c) with a byte serial I/O interface"
+  language:     "SystemVerilog" 
+  clock_hz:     133333333
+
+  tiles: "2x2"
+
+  top_module:  "tt_um_akankaan_bf16_fma"
+
+  source_files:
+    - "tt_um_akankaan_bf16_fma.v"
+    - "bf16-fma/rtl/bf16_fma.sv"
+    - "bf16-fma/rtl/bf16_fma_io.sv"
+    - "bf16-fma/rtl/bf16_loader.sv"
+    - "bf16-fma/rtl/bf16_outputter.sv"
+    - "bf16-fma/rtl/bf16_fma_core.sv"
+    - "bf16-fma/rtl/bf16_decode_classify.sv"
+    - "bf16-fma/rtl/bf16_multiplier.sv"
+    - "bf16-fma/rtl/bf16_aligner.sv"
+    - "bf16-fma/rtl/bf16_addsub_prepare.sv"
+    - "bf16-fma/rtl/bf16_addsub.sv"
+    - "bf16-fma/rtl/bf16_normalizer.sv"
+    - "bf16-fma/rtl/bf16_rounder.sv"
+
+pinout:
+  # Inputs
+  ui[0]: "in_data[0]  (operand load, low byte)"
+  ui[1]: "in_data[1]  (operand load, low byte)"
+  ui[2]: "in_data[2]  (operand load, low byte)"
+  ui[3]: "in_data[3]  (operand load, low byte)"
+  ui[4]: "in_data[4]  (operand load, low byte)"
+  ui[5]: "in_data[5]  (operand load, low byte)"
+  ui[6]: "in_data[6]  (operand load, low byte)"
+  ui[7]: "in_data[7]  (operand load, low byte)"
+
+  # Outputs
+  uo[0]: "out_data[0] (result byte stream)"
+  uo[1]: "out_data[1] (result byte stream)"
+  uo[2]: "out_data[2] (result byte stream)"
+  uo[3]: "out_data[3] (result byte stream)"
+  uo[4]: "out_data[4] (result byte stream)"
+  uo[5]: "out_data[5] (result byte stream)"
+  uo[6]: "out_data[6] (result byte stream)"
+  uo[7]: "out_data[7] (result byte stream)"
+
+  # Bidirectional pins
+  uio[0]: "in_data[8]  (operand load, high byte and input only)"
+  uio[1]: "in_data[9]  (operand load, high byte and input only)"
+  uio[2]: "in_data[10] (operand load, high byte and input only)"
+  uio[3]: "in_data[11] (operand load, high byte and input only)"
+  uio[4]: "in_data[12] (operand load, high byte and input only)"
+  uio[5]: "in_data[13] (operand load, high byte and input only)"
+  uio[6]: "in_data[14] (operand load, high byte and input only)"
+  uio[7]: "in_data[15] (operand load, high byte and input only)"
+
+# Do not change!
+yaml_version: 6
