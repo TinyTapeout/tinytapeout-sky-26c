@@ -1,0 +1,45 @@
+project:
+  title: "VITAL-AP: Adaptive Pixel Register"
+  author: "Chethan S P, Ansh A Agadi, Shylashree N, RV College of Engineering"
+  discord: ""
+  description: "Value-, prediction-, activity-, and edge-aware adaptive register for low-power image and video processing."
+  language: "Verilog"
+  clock_hz: 50000000
+
+  tiles: "1x1"
+
+  top_module: "tt_um_vital_ap"
+
+  source_files:
+    - "project.v"
+
+pinout:
+
+  ui[0]: "PIXEL_IN[0]"
+  ui[1]: "PIXEL_IN[1]"
+  ui[2]: "PIXEL_IN[2]"
+  ui[3]: "PIXEL_IN[3]"
+  ui[4]: "PIXEL_IN[4]"
+  ui[5]: "PIXEL_IN[5]"
+  ui[6]: "PIXEL_IN[6]"
+  ui[7]: "PIXEL_IN[7]"
+
+  uo[0]: "PIXEL_OUT[0]"
+  uo[1]: "PIXEL_OUT[1]"
+  uo[2]: "PIXEL_OUT[2]"
+  uo[3]: "PIXEL_OUT[3]"
+  uo[4]: "PIXEL_OUT[4]"
+  uo[5]: "PIXEL_OUT[5]"
+  uo[6]: "PIXEL_OUT[6]"
+  uo[7]: "PIXEL_OUT[7]"
+
+  uio[0]: "SENSITIVITY[0]"
+  uio[1]: "SENSITIVITY[1]"
+  uio[2]: "PREDICTION_ENABLE"
+  uio[3]: "FORCE_UPDATE"
+  uio[4]: "VALUE_AWARE"
+  uio[5]: "EDGE_ENABLE"
+  uio[6]: "MOTION_ENABLE"
+  uio[7]: "RESERVED"
+
+yaml_version: 6
