@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:        "OLAF-8: Bounded-Memory Online Adaptive Fuzzy Inference"
+  author:       "Mohammed Sharfuddin, Priya Asuti, Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "An 8-rule digital fuzzy inference engine with bounded online rule admission and replacement."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # OLAF-8 is initially targeted for a single Tiny Tapeout tile.
+  tiles: "1x1"
+
+  # Top-level Tiny Tapeout module.
+  top_module:  "tt_um_olaf8"
+
+  # Project source files located in ./src
+  source_files:
+    - "olaf8.v"
+
+# Pinout of the OLAF-8 project.
+pinout:
+  # Inputs
+  ui[0]: "x2[0]"
+  ui[1]: "x2[1]"
+  ui[2]: "x2[2]"
+  ui[3]: "x2[3]"
+  ui[4]: "x1[0]"
+  ui[5]: "x1[1]"
+  ui[6]: "x1[2]"
+  ui[7]: "x1[3]"
+
+  # Outputs
+  uo[0]: "fuzzy_y[0]"
+  uo[1]: "fuzzy_y[1]"
+  uo[2]: "fuzzy_y[2]"
+  uo[3]: "fuzzy_y[3]"
+  uo[4]: "done"
+  uo[5]: "rule_admitted"
+  uo[6]: "busy"
+  uo[7]: "reserved"
+
+  # Bidirectional pins
+  uio[0]: "start"
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
