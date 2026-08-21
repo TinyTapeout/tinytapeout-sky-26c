@@ -37,6 +37,6 @@ This is the example when calculating `1.5 * 2.0 + 0.5`:
 
 The packed result is `0x4060`, which is `3.5` in Bfloat16.
 
-## Original repository
+## Development repository
 
 For more information on the implementation and testing, please visit the [development repository](https://github.com/akankaan/bf16-fma).
