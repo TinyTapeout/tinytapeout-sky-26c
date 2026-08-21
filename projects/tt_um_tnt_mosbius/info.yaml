@@ -1,0 +1,51 @@
+# Tiny Tapeout project information
+project:
+  title:        "tnt's variant of SKY130 mini-MOSbius"
+  author:       "Sylvain Munaut"
+  discord:      "246tnt"
+  description:  "Alternative layout for Andrew Kang's mini-MOSbius for SKY130 TinyTapeout"
+  language:     "Analog"
+  clock_hz:     0
+  tiles:        "3x2"
+  analog_pins:  6
+  uses_vapwr:   true
+  top_module:   "tt_um_tnt_mosbius"
+  source_files:        
+    - "project.v"
+
+pinout:
+  ui[0]: "data_in"
+  ui[1]: "enable"
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  uo[0]: "data_out"
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  ua[0]: "Reference Bias"
+  ua[1]: "Bus 1A"
+  ua[2]: "Bus 3A"
+  ua[3]: "Bus 5A"
+  ua[4]: "Bus 2B"
+  ua[5]: "Bus 4B"
+
+yaml_version: 6
