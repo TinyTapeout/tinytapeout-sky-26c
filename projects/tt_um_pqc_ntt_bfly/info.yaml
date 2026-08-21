@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Crypto-Agile NTT Butterfly (ML-KEM / ML-DSA / FN-DSA)"
+  author:       "H Vinayaka, Abu Arshian , Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "Bit-serial Montgomery NTT butterfly shared across all three NIST PQC moduli"
+  language:     "Verilog"
+  clock_hz:     28000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_pqc_ntt_bfly"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "DIN0"
+  ui[1]: "DIN1"
+  ui[2]: "DIN2"
+  ui[3]: "DIN3"
+  ui[4]: "DIN4"
+  ui[5]: "DIN5"
+  ui[6]: "DIN6"
+  ui[7]: "DIN7"
+
+  # Outputs
+  uo[0]: "DOUT0"
+  uo[1]: "DOUT1"
+  uo[2]: "DOUT2"
+  uo[3]: "DOUT3"
+  uo[4]: "DOUT4"
+  uo[5]: "DOUT5"
+  uo[6]: "DOUT6"
+  uo[7]: "DOUT7"
+
+  # Bidirectional pins
+  uio[0]: "SHIFT (in)"
+  uio[1]: "START (in)"
+  uio[2]: ""
+  uio[3]: "SCHEME0 (in)"
+  uio[4]: "SCHEME1 (in)"
+  uio[5]: "DONE (out)"
+  uio[6]: "BUSY (out)"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
