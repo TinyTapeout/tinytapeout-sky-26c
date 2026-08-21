@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:        "Streaming Median-MAD Estimator"      
+  author:       "Mohammed Taheer, Jitesh.R, Shylashree N, RV College of Engineering"      
+  discord:      ""      
+  description:  "Zero-RAM statistical co-processor for outlier-resilient event classification."      
+  language:     "Verilog" 
+  clock_hz:     50000000       # 50 MHz is a good target
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"         
+ 
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_Median_MAD"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+    
+# The pinout of your project. 
+pinout:
+  # Inputs
+  ui[0]: "raw_in[0]"
+  ui[1]: "raw_in[1]"
+  ui[2]: "raw_in[2]"
+  ui[3]: "raw_in[3]"
+  ui[4]: "raw_in[4]"
+  ui[5]: "raw_in[5]"
+  ui[6]: "raw_in[6]"
+  ui[7]: "raw_in[7]"
+
+  # Outputs
+  uo[0]: "baseline_out[0]"
+  uo[1]: "baseline_out[1]"
+  uo[2]: "baseline_out[2]"
+  uo[3]: "baseline_out[3]"
+  uo[4]: "baseline_out[4]"
+  uo[5]: "baseline_out[5]"
+  uo[6]: "baseline_out[6]"
+  uo[7]: "baseline_out[7]"
+
+  # Bidirectional pins
+  uio[0]: "event_code[0]"        # LSB of anomaly event code
+  uio[1]: "event_code[1]"        # Mid-bit of event code
+  uio[2]: "event_code[2]"        # MSB of event code
+  uio[3]: "wake_cpu_int"         # Active-high interrupt
+  uio[4]: "debug_fsm_0"          # FSM state bit 0
+  uio[5]: "debug_fsm_1"          # FSM state bit 1
+  uio[6]: "cfg_thresh_scale"     # Input: Outlier threshold scale
+  uio[7]: "cfg_momentum_en"      # Input: Momentum Engine Enable
+
+# Do not change!
+yaml_version: 6
