@@ -1,0 +1,51 @@
+# Tiny Tapeout project information
+
+project:
+  title: "Self-Seeding Adaptive 16-bit Galois LFSR PRNG"
+  author: "Preethi S A, Khushi Vishwanath, Shylashree N, RV College Of Engineering"
+  discord: ""
+  description: "A compact 16-bit Galois LFSR PRNG with deterministic self-seeding, automatic polynomial switching, repetition detection, and cooldown control."
+  language: "Verilog"
+  clock_hz: 50000000
+
+  tiles: "1x1"
+
+  top_module: "tt_um_preethi8a_adaptive_lfsr_prng"
+
+  source_files:
+    - "project.v"
+    - "adaptive_lfsr_prng.v"
+    - "lfsr16.v"
+    - "repetition_monitor.v"
+    - "adaptive_controller.v"
+    - "seed_generator.v"
+
+pinout:
+  ui[0]: "Seed bit 0"
+  ui[1]: "Seed bit 1"
+  ui[2]: "Seed bit 2"
+  ui[3]: "Seed bit 3"
+  ui[4]: "Seed bit 4"
+  ui[5]: "Seed bit 5"
+  ui[6]: "Seed bit 6"
+  ui[7]: "PRNG enable"
+
+  uo[0]: "Random output bit 0"
+  uo[1]: "Random output bit 1"
+  uo[2]: "Random output bit 2"
+  uo[3]: "Random output bit 3"
+  uo[4]: "Random output bit 4"
+  uo[5]: "Random output bit 5"
+  uo[6]: "Random output bit 6"
+  uo[7]: "Random output bit 7"
+
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
