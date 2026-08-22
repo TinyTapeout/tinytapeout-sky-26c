@@ -355,27 +355,30 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     1540        - wires
-     1575        - wire bits
+     1589        - wires
+     1624        - wire bits
       639        - public wires
       674        - public wire bits
         8        - ports
        43        - port bits
-     1316 1.38E+04 cells
-        4   45.043   sky130_fd_sc_hd__buf_6
-        3   45.043   sky130_fd_sc_hd__buf_8
+     1365 1.44E+04 cells
+        1    7.507   sky130_fd_sc_hd__and2_2
+        1   20.019   sky130_fd_sc_hd__buf_12
+        7   78.826   sky130_fd_sc_hd__buf_6
+        1   15.014   sky130_fd_sc_hd__buf_8
        16   60.058   sky130_fd_sc_hd__conb_1
       399  8486.89   sky130_fd_sc_hd__dfxtp_2
-      328 1.23E+03   sky130_fd_sc_hd__inv_2
-        1    6.256   sky130_fd_sc_hd__inv_4
-        1    8.758   sky130_fd_sc_hd__inv_6
-      439 2.75E+03   sky130_fd_sc_hd__nand2_2
-       22  247.738   sky130_fd_sc_hd__nand2_4
+        1   16.266   sky130_fd_sc_hd__inv_12
+        1   20.019   sky130_fd_sc_hd__inv_16
+      342 1.28E+03   sky130_fd_sc_hd__inv_2
+        1   11.261   sky130_fd_sc_hd__inv_8
+      413 2.58E+03   sky130_fd_sc_hd__nand2_2
+        1   11.261   sky130_fd_sc_hd__nand2_4
         1   20.019   sky130_fd_sc_hd__nand2_8
-       34  340.326   sky130_fd_sc_hd__nand3_2
-       29  181.424   sky130_fd_sc_hd__nor2_2
-        3   33.782   sky130_fd_sc_hd__nor2_4
-        4   80.077   sky130_fd_sc_hd__nor2_8
+       48  480.461   sky130_fd_sc_hd__nand3_2
+       67  419.152   sky130_fd_sc_hd__nor2_2
+        7   78.826   sky130_fd_sc_hd__nor2_4
+       26  520.499   sky130_fd_sc_hd__nor2_8
        24  210.202   sky130_fd_sc_hd__o21ai_2
         8   70.067   sky130_fd_sc_hd__or2b_2
         7        - submodules
@@ -387,15 +390,15 @@
         1        -   bf16_normalizer
         1        -   bf16_rounder
 
-   Chip area for module '\tt_um_akankaan_bf16_fma': 13813.248000
-     of which used for sequential elements: 8486.889600 (61.44%)
+   Chip area for module '\tt_um_akankaan_bf16_fma': 14393.804800
+     of which used for sequential elements: 8486.889600 (58.96%)
 
 === design hierarchy ===
 
         +----------Count including submodules.
         |        +-Area including submodules.
         |        | 
-     4060 3.42E+04 tt_um_akankaan_bf16_fma
+     4109 3.47E+04 tt_um_akankaan_bf16_fma
       725 5.31E+03 bf16_addsub
       161 1.16E+03 bf16_addsub_prepare
       385  2.8E+03 bf16_aligner
@@ -407,8 +410,8 @@
         +----------Count including submodules.
         |        +-Area including submodules.
         |        | 
-     4121        - wires
-     4627        - wire bits
+     4170        - wires
+     4676        - wire bits
       716        - public wires
      1222        - public wire bits
        85        - ports
@@ -416,7 +419,7 @@
         -        - memories
         -        - memory bits
         -        - processes
-     4060 3.42E+04 cells
+     4109 3.47E+04 cells
         2   20.019   sky130_fd_sc_hd__a211o_2
         3   30.029   sky130_fd_sc_hd__a21bo_2
         5   56.304   sky130_fd_sc_hd__a21boi_2
@@ -429,7 +432,7 @@
         1   11.261   sky130_fd_sc_hd__a311o_2
         7   61.309   sky130_fd_sc_hd__a31o_2
         1   12.512   sky130_fd_sc_hd__a31oi_2
-       30  225.216   sky130_fd_sc_hd__and2_2
+       31  232.723   sky130_fd_sc_hd__and2_2
        11   96.342   sky130_fd_sc_hd__and2_4
         6    52.55   sky130_fd_sc_hd__and2b_2
         1    10.01   sky130_fd_sc_hd__and2b_4
@@ -438,33 +441,33 @@
         1    10.01   sky130_fd_sc_hd__and3b_2
         4   40.038   sky130_fd_sc_hd__and4_2
        21   78.826   sky130_fd_sc_hd__buf_1
-        2   40.038   sky130_fd_sc_hd__buf_12
+        3   60.058   sky130_fd_sc_hd__buf_12
        80  400.384   sky130_fd_sc_hd__buf_2
        10   75.072   sky130_fd_sc_hd__buf_4
-       17  191.434   sky130_fd_sc_hd__buf_6
-        4   60.058   sky130_fd_sc_hd__buf_8
+       20  225.216   sky130_fd_sc_hd__buf_6
+        2   30.029   sky130_fd_sc_hd__buf_8
         4   70.067   sky130_fd_sc_hd__bufinv_8
        32  120.115   sky130_fd_sc_hd__conb_1
       399  8486.89   sky130_fd_sc_hd__dfxtp_2
-        2   32.531   sky130_fd_sc_hd__inv_12
-        1   20.019   sky130_fd_sc_hd__inv_16
-      677 2.54E+03   sky130_fd_sc_hd__inv_2
-       11   68.816   sky130_fd_sc_hd__inv_4
-        4   35.034   sky130_fd_sc_hd__inv_6
-        1   11.261   sky130_fd_sc_hd__inv_8
+        3   48.797   sky130_fd_sc_hd__inv_12
+        2   40.038   sky130_fd_sc_hd__inv_16
+      691 2.59E+03   sky130_fd_sc_hd__inv_2
+       10    62.56   sky130_fd_sc_hd__inv_4
+        3   26.275   sky130_fd_sc_hd__inv_6
+        2   22.522   sky130_fd_sc_hd__inv_8
        23  258.998   sky130_fd_sc_hd__mux2_2
-     1493 9.34E+03   sky130_fd_sc_hd__nand2_2
-       85  957.168   sky130_fd_sc_hd__nand2_4
+     1467 9.18E+03   sky130_fd_sc_hd__nand2_2
+       64  720.691   sky130_fd_sc_hd__nand2_4
         7  140.134   sky130_fd_sc_hd__nand2_8
        11   96.342   sky130_fd_sc_hd__nand2b_2
        11  151.395   sky130_fd_sc_hd__nand2b_4
-      303 3.03E+03   sky130_fd_sc_hd__nand3_2
+      317 3.17E+03   sky130_fd_sc_hd__nand3_2
        22   385.37   sky130_fd_sc_hd__nand3_4
        18  202.694   sky130_fd_sc_hd__nand3b_2
         4   80.077   sky130_fd_sc_hd__nand3b_4
-      238 1.49E+03   sky130_fd_sc_hd__nor2_2
-       55  619.344   sky130_fd_sc_hd__nor2_4
-       22  440.422   sky130_fd_sc_hd__nor2_8
+      276 1.73E+03   sky130_fd_sc_hd__nor2_2
+       59  664.387   sky130_fd_sc_hd__nor2_4
+       44  880.845   sky130_fd_sc_hd__nor2_8
         4   55.053   sky130_fd_sc_hd__nor2b_4
         4   40.038   sky130_fd_sc_hd__nor3_2
         2   32.531   sky130_fd_sc_hd__nor3_4
@@ -500,6 +503,6 @@
         1 3.22E+03   bf16_normalizer
         1 1.25E+03   bf16_rounder
 
-   Chip area for top module '\tt_um_akankaan_bf16_fma': 34155.257600
-     of which used for sequential elements: 8486.889600 (24.85%)
+   Chip area for top module '\tt_um_akankaan_bf16_fma': 34735.814400
+     of which used for sequential elements: 8486.889600 (24.43%)
 
