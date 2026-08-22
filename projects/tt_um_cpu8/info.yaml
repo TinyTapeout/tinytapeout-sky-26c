@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "CPU8"
+  author:       "Aryan"
+  discord:      "LazyTreeBranch"
+  description:  "Small 8-bit accumulator CPU with UART programming, RAM, ALU, branching, and GPIO."
+  language:     "SystemVerilog"
+  clock_hz:     60000000
+
+  # Single Tiny Tapeout tile
+  tiles: "1x2"
+
+  # Top module
+  top_module:  "tt_um_cpu8"
+
+  # Source files
+  source_files:
+    - "alu8.sv"
+    - "decode8.sv"
+    - "ram8.sv"
+    - "instruction_memory8.sv"
+    - "gpio8.sv"
+    - "pc8.sv"
+    - "uart_programmer8.sv"
+    - "cpu_top8.sv"
+    - "tt_um_mcu8.sv"
+
+# Pinout
+pinout:
+  # 8 dedicated inputs
+  ui[0]: "GPIO_IN_0"
+  ui[1]: "GPIO_IN_1"
+  ui[2]: "GPIO_IN_2"
+  ui[3]: "GPIO_IN_3"
+  ui[4]: "GPIO_IN_4"
+  ui[5]: "GPIO_IN_5"
+  ui[6]: "GPIO_IN_6"
+  ui[7]: "GPIO_IN_7"
+
+  # 8 dedicated outputs
+  uo[0]: "GPIO_OUT_0"
+  uo[1]: "GPIO_OUT_1"
+  uo[2]: "GPIO_OUT_2"
+  uo[3]: "GPIO_OUT_3"
+  uo[4]: "GPIO_OUT_4"
+  uo[5]: "GPIO_OUT_5"
+  uo[6]: "GPIO_OUT_6"
+  uo[7]: "GPIO_OUT_7"
+
+  # Bidirectional pins
+  uio[0]: "UART_RX"
+  uio[1]: "GPIO_OE_0"
+  uio[2]: "GPIO_OE_1"
+  uio[3]: "GPIO_OE_2"
+  uio[4]: "GPIO_OE_3"
+  uio[5]: "GPIO_OE_4"
+  uio[6]: "GPIO_OE_5"
+  uio[7]: "GPIO_OE_6"
+
+# Do not change!
+yaml_version: 6
