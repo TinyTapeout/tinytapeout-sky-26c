@@ -1,0 +1,59 @@
+# Tiny Tapeout project information
+project:
+  title:        "UNDIP ANN Accelerator (SPI + bring-up self-test)"
+  author:       "Muhammad Ardi Saputro; Dr. Munawar Agus Riyadi"
+  discord:      ""
+  description:  "Feedforward ANN accelerator (4-5-1 topology, Q6.10 activation, Q4.4 weight) with SPI interface, weight-load separated from input-load, and bring-up modes (heartbeat/loopback/self-test) via a mode-select pin"
+  language:     "Verilog"
+  clock_hz:     10000000
+  
+  # tahu area sebenarnya. Nilai valid HANYA: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2, 8x2
+  tiles: "2x2"
+
+  # Wajib diawali "tt_um_" dan unik di shuttle.
+  top_module: "tt_um_undip_ann_q610"
+
+  # Source files, urutan tidak masalah asal semua modul yang di-instantiate ada.
+  source_files:
+    - "af.v"
+    - "pe.v"
+    - "ann.v"
+    - "spi_to_axis_deserializer.v"
+    - "axis_to_spi_serializer.v"
+    - "ann_axis_wrapper.v"
+    - "tt_um_undip_ann_q610.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# PENTING: key "pinout" ini SEJAJAR dengan "project", BUKAN di dalamnya --
+# ini yang menyebabkan error "Missing 'pinout' section" sebelumnya.
+pinout:
+  # Inputs
+  ui[0]: "SPI CS_N (active low)"
+  ui[1]: "SPI SCLK"
+  ui[2]: "SPI MOSI"
+  ui[3]: "mode select bit 0"
+  ui[4]: "mode select bit 1 (00=normal,01=heartbeat,10=loopback,11=selftest)"
+  ui[5]: "reserved / loopback echo source"
+  ui[6]: "reserved / loopback echo source"
+  ui[7]: "reserved / loopback echo source"
+  # Outputs
+  uo[0]: "SPI MISO (normal mode) / 0 (other modes)"
+  uo[1]: "ann result bit15 (normal) / heartbeat toggle / echo ui[1] (loopback) / self_test_done (selftest)"
+  uo[2]: "ann result bit14 (normal) / 0 / echo ui[2] (loopback) / self_test_pass (selftest)"
+  uo[3]: "ann result bit13 (normal) / 0 / echo ui[3] (loopback) / 0 (selftest)"
+  uo[4]: "ann result bit12 (normal) / 0 / echo ui[4] (loopback) / 0 (selftest)"
+  uo[5]: "ann result bit11 (normal) / 0 / echo ui[5] (loopback) / 0 (selftest)"
+  uo[6]: "ann result bit10 (normal) / 0 / echo ui[6] (loopback) / 0 (selftest)"
+  uo[7]: "ann result bit9 (normal) / 0 / echo ui[7] (loopback) / 0 (selftest)"
+  # Bidirectional pins (all set as output, uio_oe=0xFF)
+  uio[0]: "debug: axis_tvalid (deserializer->ann), active in normal mode only"
+  uio[1]: "debug: axis_tready, active in normal mode only"
+  uio[2]: "debug: axis_tlast, active in normal mode only"
+  uio[3]: "debug: m_axis_tvalid (ann->serializer), active in normal mode only"
+  uio[4]: "debug: m_axis_tready, active in normal mode only"
+  uio[5]: "status: weights_loaded (active in all modes, 1 = weight/bias loaded at least once since reset)"
+  uio[6]: "reserved"
+  uio[7]: "reserved"
+
+# Do not change!
+yaml_version: 6
