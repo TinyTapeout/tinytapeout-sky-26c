@@ -1,0 +1,67 @@
+148. Printing statistics.
+
+=== tt_um_terihear_tinytearout ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      372        - wires
+      407        - wire bits
+       73        - public wires
+      108        - public wire bits
+        8        - ports
+       43        - port bits
+      388 4.79E+03 cells
+        3   30.029   sky130_fd_sc_hd__a211o_2
+        4   40.038   sky130_fd_sc_hd__a21bo_2
+        1   11.261   sky130_fd_sc_hd__a21boi_2
+       13  113.859   sky130_fd_sc_hd__a21o_2
+       16  140.134   sky130_fd_sc_hd__a21oi_2
+       17  170.163   sky130_fd_sc_hd__a22o_2
+        1   11.261   sky130_fd_sc_hd__a311o_2
+        8   70.067   sky130_fd_sc_hd__a31o_2
+        7   78.826   sky130_fd_sc_hd__a32o_2
+       10   75.072   sky130_fd_sc_hd__and2_2
+       19   166.41   sky130_fd_sc_hd__and2b_2
+        9   67.565   sky130_fd_sc_hd__and3_2
+        4   40.038   sky130_fd_sc_hd__and3b_2
+        3   30.029   sky130_fd_sc_hd__and4_2
+        2   22.522   sky130_fd_sc_hd__and4b_2
+        1   12.512   sky130_fd_sc_hd__and4bb_2
+        1    5.005   sky130_fd_sc_hd__buf_2
+       23   86.333   sky130_fd_sc_hd__conb_1
+       64 1.68E+03   sky130_fd_sc_hd__dfrtp_2
+        1   26.275   sky130_fd_sc_hd__dfstp_2
+       12   45.043   sky130_fd_sc_hd__inv_2
+       46  517.997   sky130_fd_sc_hd__mux2_1
+       13  292.781   sky130_fd_sc_hd__mux4_2
+       14   87.584   sky130_fd_sc_hd__nand2_2
+        5   43.792   sky130_fd_sc_hd__nand2b_2
+        2   20.019   sky130_fd_sc_hd__nand3_2
+       21  131.376   sky130_fd_sc_hd__nor2_2
+        1    10.01   sky130_fd_sc_hd__nor3_2
+        2   25.024   sky130_fd_sc_hd__nor3b_2
+        1   12.512   sky130_fd_sc_hd__nor4_2
+        5   50.048   sky130_fd_sc_hd__o211a_2
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+        4   35.034   sky130_fd_sc_hd__o21a_2
+        5   43.792   sky130_fd_sc_hd__o21ai_2
+        3   30.029   sky130_fd_sc_hd__o21ba_2
+        2   22.522   sky130_fd_sc_hd__o21bai_2
+        1   11.261   sky130_fd_sc_hd__o221a_2
+        1   15.014   sky130_fd_sc_hd__o221ai_2
+        2   20.019   sky130_fd_sc_hd__o22a_2
+        1   12.512   sky130_fd_sc_hd__o22ai_2
+        1   11.261   sky130_fd_sc_hd__o2bb2a_2
+        1   11.261   sky130_fd_sc_hd__o311a_2
+        3   30.029   sky130_fd_sc_hd__o31a_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        8   50.048   sky130_fd_sc_hd__or2_2
+        4   30.029   sky130_fd_sc_hd__or3_2
+        2   17.517   sky130_fd_sc_hd__or4_2
+       16   260.25   sky130_fd_sc_hd__xnor2_2
+        3   48.797   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_terihear_tinytearout': 4789.593600
+     of which used for sequential elements: 1707.888000 (35.66%)
+
