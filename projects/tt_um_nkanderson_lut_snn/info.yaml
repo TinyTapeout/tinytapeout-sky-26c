@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "LUT Spiking Network Classifier"
+  author:       "Niklas Anderson"
+  discord:      ""
+  description:  "Reconfigurable look-up-table spiking network (Izhikevich, 2025) classifying line orientation in a 3x3 grid"
+  language:     "SystemVerilog"
+  clock_hz:     50000000
+
+  # How many tiles the design occupies. A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  top_module:  "tt_um_nkanderson_lut_snn"
+
+  # The project's source files, in ./src.
+  # lut_pkg.sv must stay first: both Yosys and Icarus require a package to be
+  # read before the modules that reference it.
+  source_files:
+    - "lut_pkg.sv"
+    - "lut_layer.sv"
+    - "lut_net.sv"
+    - "tt_um_nkanderson_lut_snn.sv"
+
+# The pinout of the project. Unused pins are blank.
+# This section is for the datasheet/website.
+pinout:
+  # Inputs
+  ui[0]: "GRID0 / CFG_D0 - bottom-right cell"
+  ui[1]: "GRID1 / CFG_D1"
+  ui[2]: "GRID2 / CFG_D2"
+  ui[3]: "GRID3 / CFG_D3"
+  ui[4]: "GRID4 / CFG_D4 - center cell"
+  ui[5]: "GRID5 / CFG_D5"
+  ui[6]: "GRID6 / CFG_D6"
+  ui[7]: "GRID7 / CFG_D7"
+
+  # Outputs
+  uo[0]: "CLASS / CFG_Q0 - 0=vertical, 1=horizontal"
+  uo[1]: "OUT_VALID / CFG_Q1"
+  uo[2]: "CFG_Q2"
+  uo[3]: "CFG_Q3"
+  uo[4]: "CFG_Q4"
+  uo[5]: "CFG_Q5"
+  uo[6]: "CFG_Q6"
+  uo[7]: "CFG_Q7"
+
+  # Bidirectional pins
+  uio[0]: "GRID8 - top-left cell"
+  uio[1]: "IN_VALID"
+  uio[2]: "CFG_WE - hold for 40 clocks to load weights"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
