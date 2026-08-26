@@ -18,12 +18,12 @@ jobs:
       TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: true
 
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -40,7 +40,7 @@ jobs:
           wget -P tt/docs/typst/resources/fonts https://github.com/google/fonts/raw/refs/heads/main/ofl/notocoloremoji/NotoColorEmoji-Regular.ttf
 
       - name: Install Typst
-        uses: typst-community/setup-typst@v4
+        uses: typst-community/setup-typst@v5
         with:
             typst-version: '0.13.1'
 
@@ -55,14 +55,14 @@ jobs:
           fi
 
       - name: Archive PDF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: PDF
           path: datasheet.pdf
 
       - name: upload shuttle_index.json
         if: success() || failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: shuttle_index
           path: shuttle_index.json
@@ -73,7 +73,7 @@ jobs:
           cp datasheet.pdf shuttle_index.json gh_pages
 
       - name: Upload 
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: 'gh_pages'
 
@@ -92,4 +92,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

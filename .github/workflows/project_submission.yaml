@@ -14,12 +14,12 @@ jobs:
       TT_CONFIG: sky130.yaml:../../mux_overrides.yaml
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -30,7 +30,7 @@ jobs:
 
       - name: upload shuttle_index.json
         if: success() || failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: shuttle_index
           path: shuttle_index.json
@@ -44,12 +44,12 @@ jobs:
       PDK_VERSION: '8afc8346a57fe1ab7934ba5a6056ea8b43078e71'
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -79,7 +79,7 @@ jobs:
 
       - name: Get all project OAS files that have changed
         id: changed-files
-        uses: tj-actions/changed-files@v46
+        uses: tj-actions/changed-files@v47
         with:
           files: projects/tt_um_*/*.oas
 
@@ -95,7 +95,7 @@ jobs:
           done
 
       - name: Test Summary
-        uses: test-summary/action@v2.3
+        uses: test-summary/action@v2.6
         with:
           paths: 'tt/precheck/reports/results.xml'
         if: (success() || failure()) && steps.changed-files.outputs.any_changed == 'true'
@@ -108,7 +108,7 @@ jobs:
 
       - name: Upload reports
         if: (success() || failure()) && steps.changed-files.outputs.any_changed == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: precheck-reports
           path: tt/precheck/reports

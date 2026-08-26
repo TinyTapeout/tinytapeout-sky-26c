@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -52,7 +52,7 @@ jobs:
           pdk_root: ${{ env.PDK_ROOT }}
 
       - name: Checkout Caravel
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: chipfoundry/caravel
           path: ${{ env.GOLDEN_CARAVEL }}
@@ -79,7 +79,7 @@ jobs:
             --skip-checks lvs makefile oeb
 
       - name: Upload precheck results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: precheck_results
@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -108,7 +108,7 @@ jobs:
         uses: jlumbroso/free-disk-space@main
 
       - name: Checkout Caravel
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: chipfoundry/caravel
           path: ${{ env.CARAVEL_ROOT }}
@@ -195,14 +195,14 @@ jobs:
           python $DRC_ROOT/check_drc_report.py $REPORT_FILE
 
       - name: Publish final .oas file
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: final_oas
           path: caravel/caravel_*.oas
 
       - name: Publish DRC reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: drc_reports
