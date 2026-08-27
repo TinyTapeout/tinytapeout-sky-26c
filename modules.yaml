@@ -6,3 +6,18 @@ modules:
   - name: 'factory_test' # Factory test module, address 1
     mux_id: 0
     blk_id: 1
+  # Force the use of the R0 orientation to workaround the magic HVNTM DRC issue:
+  # Magic generates maskhints on load as a difference between auto generated layer
+  # and the layer from the GDS. For HVNTM the generated layer uses the bride operator
+  # which is orientation dependent and so the maskhints are wrong when using the
+  # macro in any orientation other than R0, causing DRC issues.
+  - name: teuscher_eml_fabric
+    mux_id: 8
+    blk_id: 3
+    width: 2
+    height: 2
+    pg_vaa: true
+    analog:
+      0: null
+      1: null
+      2: null
