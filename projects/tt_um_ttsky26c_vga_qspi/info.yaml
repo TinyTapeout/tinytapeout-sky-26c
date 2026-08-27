@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title:        "ttsky26c-202607-mehmetoguzderin by Oguz"      # Project title
+  author:       "Mehmet Oguz Derin"      # Your name
+  discord:      "mehmetoguzderin"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "VGA scene with flash palette, mirrored dual-PSRAM state, and two independent gamepads."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25175000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Hard maximum allocation for this release
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_ttsky26c_vga_qspi"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  source_files:
+    - "generated.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: "Gamepad latch"
+  ui[5]: "Gamepad clock"
+  ui[6]: "Gamepad serial data"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "VGA R1"
+  uo[1]: "VGA G1"
+  uo[2]: "VGA B1"
+  uo[3]: "VGA VSYNC"
+  uo[4]: "VGA R0"
+  uo[5]: "VGA G0"
+  uo[6]: "VGA B0"
+  uo[7]: "VGA HSYNC"
+
+  # Bidirectional pins
+  uio[0]: "QSPI flash CS#"
+  uio[1]: "QSPI MOSI / SD0"
+  uio[2]: "QSPI MISO / SD1"
+  uio[3]: "QSPI SCK"
+  uio[4]: "QSPI SD2 / WP#"
+  uio[5]: "QSPI SD3 / HOLD#"
+  uio[6]: "QSPI PSRAM A CS#"
+  uio[7]: "QSPI PSRAM B CS#"
+
+# Do not change!
+yaml_version: 6
