@@ -1,0 +1,78 @@
+151. Printing statistics.
+
+=== tt_um_kashif_fp4_sparse_tpu ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1516        - wires
+     1551        - wire bits
+      463        - public wires
+      498        - public wire bits
+        8        - ports
+       43        - port bits
+     1532 2.17E+04 cells
+        2   25.024   sky130_fd_sc_hd__a2111o_2
+       20  200.192   sky130_fd_sc_hd__a211o_2
+        4   40.038   sky130_fd_sc_hd__a21bo_2
+        2   22.522   sky130_fd_sc_hd__a21boi_2
+       42  367.853   sky130_fd_sc_hd__a21o_2
+       18  157.651   sky130_fd_sc_hd__a21oi_2
+       46  517.997   sky130_fd_sc_hd__a221o_2
+        2   30.029   sky130_fd_sc_hd__a221oi_2
+       43  430.413   sky130_fd_sc_hd__a22o_2
+        5    62.56   sky130_fd_sc_hd__a22oi_2
+        4   45.043   sky130_fd_sc_hd__a2bb2o_2
+        9  101.347   sky130_fd_sc_hd__a311o_2
+        1   15.014   sky130_fd_sc_hd__a311oi_2
+       15  131.376   sky130_fd_sc_hd__a31o_2
+        2   25.024   sky130_fd_sc_hd__a31oi_2
+       11  123.869   sky130_fd_sc_hd__a32o_2
+        1   16.266   sky130_fd_sc_hd__a32oi_2
+       28  210.202   sky130_fd_sc_hd__and2_2
+        6    52.55   sky130_fd_sc_hd__and2b_2
+       17  127.622   sky130_fd_sc_hd__and3_2
+        8   80.077   sky130_fd_sc_hd__and3b_2
+        5   50.048   sky130_fd_sc_hd__and4_2
+        2    10.01   sky130_fd_sc_hd__buf_2
+       16   60.058   sky130_fd_sc_hd__conb_1
+      199 5.23E+03   sky130_fd_sc_hd__dfrtp_2
+        3   78.826   sky130_fd_sc_hd__dfstp_2
+      252 5.36E+03   sky130_fd_sc_hd__dfxtp_2
+       17   63.811   sky130_fd_sc_hd__inv_2
+      442 4.98E+03   sky130_fd_sc_hd__mux2_1
+       32  720.691   sky130_fd_sc_hd__mux4_2
+       38  237.728   sky130_fd_sc_hd__nand2_2
+        3   26.275   sky130_fd_sc_hd__nand2b_2
+        7   70.067   sky130_fd_sc_hd__nand3_2
+        4   45.043   sky130_fd_sc_hd__nand3b_2
+        1   12.512   sky130_fd_sc_hd__nand4_2
+       60   375.36   sky130_fd_sc_hd__nor2_2
+        1    10.01   sky130_fd_sc_hd__nor3_2
+        2   25.024   sky130_fd_sc_hd__nor3b_2
+        9   90.086   sky130_fd_sc_hd__o211a_2
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+       13  113.859   sky130_fd_sc_hd__o21a_2
+       14  122.618   sky130_fd_sc_hd__o21ai_2
+        2   20.019   sky130_fd_sc_hd__o21ba_2
+        3   33.782   sky130_fd_sc_hd__o21bai_2
+       15  168.912   sky130_fd_sc_hd__o221a_2
+        2   30.029   sky130_fd_sc_hd__o221ai_2
+        7   70.067   sky130_fd_sc_hd__o22a_2
+        1   12.512   sky130_fd_sc_hd__o22ai_2
+        1   11.261   sky130_fd_sc_hd__o2bb2a_2
+        2   22.522   sky130_fd_sc_hd__o311a_2
+        2   20.019   sky130_fd_sc_hd__o31a_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        4   45.043   sky130_fd_sc_hd__o32a_2
+       52  325.312   sky130_fd_sc_hd__or2_2
+        8   60.058   sky130_fd_sc_hd__or3_2
+        6    52.55   sky130_fd_sc_hd__or3b_2
+        1    8.758   sky130_fd_sc_hd__or4_2
+        1    10.01   sky130_fd_sc_hd__or4b_2
+       12  195.187   sky130_fd_sc_hd__xnor2_2
+        5   81.328   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_kashif_fp4_sparse_tpu': 21653.267200
+     of which used for sequential elements: 10667.731200 (49.27%)
+
