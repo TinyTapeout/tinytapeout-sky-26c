@@ -1,0 +1,48 @@
+project:
+  title:        "TinyMind SoC"
+  author:       "Sishi"
+  discord:      ""
+  description:  "A tiny processor-controlled 8-input, 3-class fixed-weight inference accelerator with a custom CPU, program ROM, clocked TinyMind core, confidence logic, and seven-segment output."
+  language:     "Verilog"
+  clock_hz:     10000000
+  tiles:        "1x1"
+  top_module:   "tt_um_sishi888_tinymind"
+
+  source_files:
+    - "project.v"
+
+
+pinout:
+
+  # Dedicated inputs
+  ui[0]: "Feature 0 - likes mathematics"
+  ui[1]: "Feature 1 - likes programming"
+  ui[2]: "Feature 2 - likes electronics"
+  ui[3]: "Feature 3 - likes physics"
+  ui[4]: "Feature 4 - likes data and patterns"
+  ui[5]: "Feature 5 - likes building things"
+  ui[6]: "Feature 6 - likes design and creativity"
+  ui[7]: "Feature 7 - likes experimentation and research"
+
+  # Dedicated outputs
+  uo[0]: "Seven-segment g"
+  uo[1]: "Seven-segment f"
+  uo[2]: "Seven-segment e"
+  uo[3]: "Seven-segment d"
+  uo[4]: "Seven-segment c"
+  uo[5]: "Seven-segment b"
+  uo[6]: "Seven-segment a"
+  uo[7]: "Close-prediction decimal point"
+
+  # Bidirectional pins
+  uio[0]: "CPU run enable"
+  uio[1]: "Unused"
+  uio[2]: "Unused"
+  uio[3]: "Unused"
+  uio[4]: "Unused"
+  uio[5]: "Unused"
+  uio[6]: "Unused"
+  uio[7]: "Unused"
+
+
+yaml_version: 6
