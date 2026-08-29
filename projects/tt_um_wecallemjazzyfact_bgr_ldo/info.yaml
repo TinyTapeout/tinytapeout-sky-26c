@@ -25,14 +25,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "trim[0]"
-  ui[1]: "trim[1]"
-  ui[2]: "trim[2]"
-  ui[3]: "trim[3]"
+  ui[0]: "trim[1]"
+  ui[1]: "trim[2]"
+  ui[2]: "trim[3]"
+  ui[3]: "trim[4]"
   ui[4]: "snk_en"
   ui[5]: "ro_en"
-  ui[6]: ""
-  ui[7]: ""
+  ui[6]: "trim[5] (MSB)"
+  ui[7]: "trim[0] (LSB)"
 
   # Outputs
   uo[0]: "div_out"
