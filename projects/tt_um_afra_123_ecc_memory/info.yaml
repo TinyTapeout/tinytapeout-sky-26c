@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "Runtime-Reconfigurable ECC Memory"
+  author:       "Afra Feroz, Dhruvi Bhandari, Shylashree N, RV College of Engineering"
+  discord:      ""
+  description:  "A runtime-reconfigurable memory supporting OFF, parity, Hamming, and SECDED error detection and correction modes."
+  language:     "Verilog"
+  clock_hz:     0
+
+  # Single Tiny Tapeout tile
+  tiles: "1x1"
+
+  # Tiny Tapeout top-level module
+  top_module:  "tt_um_afra_123_ecc_memory"
+
+  # Source files in ./src
+  source_files:
+    - "project.v"
+    - "runtime_reconfig_ecc_memory.v"
+
+
+# Pinout of the project
+pinout:
+  # ----------------------------------------------------------
+  # Dedicated inputs
+  # ----------------------------------------------------------
+
+  ui[0]: "ECC_MODE_0"
+  ui[1]: "ECC_MODE_1"
+  ui[2]: "WRITE_ENABLE"
+  ui[3]: "ADDRESS_0"
+  ui[4]: "ADDRESS_1"
+  ui[5]: "ADDRESS_2"
+  ui[6]: "WRITE_DATA_0"
+  ui[7]: "WRITE_DATA_1"
+
+
+  # ----------------------------------------------------------
+  # Dedicated outputs
+  # ----------------------------------------------------------
+
+  uo[0]: "READ_DATA_0"
+  uo[1]: "READ_DATA_1"
+  uo[2]: "READ_DATA_2"
+  uo[3]: "READ_DATA_3"
+  uo[4]: "READ_DATA_4"
+  uo[5]: "READ_DATA_5"
+  uo[6]: "READ_DATA_6"
+  uo[7]: "READ_DATA_7"
+
+
+  # ----------------------------------------------------------
+  # Bidirectional pins
+  # ----------------------------------------------------------
+
+  uio[0]: "SINGLE_ERROR"
+  uio[1]: "DOUBLE_ERROR"
+  uio[2]: "WRITE_DATA_2"
+  uio[3]: "WRITE_DATA_3"
+  uio[4]: "WRITE_DATA_4"
+  uio[5]: "WRITE_DATA_5"
+  uio[6]: "WRITE_DATA_6"
+  uio[7]: "WRITE_DATA_7"
+
+
+# Do not change!
+yaml_version: 6
