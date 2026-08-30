@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_ttsky26c_vga_qspi
+MACRO tt_um_ttsky26c_oguz
   CLASS BLOCK ;
-  FOREIGN tt_um_ttsky26c_vga_qspi ;
+  FOREIGN tt_um_ttsky26c_oguz ;
   ORIGIN 0.000 0.000 ;
   SIZE 161.000 BY 111.520 ;
   PIN VGND
@@ -489,6 +489,6 @@ MACRO tt_um_ttsky26c_vga_qspi
         RECT 136.890 3.575 137.790 109.440 ;
         RECT 140.190 3.575 148.745 109.440 ;
   END
-END tt_um_ttsky26c_vga_qspi
+END tt_um_ttsky26c_oguz
 END LIBRARY
 
