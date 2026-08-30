@@ -1,8 +1,8 @@
 
 # Tiny Tapeout project information
 project:
-  title:        "vga_dyoa"      # Project title
-  author:       "1DC"      # Your name
+  title:        "VGA Design Your Own ASIC"      # Project title
+  author:       "LDeChavez"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Shows DESIGN YOUR OWN ASIC in VGA display."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
