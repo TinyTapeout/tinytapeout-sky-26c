@@ -1,0 +1,84 @@
+145. Printing statistics.
+
+=== tt_um_kenchangh_mnist ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2149        - wires
+     2184        - wire bits
+      266        - public wires
+      301        - public wire bits
+        8        - ports
+       43        - port bits
+     2165 2.24E+04 cells
+        6   75.072   sky130_fd_sc_hd__a2111o_2
+        2   30.029   sky130_fd_sc_hd__a2111oi_2
+       38  380.365   sky130_fd_sc_hd__a211o_2
+        5    62.56   sky130_fd_sc_hd__a211oi_2
+       17  170.163   sky130_fd_sc_hd__a21bo_2
+        2   22.522   sky130_fd_sc_hd__a21boi_2
+       63  551.779   sky130_fd_sc_hd__a21o_2
+       79  691.914   sky130_fd_sc_hd__a21oi_2
+       39  439.171   sky130_fd_sc_hd__a221o_2
+       49   490.47   sky130_fd_sc_hd__a22o_2
+        4   50.048   sky130_fd_sc_hd__a22oi_2
+       12   135.13   sky130_fd_sc_hd__a2bb2o_2
+       14  157.651   sky130_fd_sc_hd__a311o_2
+       68  595.571   sky130_fd_sc_hd__a31o_2
+        5    62.56   sky130_fd_sc_hd__a31oi_2
+       24  270.259   sky130_fd_sc_hd__a32o_2
+        6   67.565   sky130_fd_sc_hd__a41o_2
+       80  600.576   sky130_fd_sc_hd__and2_2
+       16  140.134   sky130_fd_sc_hd__and2b_2
+       59  442.925   sky130_fd_sc_hd__and3_2
+        6   60.058   sky130_fd_sc_hd__and3b_2
+        8   80.077   sky130_fd_sc_hd__and4_2
+        3   33.782   sky130_fd_sc_hd__and4b_2
+        5    62.56   sky130_fd_sc_hd__and4bb_2
+        3   15.014   sky130_fd_sc_hd__buf_2
+       10   37.536   sky130_fd_sc_hd__conb_1
+      261 5.55E+03   sky130_fd_sc_hd__dfxtp_2
+       70  262.752   sky130_fd_sc_hd__inv_2
+       18  202.694   sky130_fd_sc_hd__mux2_1
+        2   45.043   sky130_fd_sc_hd__mux4_2
+      191 1.19E+03   sky130_fd_sc_hd__nand2_2
+       18  157.651   sky130_fd_sc_hd__nand2b_2
+        7   70.067   sky130_fd_sc_hd__nand3_2
+        2   22.522   sky130_fd_sc_hd__nand3b_2
+      147  919.632   sky130_fd_sc_hd__nor2_2
+        4   40.038   sky130_fd_sc_hd__nor3_2
+        1   12.512   sky130_fd_sc_hd__nor4_2
+        2   30.029   sky130_fd_sc_hd__nor4b_2
+        2   25.024   sky130_fd_sc_hd__o2111a_2
+        2   30.029   sky130_fd_sc_hd__o2111ai_2
+      169 1.69E+03   sky130_fd_sc_hd__o211a_2
+       14  175.168   sky130_fd_sc_hd__o211ai_2
+       34  297.786   sky130_fd_sc_hd__o21a_2
+       94   823.29   sky130_fd_sc_hd__o21ai_2
+        6   60.058   sky130_fd_sc_hd__o21ba_2
+        6   67.565   sky130_fd_sc_hd__o21bai_2
+       91 1.02E+03   sky130_fd_sc_hd__o221a_2
+        5   75.072   sky130_fd_sc_hd__o221ai_2
+       10  100.096   sky130_fd_sc_hd__o22a_2
+        6   75.072   sky130_fd_sc_hd__o22ai_2
+        5   56.304   sky130_fd_sc_hd__o2bb2a_2
+        1   15.014   sky130_fd_sc_hd__o2bb2ai_2
+       18  202.694   sky130_fd_sc_hd__o311a_2
+        1   16.266   sky130_fd_sc_hd__o311ai_2
+       20  200.192   sky130_fd_sc_hd__o31a_2
+        8  100.096   sky130_fd_sc_hd__o31ai_2
+       21  236.477   sky130_fd_sc_hd__o32a_2
+        2   32.531   sky130_fd_sc_hd__o32ai_2
+        4   50.048   sky130_fd_sc_hd__o41a_2
+      146  913.376   sky130_fd_sc_hd__or2_2
+       41  307.795   sky130_fd_sc_hd__or3_2
+       19   166.41   sky130_fd_sc_hd__or3b_2
+       15  131.376   sky130_fd_sc_hd__or4_2
+        3   30.029   sky130_fd_sc_hd__or4b_2
+       46  748.218   sky130_fd_sc_hd__xnor2_2
+       30  487.968   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_kenchangh_mnist': 22375.209600
+     of which used for sequential elements: 5551.574400 (24.81%)
+
