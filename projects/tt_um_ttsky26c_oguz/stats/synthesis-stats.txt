@@ -1,6 +1,6 @@
 173. Printing statistics.
 
-=== tt_um_ttsky26c_vga_qspi ===
+=== tt_um_ttsky26c_oguz ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
@@ -77,6 +77,6 @@
        28  455.437   sky130_fd_sc_hd__xnor2_2
        19  309.046   sky130_fd_sc_hd__xor2_2
 
-   Chip area for module '\tt_um_ttsky26c_vga_qspi': 11778.796800
+   Chip area for module '\tt_um_ttsky26c_oguz': 11778.796800
      of which used for sequential elements: 2743.881600 (23.30%)
 

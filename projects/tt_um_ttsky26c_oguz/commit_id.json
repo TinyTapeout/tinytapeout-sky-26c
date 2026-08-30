@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout (detached) ff75e344",
+  "repo": "https://github.com/mehmetoguzderin/ttsky26c-202607-mehmetoguzderin",
+  "commit": "a86ce7d52bab0e1d01cb281d83714edad94ff1b7",
+  "workflow_url": "https://github.com/mehmetoguzderin/ttsky26c-202607-mehmetoguzderin/actions/runs/33254761046",
+  "source_digest": "sha256:61eba703ac1e2a7cf2e38559b0b7e077362ba4eae4395c9b036795f5a63c1da8",
+  "design_sha256": "910350f4514cedab14112bcb504ad0262a7bbfb906ce35f2320c8c2911930719",
+  "project_id": 5336,
+  "sort_id": 1784303054248
+}

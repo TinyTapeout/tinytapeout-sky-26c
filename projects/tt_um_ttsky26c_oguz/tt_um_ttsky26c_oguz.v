@@ -1,4 +1,4 @@
-module tt_um_ttsky26c_vga_qspi (clk,
+module tt_um_ttsky26c_oguz (clk,
     ena,
     rst_n,
     VPWR,
