@@ -1,0 +1,66 @@
+# Tiny Tapeout project information
+project:
+  title:        "SIMON V2"      # Project title
+  author:       "Libor Miller"      # Your name
+  discord:      "lordugandsky"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Cryptographic accelerator with SPI interface V2"      # One line description of what your project does
+  language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 1        # Valid values: 0 to 6
+  uses_vapwr: false       # Set to true if your project uses second analog power supply (VAPWR) in addition to 1.8V (VDPWR)
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_libormiller_SIMON_V2"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "DAC[0]"
+  ui[1]: "DAC[1]"
+  ui[2]: "DAC[2]"
+  ui[3]: "AMUX[0]"
+  ui[4]: "AMUX[1]"
+  ui[5]: "AMUX_ENABLE"
+  ui[6]: "CLK_INTERNAL_ENABLE"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: ""
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "CS_n"
+  uio[1]: "MOSI"
+  uio[2]: "MISO"
+  uio[3]: "SCK"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
+  ua[0]: "AMUX_OUT"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
