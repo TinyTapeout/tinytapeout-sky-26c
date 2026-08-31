@@ -11,7 +11,7 @@ project:
   tiles: "2x2"          # Valid values for analog projects: 1x2, 2x2
 
   # How many analog pins does your project use?
-  analog_pins: 2        # Valid values: 0 to 6
+  analog_pins: 6        # Valid values: 0 to 6
   uses_vapwr: false       # Set to true if your project uses second analog power supply (VAPWR) in addition to 1.8V (VDPWR)
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
@@ -57,10 +57,10 @@ pinout:
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
   ua[0]: "VCM"
   ua[1]: "VIN"
-  ua[2]: ""
-  ua[3]: ""
-  ua[4]: ""
-  ua[5]: ""
+  ua[2]: "VIP"
+  ua[3]: "VREF_P"
+  ua[4]: "VREF_N"
+  ua[5]: "IBIAS"
 
 # Do not change!
 yaml_version: 6
