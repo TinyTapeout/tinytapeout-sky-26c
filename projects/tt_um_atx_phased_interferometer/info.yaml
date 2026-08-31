@@ -3,7 +3,7 @@ project:
   title:        "Acoustic Interferometer"      # Project title
   author:       "Josef Gajdusek"      # Your name
   discord:      "__atx__"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Displays direction of arrival for a 20kHz tone"      # One line description of what your project does
+  description:  "Displays direction of arrival of an 20kHz tone on a LED bar"      # One line description of what your project does
   language:     "Chisel" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     10240000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -36,7 +36,7 @@ pinout:
   uo[0]: "PDM_CLK"
   uo[1]: "LED_POS"
   uo[2]: "LED_NEG"
-  uo[3]: ""
+  uo[3]: "PHASE_UART"
   uo[4]: ""
   uo[5]: ""
   uo[6]: ""
