@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title: "NanoV RV32E one-tile RISC-V processor"
+  author: "Wai Ming Lee"
+  discord: ""
+  description: "One-tile NanoV RV32E core with external SPI RAM and minimal GPIO"
+  language: "Verilog"
+  clock_hz: 12000000
+
+  # Experimental area-reduced derivative of the signed 1x2 NanoV baseline.
+  tiles: "1x1"
+
+  # Tiny Tapeout requires the GitHub username in the submitted top-module name.
+  top_module: "tt_um_WaiMingLee888_nanov_1tile"
+
+  source_files:
+    - "tt_top.v"
+    - "nanoV/alu.v"
+    - "nanoV/core.v"
+    - "nanoV/cpu_external.v"
+    - "nanoV/register_sources.v"
+    - "nanoV/register_spi.v"
+    - "nanoV/register.v"
+    - "nanoV/shift.v"
+
+pinout:
+  # General-purpose inputs, readable at address 0x10000004.
+  ui[0]: "GPIO input 0"
+  ui[1]: "GPIO input 1"
+  ui[2]: "GPIO input 2"
+  ui[3]: "GPIO input 3"
+  ui[4]: "GPIO input 4"
+  ui[5]: "GPIO input 5"
+  ui[6]: "GPIO input 6"
+  ui[7]: "GPIO input 7"
+
+  # GPIO outputs at address 0x10000000; inputs are at 0x10000004.
+  uo[0]: "GPIO output 0 / segment a"
+  uo[1]: "GPIO output 1 / segment b"
+  uo[2]: "GPIO output 2 / segment c"
+  uo[3]: "GPIO output 3 / segment d"
+  uo[4]: "GPIO output 4 / segment e"
+  uo[5]: "GPIO output 5 / segment f"
+  uo[6]: "GPIO output 6 / segment g"
+  uo[7]: "GPIO output 7 / decimal point"
+
+  uio[0]: "SPI RAM MOSI"
+  uio[1]: "SPI RAM chip select, active low"
+  uio[2]: "SPI RAM clock"
+  uio[3]: "SPI RAM MISO"
+  uio[4]: "Unused"
+  uio[5]: "Unused"
+  uio[6]: "Unused"
+  uio[7]: "SPI RAM HOLD, active low"
+
+# Do not change.
+yaml_version: 6
