@@ -9,19 +9,42 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-A simple yet stylish ring oscillator that uses a chain of 21 SkullFET inverters to generate a square wave output. Based on simulation, the oscillator should have a frequency of around 169.2 MHz.
+A simple yet stylish ring oscillator that uses a chain of 21 SkullFET inverters to generate a square wave. The ring runs from VAPWR, and its output fans out through a buffer into two independent branches:
 
-| Pin         | Expected frequency |
-| ----------- | ------------------ |
-| osc_out     | 169.2 MHz          |
-| osc_div_2   | 84.6 MHz           |
-| osc_div_4   | 42.3 MHz           |
-| osc_div_8   | 21.1 MHz           |
-| osc_out_3v3 | 169.2 MHz          |
+```
+ring (21 SkullFET inverters, VAPWR)
+  |
+  +-- SkullFET buffer (VAPWR)
+        |
+        +-- level shifter (VDPWR) --> uo_out[0] --> /2 /4 /8 --> uo_out[1..3]
+        |
+        `-- pad driver (VAPWR) -----> ua[0]
+```
+
+The buffer matters: it keeps the divider chain's input on an internal node, so the digital outputs work no matter what is connected to the analog pin.
+
+Measured on silicon (ttsky25b), the ring runs at **178-180 MHz**. Simulation of the extracted layout gives ~170 MHz.
+
+| Pin       | Signal      | Frequency | Observable?       |
+| --------- | ----------- | --------- | ----------------- |
+| uo_out[0] | osc_out     | ~180 MHz  | Most likely no    |
+| uo_out[1] | osc_div_2   | ~90 MHz   | Probably no       |
+| uo_out[2] | osc_div_4   | ~45 MHz   | Marginal          |
+| uo_out[3] | osc_div_8   | ~22 MHz   | **Yes**           |
+| ua[0]     | osc_out_3v3 | ~180 MHz  | Small signal only |
 
 ## How to test
 
-Connect an oscilloscope to one of `osc_out_3v3` or `osc_div_8` (uo_out pin 3) pin and enjoy the show. The remaining output pins, `osc_out`, `osc_div_2`, and `osc_div_4`, are likely to be changing too fast for GPIO pins to handle (the GPIO pins are limited to around 33 MHz), so you will probably not be able to observe them directly.
+**Use `osc_div_8` on uo_out[3].** Connect a scope or logic analyzer and measure the period; multiply by 8 to get the ring frequency. The Tiny Tapeout GPIOs top out around 33 MHz, so `osc_out`, `osc_div_2` and `osc_div_4` are too fast to come out cleanly — expect them to look distorted or static.
+
+**About `ua[0]`:** this is a small-signal tap, not a square wave. Roughly a kilohm of on-chip routing plus the pad and mux capacitance low-pass the node well below the ring frequency — no driver that fits in this tile could swing it rail-to-rail at 180 MHz. Expect on the order of 100 mV peak-to-peak sitting around 0.6-0.8 V DC.
+The amplitude depends on your probe, so treat it as a qualitative "it's oscillating" indicator rather than a calibrated output.
+
+## Layout
+
+![Layout](layout.png)
+
+Twenty-one SkullFET inverters arranged in a ring around a big skull, with the buffer, level shifter, pad driver and divider chain along the top edge.
 
 ## Simulation results
 
@@ -29,6 +52,6 @@ The following graph shows the output of the oscillator and the divided outputs. 
 
 ![Simulation results](sim.png)
 
-The outputs are shifted by 2 volts to make them easier to see in the graph. "uo_out[0]" is the main output of the oscillator, "ua[0]" is the 3v3 analog output, and "uo_out[1]"/"uo_out[2]"/"uo_out[3]" are the divided outputs.
+The outputs are shifted by 2 volts to make them easier to see in the graph. "uo_out[0]" is the main output of the oscillator, "ua[0]" is the analog output, and "uo_out[1]"/"uo_out[2]"/"uo_out[3]" are the divided outputs.
 
-Please note that the simulation results do not account for all parasitics, only the primary ones. Consequently, the actual frequency of the oscillator is likely to be lower than the simulated value.
+The testbench models the analog pad parasitics (series resistance plus pad capacitance on `ua[0]`); without them the simulation predicts a full-swing analog output that the silicon cannot produce.

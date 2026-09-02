@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Uri Shaked
+ * Copyright (c) 2024-2026 Uri Shaked
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,18 +20,29 @@ module tt_um_oscillating_bones (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  wire osc_out_internal_3v3;
-  wire osc_out;
+  wire ring_out;      // ring oscillator output (VAPWR domain)
+  wire osc_3v3;       // buffered ring output; feeds both branches below
+  wire osc_out;       // level-shifted into the VDPWR domain
   wire osc_div_2;
   wire osc_div_4;
   wire osc_div_8;
-  wire osc_out_3v3;
+  wire osc_out_3v3;   // analog pad output
 
-  ring ring (.ROSC_OUT(osc_out_internal_3v3));
+  ring ring (.ROSC_OUT(ring_out));
 
+  // Buffer the ring so that neither the level shifter nor the analog pad
+  // driver loads the oscillator directly, and so that the digital chain's
+  // input stays on an internal node rather than on the ua[0] pad.
+  skullfet_inverter_5v_pwr osc_buffer (
+      .VDD(VAPWR),
+      .A  (ring_out),
+      .Y  (osc_3v3)
+  );
+
+  // VAPWR -> VDPWR level shifter, clocking the divider chain.
   skullfet_inverter_5v_pwr level_shift (
       .VDD(VDPWR),
-      .A  (osc_out_internal_3v3),
+      .A  (osc_3v3),
       .Y  (osc_out)
   );
 
@@ -42,9 +53,10 @@ module tt_um_oscillating_bones (
       .ODIV8(osc_div_8)
   );
 
+  // Dedicated analog pad driver, fed from the same internal node.
   skullfet_inverter_5v_pwr ua_buffer (
       .VDD(VAPWR),
-      .A  (osc_out),
+      .A  (osc_3v3),
       .Y  (osc_out_3v3)
   );
 
