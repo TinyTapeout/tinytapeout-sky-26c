@@ -4,11 +4,14 @@
  *
  * Black-box interface for the custom analog GDS/LEF implementation.
  *
- *   ua[0]     VCO control input
+ *   ua[0]     Shared VCO/Delta-Sigma analog input
+ *   ua[1]     Buffered Delta-Sigma loop monitor
  *   uo_out[0] VCO-ADC pulse train, counted off-chip
+ *   uo_out[1] Delta-Sigma one-bit output stream
  *
- * uo_out[1:7], uio_out, and uio_oe are tied to VGND in layout. ua[1:7]
- * remain physically isolated; clk, rst_n, ena, ui_in, and uio_in are unused.
+ * uo_out[2:7], uio_out, and uio_oe are tied to VGND in layout. ua[2:7]
+ * remain physically isolated. clk and rst_n operate the Delta-Sigma path;
+ * ena, ui_in, and uio_in are unused.
  */
 
 `default_nettype none

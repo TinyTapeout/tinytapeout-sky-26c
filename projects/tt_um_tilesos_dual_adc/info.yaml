@@ -1,18 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title: "VCO-Based Noise-Shaping ADC"
+  title: "Dual-Path Noise-Shaping ADC"
   author: "Tyler McClure"
   discord: "tiles_os"
-  description: "A voltage-controlled ring oscillator converts one analog input into a buffered pulse train for off-chip frequency measurement."
+  description: "Two ADC architectures share one analog input: a VCO pulse-frequency path and a first-order switched-capacitor delta-sigma bitstream, with a buffered analog loop monitor."
   language: "Analog"
   clock_hz: 1000000
 
   # A SKY130 2x2 analog template has a 334.88 x 225.76 um die area.
   tiles: "2x2"
 
-  # Only ua[0] is purchased/used. The physical ua[1] template pin stays
-  # isolated so a later delta-sigma option remains a localized route change.
-  analog_pins: 1
+  # ua[0] is the shared converter input; ua[1] is the buffered DSM monitor.
+  analog_pins: 2
   uses_vapwr: false
 
   top_module: "tt_um_tilesos_dual_adc"
@@ -36,7 +35,7 @@ pinout:
 
   # Outputs
   uo[0]: "VCO-ADC pulse train"
-  uo[1]: ""
+  uo[1]: "Delta-sigma bitstream"
   uo[2]: ""
   uo[3]: ""
   uo[4]: ""
@@ -56,7 +55,7 @@ pinout:
 
   # Analog pins
   ua[0]: "Shared analog input"
-  ua[1]: ""
+  ua[1]: "Buffered delta-sigma loop monitor"
   ua[2]: ""
   ua[3]: ""
   ua[4]: ""
