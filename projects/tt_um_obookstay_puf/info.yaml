@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "An arbiter PUF"      # Project title
+  author:       "Obookstay"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A arbiter PUF aiming at decreasing linearity within limited area"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     48000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_obookstay_puf"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  #
+  # Note: the arbiter switch chain is the symmetric hard macro
+  # `arbchain` (src/macro).  Its behavioural Verilog (arbiter_chain.v,
+  # arbiter_cell.v, arb_mux.v, arbchain.v) is simulation-only and is
+  # intentionally NOT listed here -- synthesis sees `arbchain` as a
+  # black box declared via the MACROS .vh header in src/config.json.
+  source_files:
+    - "puf_defines.v"
+    - "puf_top.v"
+    - "puf_controller.v"
+    - "lfsr.v"
+    - "uart_tx.v"
+    - "tt_um_obookstay_puf.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Challenge bit 8"
+  ui[1]: "Challenge bit 9"
+  ui[2]: "Challenge bit 10"
+  ui[3]: "Challenge bit 11"
+  ui[4]: "Challenge bit 12"
+  ui[5]: "Challenge bit 13"
+  ui[6]: "Challenge bit 14"
+  ui[7]: "Challenge bit 15"
+
+  # Outputs
+  uo[0]: "UART TX (115200 8N1)"
+  uo[1]: "LED R"
+  uo[2]: "LED G"
+  uo[3]: "LED B"
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "Challenge bit 0"
+  uio[1]: "Challenge bit 1"
+  uio[2]: "Challenge bit 2"
+  uio[3]: "Challenge bit 3"
+  uio[4]: "Challenge bit 4"
+  uio[5]: "Challenge bit 5"
+  uio[6]: "Challenge bit 6"
+  uio[7]: "Challenge bit 7"
+
+# Do not change!
+yaml_version: 6
