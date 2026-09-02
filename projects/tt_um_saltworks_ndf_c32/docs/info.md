@@ -92,6 +92,54 @@ emission needs either a shift-enable port on the serialiser (about +32 selects) 
 per-frame reloads; it is priced and owed, and it does not move the area, timing,
 DRC, LVS or antenna numbers a layout of this composition produces.
 
+## Signoff — max-fanout DRV at the configuration this bundle submits
+
+*Written 2026-09-02 for the `ndf-2a` resubmission. It describes THIS configuration (branch
+`ndf-2a`, `src/config.json`) and no other; the 2026-08-19 submission it replaces carried no
+such note, deliberately — see the last paragraph.*
+
+**What changed, and what did not.** Exactly four LibreLane keys differ from the 08-19
+submission: `PL_RESIZER_HOLD_SLACK_MARGIN` 0.1 → 0.45, `GRT_RESIZER_HOLD_SLACK_MARGIN`
+0.05 → 0.3, `RSZ_CORNERS` (resizing now against the four ss/tt corners instead of `nom_tt`
+alone), and `CTS_SINK_CLUSTERING_SIZE` = 10. The RTL is byte-identical to the 08-19
+submission; `info.yaml`, the pinout, the 55 ns clock and the 6x2 tile are unchanged.
+
+**What this configuration reports at signoff, all nine STA corners, fanout limit 10:**
+
+```
+                              08-19 submission      this bundle
+max_fanout violators                    117                1
+   clock-tree leaves                    111                0
+   datapath                               6                1     wire695/X, fanout 11
+max_slew violators                     3317              825
+max_cap violators                        27                5
+setup worst slack (55 ns period)   +5.668 ns        +7.859 ns
+hold worst slack                   +0.111 ns        +0.198 ns
+setup / hold TNS                       0 / 0            0 / 0
+DRC · LVS · antenna                    0 / 0 / 0        0 / 0 / 0
+```
+
+The 08-19 column is the shuttle's own signoff for run 32284710003, reproduced locally
+bit-exactly (all 320 shared metrics identical) before the four keys were changed, so the
+delta is measured against the fabricated baseline and not against an approximation of it.
+
+**The one remaining violator, and why it is accepted.** `wire695` is a resizer-inserted
+datapath buffer at fanout 11 against a limit of 10. Its slack is absorbed: setup closes with
++7.859 ns of margin on a 55 ns period and hold with +0.198 ns, TNS 0.0, in every corner. A
+datapath net one over the limit costs transition time on one combinational path that has that
+margin to spend. A clock-tree leaf over the limit is a different object — it lands on skew and
+insertion delay for every flop beneath it — which is why the 08-19 design's 111 clock-leaf
+violators were the thing worth fixing, and `CTS_SINK_CLUSTERING_SIZE = 10` removes all 111.
+The datapath remainder is placement-dependent and moves between runs; the council of
+2026-08-28 accepted *at most one datapath violator at fanout 11–12, zero clock-leaf* as the
+criterion for this configuration, and this bundle meets it.
+
+**Why the previous bundle carried no such note.** The 08-19 submission documents the design
+as fabricated, in which `wire695` does not exist and the fanout count is 117. A note naming
+one accepted violator would have told a reader that the fabricated part has one; it has 117.
+Artifact and evidence describe the same chip at the same time, or they do not travel
+together — so this note ships with the configuration it measures, and not before.
+
 ## External hardware
 
 None. The design needs no external hardware: drive the pins directly, or from a
