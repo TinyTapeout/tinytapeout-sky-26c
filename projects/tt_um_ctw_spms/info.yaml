@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title:        "CTW-SPMS — Programmable Smart Power Management & Supervisor"
+  author:       "rakuichijo2001-sketch"
+  discord:      ""
+  description:  "Programmable all-digital smart power-management and supervision ASIC"
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # SKY130 1x2 tile
+  tiles: "1x2"
+
+  # Tiny Tapeout top module
+  top_module: "tt_um_ctw_spms"
+
+  # RTL source files, dependency order
+  source_files:
+    - "sync_2ff.v"
+    - "timebase_tick.v"
+    - "tt_um_ctw_spms.v"
+
+# Pinout
+pinout:
+  # Dedicated inputs
+  ui[0]: "PG1"
+  ui[1]: "PG2"
+  ui[2]: "PG3"
+  ui[3]: "PG4"
+  ui[4]: "OVERCURRENT"
+  ui[5]: "OVERTEMP"
+  ui[6]: "WATCHDOG_IN"
+  ui[7]: "FORCE_SHUTDOWN_EXT"
+
+  # Dedicated outputs
+  uo[0]: "RAIL1_EN"
+  uo[1]: "RAIL2_EN"
+  uo[2]: "RAIL3_EN"
+  uo[3]: "RAIL4_EN"
+  uo[4]: "LOAD1_EN"
+  uo[5]: "LOAD2_EN"
+  uo[6]: "LOAD3_EN"
+  uo[7]: "FAULT"
+
+  # Bidirectional pins
+  uio[0]: "SPI_MISO"
+  uio[1]: "SPI_CS_N"
+  uio[2]: "SPI_SCLK"
+  uio[3]: "SPI_MOSI"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change
+yaml_version: 6
