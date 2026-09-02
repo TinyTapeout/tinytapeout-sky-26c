@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "4-bit Adder / Accumulator" # Project title
+  author:       "Taiwo Opesade"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A 4-bit accumulator register that adds, loads or clears on each clock edge, built entirely from primitive logic gates" # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000  # Clock frequency in Hz (10 MHz - no internal timing constraints, any reasonable frequency works)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_taiwoopesade_adder_accumulator"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "DATA_IN[0]"
+  ui[1]: "DATA_IN[1]"
+  ui[2]: "DATA_IN[2]"
+  ui[3]: "DATA_IN[3]"
+  ui[4]: "MODE (0=add DATA_IN to accumulator, 1=load DATA_IN)"
+  ui[5]: "CLR (1=clear accumulator to 0, overrides MODE)"
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "ACC[0]"
+  uo[1]: "ACC[1]"
+  uo[2]: "ACC[2]"
+  uo[3]: "ACC[3]"
+  uo[4]: "CARRY_OUT (set when the last add overflowed 4 bits)"
+  uo[5]: "ZERO (set when ACC is 0000)"
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
