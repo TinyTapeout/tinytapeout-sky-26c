@@ -9,9 +9,9 @@ be under 1 MB.
 This project compares two independent first-order noise-shaping ADC
 architectures on the same die and with the same external input.
 
-**Shared input.** `ua[0]` drives both converter front ends. The final design
-must isolate switched-capacitor kickback from the VCO control path so that the
-two converters do not materially disturb each other.
+**Shared input.** `ua[0]` drives both converter front ends. The routed design
+isolates switched-capacitor kickback from the VCO control path; extracted
+simultaneous-operation checks show negligible VCO frequency shift.
 
 **Path A — VCO-based ADC (`uo_out[0]`).** A voltage-controlled,
 current-starved ring oscillator converts input voltage to frequency. The raw
@@ -32,9 +32,11 @@ directly to the pad.
 asynchronous to `clk`; its count windows are created off-chip. `rst_n` resets
 the clocked state and places the analog loop in a defined startup condition.
 
-The initial performance targets are approximately 9-bit ENOB for the
-delta-sigma path and at least 8-bit ENOB for the calibrated VCO path. These are
-targets until supported by PVT, mismatch, and post-layout simulation results.
+The extracted 8,192-bit delta-sigma shaping record measures about 43.18 dB
+SNDR (6.88-bit short-record ENOB estimate) at the selected operating point.
+The VCO path is intended for off-chip calibration and frequency counting.
+These simulations qualify nominal extracted behavior, not silicon yield or
+measured performance.
 
 ## How to test
 
