@@ -1,0 +1,47 @@
+# Tiny Tapeout project information
+project:
+  title:        "RSA Simple Encryptor"
+  author:       "Amit"
+  discord:      ""
+  description:  "Textbook RSA encryption core. Computes message^5 mod 221 using a pipelined square-and-multiply modular exponentiation algorithm."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  tiles: "1x1"
+
+  top_module: "tt_um_rsa_simple"
+
+  source_files:
+    - "project.v"
+    - "rsa_simple.v"
+    - "modexp.v"
+
+pinout:
+  ui[0]: "message[0]"
+  ui[1]: "message[1]"
+  ui[2]: "message[2]"
+  ui[3]: "message[3]"
+  ui[4]: "message[4]"
+  ui[5]: "message[5]"
+  ui[6]: "message[6]"
+  ui[7]: "message[7]"
+
+  uo[0]: "encrypted[0]"
+  uo[1]: "encrypted[1]"
+  uo[2]: "encrypted[2]"
+  uo[3]: "encrypted[3]"
+  uo[4]: "encrypted[4]"
+  uo[5]: "encrypted[5]"
+  uo[6]: "encrypted[6]"
+  uo[7]: "encrypted[7]"
+
+  uio[0]: "start — pulse high 1 cycle to begin encryption"
+  uio[1]: "done — pulses high for 1 cycle when ciphertext is valid"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
