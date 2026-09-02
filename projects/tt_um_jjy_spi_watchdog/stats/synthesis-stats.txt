@@ -1,0 +1,64 @@
+138. Printing statistics.
+
+=== tt_um_jjy_spi_watchdog ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      502        - wires
+      537        - wire bits
+      117        - public wires
+      152        - public wire bits
+        8        - ports
+       43        - port bits
+      518 5.69E+03 cells
+        1   12.512   sky130_fd_sc_hd__a2111o_2
+        3   30.029   sky130_fd_sc_hd__a211o_2
+        1    10.01   sky130_fd_sc_hd__a21bo_2
+        1   11.261   sky130_fd_sc_hd__a21boi_2
+       13  113.859   sky130_fd_sc_hd__a21o_2
+       15  131.376   sky130_fd_sc_hd__a21oi_2
+       10  112.608   sky130_fd_sc_hd__a221o_2
+        2   20.019   sky130_fd_sc_hd__a22o_2
+        1   12.512   sky130_fd_sc_hd__a22oi_2
+        2   22.522   sky130_fd_sc_hd__a2bb2o_2
+       10   87.584   sky130_fd_sc_hd__a31o_2
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        2   22.522   sky130_fd_sc_hd__a32o_2
+       33  247.738   sky130_fd_sc_hd__and2_2
+        7   61.309   sky130_fd_sc_hd__and2b_2
+       32   240.23   sky130_fd_sc_hd__and3_2
+       28  280.269   sky130_fd_sc_hd__and3b_2
+       12  120.115   sky130_fd_sc_hd__and4_2
+        3   15.014   sky130_fd_sc_hd__buf_2
+       18   67.565   sky130_fd_sc_hd__conb_1
+      110 2.34E+03   sky130_fd_sc_hd__dfxtp_2
+       11    41.29   sky130_fd_sc_hd__inv_2
+        9  101.347   sky130_fd_sc_hd__mux2_1
+       22  137.632   sky130_fd_sc_hd__nand2_2
+        6    52.55   sky130_fd_sc_hd__nand2b_2
+        2   20.019   sky130_fd_sc_hd__nand3_2
+        1   11.261   sky130_fd_sc_hd__nand3b_2
+       29  181.424   sky130_fd_sc_hd__nor2_2
+        2   20.019   sky130_fd_sc_hd__nor3_2
+        3   37.536   sky130_fd_sc_hd__nor3b_2
+        1   12.512   sky130_fd_sc_hd__nor4_2
+        1   12.512   sky130_fd_sc_hd__o2111a_2
+       26   260.25   sky130_fd_sc_hd__o211a_2
+        9   78.826   sky130_fd_sc_hd__o21a_2
+       29  253.994   sky130_fd_sc_hd__o21ai_2
+        1    10.01   sky130_fd_sc_hd__o22a_2
+        1   11.261   sky130_fd_sc_hd__o2bb2a_2
+        1   12.512   sky130_fd_sc_hd__o31ai_2
+        1   12.512   sky130_fd_sc_hd__o41a_2
+       32  200.192   sky130_fd_sc_hd__or2_2
+       10   75.072   sky130_fd_sc_hd__or3_2
+        4   35.034   sky130_fd_sc_hd__or3b_2
+        5   43.792   sky130_fd_sc_hd__or4_2
+        3   30.029   sky130_fd_sc_hd__or4b_2
+        2   32.531   sky130_fd_sc_hd__xnor2_2
+        2   32.531   sky130_fd_sc_hd__xor2_2
+
+   Chip area for module '\tt_um_jjy_spi_watchdog': 5687.955200
+     of which used for sequential elements: 2339.744000 (41.14%)
+
