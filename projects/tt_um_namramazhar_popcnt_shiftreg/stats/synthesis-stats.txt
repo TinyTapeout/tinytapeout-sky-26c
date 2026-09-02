@@ -1,0 +1,28 @@
+115. Printing statistics.
+
+=== tt_um_namramazhar_popcnt_shiftreg ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       86        - wires
+      121        - wire bits
+       58        - public wires
+       93        - public wire bits
+        8        - ports
+       43        - port bits
+       87 1.27E+03 cells
+        1    8.758   sky130_fd_sc_hd__and2b_2
+       19   71.318   sky130_fd_sc_hd__conb_1
+       24  630.605   sky130_fd_sc_hd__dfrtp_2
+        1   26.275   sky130_fd_sc_hd__dfstp_2
+       12   240.23   sky130_fd_sc_hd__fa_1
+        3        -   sky130_fd_sc_hd__ha_1
+       24  270.259   sky130_fd_sc_hd__mux2_1
+        3   18.768   sky130_fd_sc_hd__nand2_2
+
+   Area for cell type \sky130_fd_sc_hd__ha_1 is unknown!
+
+   Chip area for module '\tt_um_namramazhar_popcnt_shiftreg': 1266.214400
+     of which used for sequential elements: 656.880000 (51.88%)
+
