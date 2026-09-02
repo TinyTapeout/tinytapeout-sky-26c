@@ -1,0 +1,48 @@
+# Tiny Tapeout project information
+project:
+  title: "Montenegro SecureKey"
+  author: "Armin"
+  discord: "armin5651"
+  description: "64-bit challenge-response and Montenegro melody demo ASIC"
+  language: "Verilog"
+  clock_hz: 10000000
+
+  # Compact keyed mixer and shortened melody/tone engine fit one tile.
+  tiles: "1x1"
+
+  top_module: "tt_um_arminkardovic_montenegro_securekey"
+  source_files:
+    - "project.v"
+
+pinout:
+  # Inputs
+  ui[0]: "DATA[0] - challenge byte bit 0"
+  ui[1]: "DATA[1] - challenge byte bit 1"
+  ui[2]: "DATA[2] - challenge byte bit 2"
+  ui[3]: "DATA[3] - challenge byte bit 3"
+  ui[4]: "DATA[4] - challenge byte bit 4"
+  ui[5]: "DATA[5] - challenge byte bit 5"
+  ui[6]: "DATA[6] - challenge byte bit 6"
+  ui[7]: "DATA[7] - challenge byte bit 7"
+
+  # Outputs
+  uo[0]: "RESPONSE[0] - response byte bit 0"
+  uo[1]: "RESPONSE[1] - response byte bit 1"
+  uo[2]: "RESPONSE[2] - response byte bit 2"
+  uo[3]: "RESPONSE[3] - response byte bit 3"
+  uo[4]: "RESPONSE[4] - response byte bit 4"
+  uo[5]: "RESPONSE[5] - response byte bit 5"
+  uo[6]: "RESPONSE[6] - response byte bit 6"
+  uo[7]: "RESPONSE[7] - response byte bit 7"
+
+  # Bidirectional/control pins
+  uio[0]: "DATA_LOAD / RESPONSE_NEXT (input)"
+  uio[1]: "AUTH_START (input)"
+  uio[2]: "RESPONSE_VALID (output)"
+  uio[3]: "MUSIC_START (input)"
+  uio[4]: "MUSIC_STOP (input)"
+  uio[5]: "AUDIO_OUT (output)"
+  uio[6]: "AUTH_OK (output)"
+  uio[7]: "AUTH_BUSY (output)"
+
+yaml_version: 6
