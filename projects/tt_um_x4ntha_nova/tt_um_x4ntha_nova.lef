@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_ahlana_nova_cpu
+MACRO tt_um_x4ntha_nova
   CLASS BLOCK ;
-  FOREIGN tt_um_ahlana_nova_cpu ;
+  FOREIGN tt_um_x4ntha_nova ;
   ORIGIN 0.000 0.000 ;
   SIZE 161.000 BY 111.520 ;
   PIN VGND
@@ -76,6 +76,7 @@ MACRO tt_um_ahlana_nova_cpu
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 138.310 110.520 138.610 111.520 ;
@@ -320,6 +321,7 @@ MACRO tt_um_ahlana_nova_cpu
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 55.510 110.520 55.810 111.520 ;
@@ -372,7 +374,6 @@ MACRO tt_um_ahlana_nova_cpu
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.867500 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -382,7 +383,6 @@ MACRO tt_um_ahlana_nova_cpu
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.989000 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -392,7 +392,6 @@ MACRO tt_um_ahlana_nova_cpu
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.741500 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -415,12 +414,13 @@ MACRO tt_um_ahlana_nova_cpu
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.040 ;
+        RECT 0.990 0.040 158.540 111.140 ;
       LAYER met2 ;
-        RECT 13.440 2.535 144.340 111.365 ;
+        RECT 1.020 0.010 158.610 111.170 ;
       LAYER met3 ;
-        RECT 18.290 2.555 144.170 111.345 ;
+        RECT 1.445 0.175 158.635 110.665 ;
       LAYER met4 ;
+        RECT 4.895 110.120 30.270 110.665 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
         RECT 36.890 110.120 38.550 110.665 ;
@@ -462,15 +462,20 @@ MACRO tt_um_ahlana_nova_cpu
         RECT 136.250 110.120 137.910 110.665 ;
         RECT 139.010 110.120 140.670 110.665 ;
         RECT 141.770 110.120 143.430 110.665 ;
-        RECT 30.655 109.440 144.145 110.120 ;
-        RECT 30.655 96.735 56.750 109.440 ;
-        RECT 59.150 96.735 60.050 109.440 ;
-        RECT 62.450 96.735 95.620 109.440 ;
-        RECT 98.020 96.735 98.920 109.440 ;
-        RECT 101.320 96.735 134.490 109.440 ;
-        RECT 136.890 96.735 137.790 109.440 ;
-        RECT 140.190 96.735 144.145 109.440 ;
+        RECT 144.530 110.120 146.190 110.665 ;
+        RECT 147.290 110.120 154.265 110.665 ;
+        RECT 4.895 109.440 154.265 110.120 ;
+        RECT 4.895 2.080 17.880 109.440 ;
+        RECT 20.280 2.080 21.180 109.440 ;
+        RECT 23.580 2.080 56.750 109.440 ;
+        RECT 59.150 2.080 60.050 109.440 ;
+        RECT 62.450 2.080 95.620 109.440 ;
+        RECT 98.020 2.080 98.920 109.440 ;
+        RECT 101.320 2.080 134.490 109.440 ;
+        RECT 136.890 2.080 137.790 109.440 ;
+        RECT 140.190 2.080 154.265 109.440 ;
+        RECT 4.895 0.175 154.265 2.080 ;
   END
-END tt_um_ahlana_nova_cpu
+END tt_um_x4ntha_nova
 END LIBRARY
 
