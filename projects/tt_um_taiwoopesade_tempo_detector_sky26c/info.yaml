@@ -1,0 +1,50 @@
+# TinyTapeout project configuration.
+# See: https://tinytapeout.com/hdl/config/
+
+project:
+  title:        "Hardware Audio Tempo Detector"
+  author:       "Taiwo Opesade"
+  discord:      ""
+  description:  "Detects the tempo (BPM) of a live audio stream entirely in hardware, using onset detection and a bit-serial divider - no CPU, no multiplier."
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  source_files:
+    - "project.v"
+    - "onset_detector.v"
+    - "interval_counter.v"
+    - "tempo_estimator.v"
+    - "bpm_divider.v"
+    - "result_latch.v"
+  top_module:  "tt_um_taiwoopesade_tempo_detector_sky26c"
+
+  tiles: "1x1"
+
+pinout:
+  ui[0]: "audio_sample[0] - streaming amplitude sample bit 0 (LSB)"
+  ui[1]: "audio_sample[1]"
+  ui[2]: "audio_sample[2]"
+  ui[3]: "audio_sample[3]"
+  ui[4]: "audio_sample[4]"
+  ui[5]: "audio_sample[5]"
+  ui[6]: "audio_sample[6]"
+  ui[7]: "audio_sample[7] - streaming amplitude sample bit 7 (MSB)"
+  uo[0]: "bpm_estimate[0] - latched BPM estimate, bit 0 (LSB)"
+  uo[1]: "bpm_estimate[1]"
+  uo[2]: "bpm_estimate[2]"
+  uo[3]: "bpm_estimate[3]"
+  uo[4]: "bpm_estimate[4]"
+  uo[5]: "bpm_estimate[5]"
+  uo[6]: "bpm_estimate[6]"
+  uo[7]: "bpm_estimate[7] - latched BPM estimate, bit 7 (MSB)"
+  uio[0]: "sample_valid - strobe: a new audio_sample is present this cycle"
+  uio[1]: "frame_reset - restart tempo tracking (new track/song)"
+  uio[2]: "beat_pulse - one-cycle pulse on each detected beat onset"
+  uio[3]: "tempo_locked - high once recent intervals are stable"
+  uio[4]: "onset_active - raw pre-refractory onset flag (debug)"
+  uio[5]: "overflow_flag - no beat seen recently (silence / very slow)"
+  uio[6]: "confidence[0] - stability score, bit 0 (2'b11 = tightest lock)"
+  uio[7]: "confidence[1] - stability score, bit 1"
+
+# Do not change:
+yaml_version: 6
