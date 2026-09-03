@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       PDK_ROOT: '/home/runner/pdk'
-      PDK_VERSION: '8afc8346a57fe1ab7934ba5a6056ea8b43078e71'
+      PDK_VERSION: '0536d02d875c8f67dd7cca3902ac457e62f20005'
     steps:
       - name: checkout repo
         uses: actions/checkout@v7
