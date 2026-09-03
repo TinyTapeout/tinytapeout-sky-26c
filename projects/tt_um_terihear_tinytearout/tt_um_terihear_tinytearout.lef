@@ -59,7 +59,7 @@ MACRO tt_um_terihear_tinytearout
   PIN ena
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 146.590 110.520 146.890 111.520 ;
@@ -104,7 +104,8 @@ MACRO tt_um_terihear_tinytearout
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.647700 ;
+    ANTENNADIFFAREA 0.434700 ;
     PORT
       LAYER met4 ;
         RECT 130.030 110.520 130.330 111.520 ;
@@ -113,7 +114,8 @@ MACRO tt_um_terihear_tinytearout
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.647700 ;
+    ANTENNADIFFAREA 0.434700 ;
     PORT
       LAYER met4 ;
         RECT 127.270 110.520 127.570 111.520 ;
@@ -131,7 +133,8 @@ MACRO tt_um_terihear_tinytearout
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.647700 ;
+    ANTENNADIFFAREA 0.434700 ;
     PORT
       LAYER met4 ;
         RECT 121.750 110.520 122.050 111.520 ;
@@ -149,6 +152,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 110.520 116.530 111.520 ;
@@ -157,6 +161,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 113.470 110.520 113.770 111.520 ;
@@ -165,6 +170,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 110.710 110.520 111.010 111.520 ;
@@ -173,6 +179,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 107.950 110.520 108.250 111.520 ;
@@ -181,6 +188,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 110.520 105.490 111.520 ;
@@ -189,6 +197,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 102.430 110.520 102.730 111.520 ;
@@ -197,6 +206,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 99.670 110.520 99.970 111.520 ;
@@ -205,6 +215,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 96.910 110.520 97.210 111.520 ;
@@ -277,6 +288,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 72.070 110.520 72.370 111.520 ;
@@ -285,6 +297,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 69.310 110.520 69.610 111.520 ;
@@ -341,6 +354,7 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
@@ -350,6 +364,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -358,6 +374,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -366,6 +384,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 85.870 110.520 86.170 111.520 ;
@@ -374,6 +394,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -382,6 +404,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -390,6 +414,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -398,6 +424,8 @@ MACRO tt_um_terihear_tinytearout
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -409,11 +437,11 @@ MACRO tt_um_terihear_tinytearout
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.040 ;
+        RECT 2.760 2.480 158.540 109.440 ;
       LAYER met2 ;
-        RECT 11.600 2.535 157.220 111.365 ;
+        RECT 5.160 2.535 158.140 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 155.415 111.345 ;
+        RECT 12.485 2.555 155.415 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
@@ -457,14 +485,15 @@ MACRO tt_um_terihear_tinytearout
         RECT 139.010 110.120 140.670 110.665 ;
         RECT 141.770 110.120 143.430 110.665 ;
         RECT 144.530 110.120 146.190 110.665 ;
-        RECT 30.655 109.440 146.905 110.120 ;
-        RECT 30.655 53.215 56.750 109.440 ;
-        RECT 59.150 53.215 60.050 109.440 ;
-        RECT 62.450 53.215 95.620 109.440 ;
-        RECT 98.020 53.215 98.920 109.440 ;
-        RECT 101.320 53.215 134.490 109.440 ;
-        RECT 136.890 53.215 137.790 109.440 ;
-        RECT 140.190 53.215 146.905 109.440 ;
+        RECT 147.290 110.120 151.505 110.665 ;
+        RECT 30.655 109.440 151.505 110.120 ;
+        RECT 30.655 15.135 56.750 109.440 ;
+        RECT 59.150 15.135 60.050 109.440 ;
+        RECT 62.450 15.135 95.620 109.440 ;
+        RECT 98.020 15.135 98.920 109.440 ;
+        RECT 101.320 15.135 134.490 109.440 ;
+        RECT 136.890 15.135 137.790 109.440 ;
+        RECT 140.190 15.135 151.505 109.440 ;
   END
 END tt_um_terihear_tinytearout
 END LIBRARY
