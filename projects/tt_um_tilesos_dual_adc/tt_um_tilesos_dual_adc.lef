@@ -233,7 +233,7 @@ MACRO tt_um_tilesos_dual_adc
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 4.066900 ;
+    ANTENNADIFFAREA 274.746704 ;
     PORT
       LAYER met4 ;
         RECT 49.990 224.760 50.290 225.760 ;
@@ -242,7 +242,7 @@ MACRO tt_um_tilesos_dual_adc
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 4.066900 ;
+    ANTENNADIFFAREA 274.746704 ;
     PORT
       LAYER met4 ;
         RECT 47.230 224.760 47.530 225.760 ;
@@ -251,7 +251,7 @@ MACRO tt_um_tilesos_dual_adc
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 4.066900 ;
+    ANTENNADIFFAREA 274.746704 ;
     PORT
       LAYER met4 ;
         RECT 44.470 224.760 44.770 225.760 ;
@@ -260,7 +260,7 @@ MACRO tt_um_tilesos_dual_adc
   PIN uio_oe[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 4.066900 ;
+    ANTENNADIFFAREA 274.746704 ;
     PORT
       LAYER met4 ;
         RECT 41.710 224.760 42.010 225.760 ;
@@ -269,7 +269,7 @@ MACRO tt_um_tilesos_dual_adc
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 4.066900 ;
+    ANTENNADIFFAREA 274.746704 ;
     PORT
       LAYER met4 ;
         RECT 38.950 224.760 39.250 225.760 ;
