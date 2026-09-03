@@ -1,0 +1,48 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id: "472423526521678849" # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title: "4-bit to 5x7 Matrix Decoder for Tiny Tapeout" # Project title
+  author: "Alanna Kelly" # Your name
+  discord: "kelpana" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "Not working" # One line description of what your project does
+  language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 250 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "D0"
+  ui[1]: "D1"
+  ui[2]: "D2"
+  ui[3]: "D3"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "C0"
+  uo[1]: "C1"
+  uo[2]: "C2"
+  uo[3]: "C3"
+  uo[4]: "C4"
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "R0"
+  uio[1]: "R1"
+  uio[2]: "R2"
+  uio[3]: "R3"
+  uio[4]: "R4"
+  uio[5]: "R5"
+  uio[6]: "R6"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
