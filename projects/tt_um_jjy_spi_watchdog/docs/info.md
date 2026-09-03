@@ -80,6 +80,10 @@ for a few `clk` periods before the first and after the last `SCLK` edge.
 A frame takes effect only if exactly 10 bits were clocked in while `CS_N`
 was low. Frames of any other length are discarded.
 
+![Write frame](spi_write_timing.svg)
+
+![Read frame](spi_read_timing.svg)
+
 ### SPI register map
 
 | Addr | Name     | R/W   | Description                                        |
