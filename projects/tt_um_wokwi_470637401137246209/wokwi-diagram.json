@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-gate-not", "id": "not1", "top": -566.4, "left": 393.6, "attrs": {} },
+    { "type": "wokwi-gate-not", "id": "not2", "top": -556.8, "left": 393.6, "attrs": {} },
+    { "type": "wokwi-gate-not", "id": "not3", "top": -547.2, "left": 393.6, "attrs": {} },
+    { "type": "wokwi-gate-not", "id": "not4", "top": -537.6, "left": 393.6, "attrs": {} },
+    {
+      "type": "wokwi-clock-generator",
+      "id": "clock1",
+      "top": -720,
+      "left": 115.2,
+      "attrs": { "frequency": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "pwr2", "top": -441.6, "left": 796.2, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "pwr1", "top": -594.44, "left": 115.2, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -548.04,
+      "left": 782.68,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw2",
+      "top": -734.8,
+      "left": 195.1,
+      "attrs": { "value": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -713.8,
+      "left": 249.6,
+      "attrs": { "color": "grey", "label": "Step", "bounce": "0", "key": "s" }
+    },
+    { "type": "wokwi-vcc", "id": "pwr3", "top": -738.44, "left": 336, "attrs": {} },
+    {
+      "type": "board-tt-block-input",
+      "id": "ttin",
+      "top": -592.93,
+      "left": 235.2,
+      "attrs": { "verilogRole": "input" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -624, "left": 66.6, "attrs": {} },
+    {
+      "type": "board-tt-block-output",
+      "id": "ttout",
+      "top": -573.73,
+      "left": 590.4,
+      "attrs": { "verilogRole": "output" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -658.45,
+      "left": 19.2,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-vcc", "id": "pwr5", "top": -690.44, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": -652.8,
+      "left": 268.8,
+      "attrs": { "text": "3. Tap to advance clock" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -796.8,
+      "left": 0,
+      "attrs": { "text": "1. Simulate with the green ▶ button" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": -633.6,
+      "left": 604.8,
+      "attrs": { "text": "4. Watch the outputs changing" }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": -663.4,
+      "left": 1005.87,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -926.69,
+      "left": 922.48,
+      "attrs": { "display": "angle" }
+    }
+  ],
+  "connections": [
+    [ "drv1:1B", "stepper1:B-", "black", [ "v0" ] ],
+    [ "drv1:1A", "stepper1:B+", "green", [ "v0" ] ],
+    [ "stepper1:A+", "drv1:2A", "blue", [ "v0" ] ],
+    [ "stepper1:A-", "drv1:2B", "red", [ "v0" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "v15.92", "h-9.9" ] ],
+    [ "not2:OUT", "ttout:OUT1", "violet", [ "v0" ] ],
+    [ "not3:OUT", "ttout:OUT2", "violet", [ "v0" ] ],
+    [ "ttout:OUT3", "not4:OUT", "violet", [ "h0" ] ],
+    [ "ttout:EXTOUT0", "sevseg1:A", "green", [ "h21.01", "v-28.8", "h96" ] ],
+    [ "ttout:EXTOUT1", "sevseg1:B", "green", [ "h11.41", "v-48", "h122.99", "v41.34" ] ],
+    [
+      "ttout:EXTOUT2",
+      "sevseg1:C",
+      "green",
+      [ "h30.61", "v-38.4", "h115.2", "v105.6", "h-28.8" ]
+    ],
+    [ "ttout:EXTOUT3", "sevseg1:D", "green", [ "h57.6", "v57.6", "h48" ] ],
+    [ "sevseg1:E", "ttout:EXTOUT4", "green", [ "v9.6", "h-48", "v-38.4" ] ],
+    [ "ttout:EXTOUT5", "sevseg1:F", "green", [ "h69.01", "v-57.6", "h28.8" ] ],
+    [ "ttout:EXTOUT6", "sevseg1:G", "green", [ "h78.61", "v-57.6" ] ],
+    [ "ttout:EXTOUT7", "sevseg1:DP", "green", [ "v28.8", "h136.21" ] ],
+    [ "pwr2:GND", "sevseg1:COM.1", "black", [ "v0" ] ],
+    [ "sw2:1", "clock1:CLK", "blue", [ "h-19.2", "v-57.6" ] ],
+    [ "sw2:2", "ttin:EXTCLK", "blue", [ "v0" ] ],
+    [ "ttin:IN0", "not1:IN", "green", [ "h0" ] ],
+    [ "not2:IN", "ttin:IN1", "green", [ "v0" ] ],
+    [ "not3:IN", "ttin:IN2", "green", [ "v0" ] ],
+    [ "not4:IN", "ttin:IN3", "green", [ "v0" ] ],
+    [ "ttin:IN4", "ttout:OUT4", "green", [ "h0" ] ],
+    [ "ttout:OUT5", "ttin:IN5", "green", [ "h0" ] ],
+    [ "ttin:IN6", "ttout:OUT6", "green", [ "h0" ] ],
+    [ "ttout:OUT7", "ttin:IN7", "green", [ "h0" ] ],
+    [ "btn1:1.l", "sw2:3", "blue", [ "h0" ] ],
+    [ "pwr3:VCC", "btn1:2.r", "red", [ "v0" ] ],
+    [ "pwr5:VCC", "r2:1", "red", [ "v0" ] ],
+    [ "not1:OUT", "ttout:OUT0", "violet", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
