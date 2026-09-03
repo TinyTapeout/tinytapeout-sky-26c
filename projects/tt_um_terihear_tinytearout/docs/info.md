@@ -9,32 +9,28 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-1. This is a 2’s complement bit-serial multiplier with a fractional coefficient. The coefficient is an 8-bit 2’s complement fixed-point value in Q0.7 format (range: -1 to +127/128) with
-|coefficient| < 1. We attain a total delay of 16 clock cycles from operands valid to rounded product emission. We use a simple 3-state FSM for the synchronous serializing of the multiplicand and coefficient from the 8-bit dedicated input.
+1. This is a device to serially multiply and accumulate. But the "serially" applies only to multiplying, and not to accumulating.
 
-2. Although the product will fit within 16 bits before rounding, intermediate accumulation requires guard bits. We use a 24-bit signed accumulator (16 integer + 7 fractional + 1 sign extension) to prevent overflow during accumulation.
+2. The numbers are encoded 2's complement. The fractional coefficient is an 8-bit 2’s complement fixed-point value in Q0.7 format, with a range of -127/128 to +127/128, hence |coefficient| < 1. We aim to approach an expected delay around 8 clock cycles from operands valid to rounded product emission. We synchronize the input of the  multiplicand and coefficient from the 8-bit dedicated input and the input-enabled 8-bit bidirectional port enabled for input.
 
-3. In the LSB-first bit-serial multiplication, when we reach the MSB of the multiplier (coefficient), that bit has negative weight. Instead of adding multiplicand << 7, we subtract it. This is the standard Baugh-Wooley adaptation for bit-serial. During all other cycles, partial products are sign-extended to the accumulator width implicitly by using signed arithmetic.
+3. Although the product should not overflow 16 bits, intermediate accumulation requires guard bits. We use a 24-bit signed accumulator, not the most parsimonious.
 
-4. Rounding after 8 accumulation cycles, the lower 7 bits of the accumulator contain the fractional residue. We apply round-half-up: if acc[6] == 1, add 1 to acc[7] before extracting the integer result. This adds 1 cycle of latency.
+4. At the 6th accumulation cycle, the lower 6 bits of the accumulator contain the fractional residue. We apply round-half-up by adding 1 to the cumulant. We then complete the multiplication by subtracting the multiplicand from the cumulant if the coefficient is negative. The product is output to the dedicated output with a data available signal at the output-enabled birectional port.
 
-5. To achieve the delay of 16 clock cycles, the 8-bit coefficient is loaded in parallel with the first 8 bits of the multiplicand. Cycles 9–15 are "idle" accumulation cycles where the coefficient is fully latched and no new multiplicand bits arrive (the remaining 8 multiplicand bits are zero-padded conceptually, but since the coefficient is only 8 bits, accumulation completes at cycle 8). Cycles 9–15 serve as pipeline alignment delay so the total multiplicand-to-product latency equals 16. Cycle 16 performs rounding and output.
-
-6. SERDES input/output are 8-bit wide buses clocked at the same rate. Input SERDES deserializes two consecutive 8-bit words into the 16-bit multiplicand (LSB word first). Output SERDES serializes the 16-bit result into two 8-bit words (LSB word first). 
 
 ASCII block schematic:
 
                         ┌─────────────────────────────────────────────┐
-                        │           PIPELINED BIT-SERIAL MULTIPLIER   │
+                        │           SERIAL MULTIPLY AND ACCUMULATE    │
                         │                                             │
   clk ─────────────────►│  ┌──────────┐                               │
-  rst_n ───────────────►│  │ Control  │◄── enable                     │
+  rst_n ───────────────►│  │ Control  │                               │
   ena ─────────────────►│  │ FSM      │                               │
                         │  └────┬─────┘                               │
                         │       │                                     │
-   in[7:0] ────────────►│  ┌────▼─────┐    ┌──────────────────────┐   │
-                        │  │ Input    │    │                      │   │
-                        │  │ SERDES   ├───►│ 8-bit Coeff Latch    │   │
+ uio_in[7:0] ──────────►│  ┌────▼─────┐    ┌──────────────────────┐   │
+  ui_in[7:0] ──────────►│  │ Input    │    │                      │   │
+                        │  │          ├───►│ 8-bit Coeff Latch    │   │
                         │  │ (2×8→16) │    │ (Q0.7 signed)        │   │
                         │  └────┬─────┘    └──────────┬───────────┘   │
                         │       │                     │               │
@@ -52,11 +48,11 @@ ASCII block schematic:
                         │                    │ Round Unit  │          │
                         │                    │ (half-up)   │          │
                         │                    └──────┬──────┘          │
-                        │                           │ 16-bit          │
+                        │                           │                 │
                         │                    ┌──────▼──────┐          │
                         │                    │ Output      │          │
-                        │                    │ SERDES      ├─────────► out[7:0]
-                        │                    │ (16→2×8)    │          │
+                        │                    │             ├─────────► uo_out[7:0]
+                        │                    │ (16→2×8)    ├─────────► uio_oe[7:0]
                         │                    └─────────────┘          │
                         │                                             │
                         └─────────────────────────────────────────────┘
@@ -64,10 +60,10 @@ ASCII block schematic:
 
 ## How to test
 
+We characterize the latency as clock cycles from operands valid to rounded product emission.
+
 We test for arithmetic correctness with the "golden model" for
 *   boundary values of the coefficient
 *   rounding half-up
-We try falsifying the claims of
 *   overflow does not occur
-*   16 clock cycles from multiplicand-Hi valid to product LSB
 
