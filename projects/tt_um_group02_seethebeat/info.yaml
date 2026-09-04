@@ -1,0 +1,65 @@
+# Tiny Tapeout project information
+project:
+  title: "SeeTheBeat" # Project title
+  author: "Jonas Creyns, Giel Swenters" # Your name
+  discord: "mula__b, joneaz" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "Real-time audio visualizer: on-chip 512-point FFT driving a VGA display" # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 40000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_group02_seethebeat"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "cordic.v"
+    - "butterfly.v"
+    - "fft_alu.v"
+    - "mcu_bus.v"
+    - "fft_ctrl.v"
+    - "vga_timing.v"
+    - "visual_state.v"
+    - "pixel_gen.v"
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs -- sample/read date from MCU (RP2040)
+  ui[0]: "din0"
+  ui[1]: "din1"
+  ui[2]: "din2"
+  ui[3]: "din3"
+  ui[4]: "din4"
+  ui[5]: "din5"
+  ui[6]: "din6"
+  ui[7]: "din7"
+
+  # Outputs -- VGA
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "vsync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "hsync"
+
+  # Bidirectional pins -- the chip<->MCU bus. uio_oe is a constant 0x3F, so uio[5:0] are
+  # OUTPUTS (the chip's command lane) and uio[7:6] are INPUTS (handshake from the MCU).
+  uio[0]: "cmd0" # out: 6-bit command / address / write-data lane
+  uio[1]: "cmd1"
+  uio[2]: "cmd2"
+  uio[3]: "cmd3"
+  uio[4]: "cmd4"
+  uio[5]: "cmd5"
+  uio[6]: "frame_ready" # in:  rising edge starts an FFT
+  uio[7]: "resp_valid" # in:  MCU read-data on ui[7:0] is valid this cycle
+
+# Do not change!
+yaml_version: 6
