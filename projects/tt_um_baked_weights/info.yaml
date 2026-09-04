@@ -1,0 +1,85 @@
+# Tiny Tapeout project information — ttsky26c, 4x4 huge-module slot (decision 27), digital only.
+#
+# Schema: tt-support-tools/project_info.py (yaml_version 6). Every key below is
+# validated; `pinout` must list all 24 ui/uo/uio entries and no extras. `ua[*]`
+# is omitted deliberately: analog_pins is 0 and there is no analog template for this slot,
+# so the tile must have zero analog pins (docs/research/tt-platform.md 3).
+#
+# `top_module` must match the GDS top cell, the LibreLane DESIGN_NAME and the
+# module in src/tt_um_baked_weights.v, and must be unique across the shuttle.
+project:
+  title: "Baked-Weights Shakespeare GPT"
+  author: "Jai Agrawal"
+  discord: "geometrically"
+  description: "Ternary-weight transformer with the whole model baked into ROM: streams int16 residuals in, int8 residuals out, one token per transaction"
+  language: "Verilog"
+  clock_hz: 22222222
+
+  tiles: "4x4"
+
+  analog_pins: 0
+  uses_vapwr: false
+
+  top_module: "tt_um_baked_weights"
+
+  # GENERATED from the source list of the hardening run that built
+  # tt_submission/: the hand-written RTL plus the generated constant
+  # tables, all in ./src. The packaging step rewrites this list,
+  # so src/ cannot drift from the GDS beside it. Do not hand-edit either.
+  # tt-support-tools requires every entry to resolve under ./src.
+  # The list below is the sign-off build; make_submission.sh overwrites it from the packaged run.
+  source_files:
+    - "tt_um_baked_weights.v"
+    - "chip_core.v"
+    - "wrom_macro_ovf.v"
+    - "sequencer.v"
+    - "tmac.v"
+    - "trit_dec5.v"
+    - "rnd_shift.v"
+    - "mingru.v"
+    - "rmsnorm.v"
+    - "resid_add.v"
+    - "sqrelu.v"
+    - "sigmoid_lut.v"
+    - "rsqrt_lut.v"
+    - "norm_const.v"
+    - "norm_sh.v"
+    - "site_const.v"
+    - "mat_const.v"
+    - "gate_const.v"
+    - "wrom_ovf.v"
+
+# Normative source: docs/io-protocol.md 1. uio_oe is constant 8'b1110_0110.
+pinout:
+  # Inputs — one byte of the input residual vector, high byte of a lane first
+  ui[0]: "data_in[0]"
+  ui[1]: "data_in[1]"
+  ui[2]: "data_in[2]"
+  ui[3]: "data_in[3]"
+  ui[4]: "data_in[4]"
+  ui[5]: "data_in[5]"
+  ui[6]: "data_in[6]"
+  ui[7]: "data_in[7]"
+
+  # Outputs — one byte of the output residual vector, int8
+  uo[0]: "data_out[0]"
+  uo[1]: "data_out[1]"
+  uo[2]: "data_out[2]"
+  uo[3]: "data_out[3]"
+  uo[4]: "data_out[4]"
+  uo[5]: "data_out[5]"
+  uo[6]: "data_out[6]"
+  uo[7]: "data_out[7]"
+
+  # Bidirectional — handshake and phase observation
+  uio[0]: "in_valid (host drives)"
+  uio[1]: "in_ready (chip drives)"
+  uio[2]: "out_valid (chip drives)"
+  uio[3]: "out_ready (host drives)"
+  uio[4]: "sot, start of sequence (host drives)"
+  uio[5]: "dbg_busy (chip drives)"
+  uio[6]: "dbg_rx (chip drives)"
+  uio[7]: "dbg_tx (chip drives)"
+
+# Do not change!
+yaml_version: 6

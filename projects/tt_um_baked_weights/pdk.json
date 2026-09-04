@@ -1,0 +1,7 @@
+{
+  "FLOW_NAME": "LibreLane",
+  "FLOW_VERSION": "3.0.6",
+  "PDK": "sky130A",
+  "PDK_SOURCE": "open_pdks",
+  "PDK_VERSION": "0536d02d875c8f67dd7cca3902ac457e62f20005"
+}

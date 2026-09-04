@@ -1,0 +1,13 @@
+{
+  "app": "flow/package.sh (local harden, flow/README.md)",
+  "repo": "git@github.com:Geometrically/baked-weights.git",
+  "commit": "0a33bcf63605feacca60e59038a93ebcb166d879",
+  "dirty": true,
+  "workflow_url": "",
+  "config": "l2e40mlp2",
+  "run_tag": "ship",
+  "run_completed": true,
+  "librelane_version": "3.0.6",
+  "project_id": 5698,
+  "sort_id": 1788543049006
+}
