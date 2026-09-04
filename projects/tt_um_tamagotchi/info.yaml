@@ -1,0 +1,86 @@
+# Tiny Tapeout project information
+project:
+  title:        "TamaGotThis"      # Project title
+  author:       "Hui Yi, Manou, Maja, Storm"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Renders a tamagotchi cat to a VGA screen and allows you to interact with it."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25175000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_tamagotchi"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "game_controller.v"
+    - "main_controller.v"
+    - "timer.v"
+    - "vga.v"
+    - "hvsync_generator.v"
+    - "settings_manager.v"
+    - "clock_divider.v"
+    - "minigame.v"
+    - "lfsr32.v"
+    - "audio.v"
+    - "play_note.v"
+
+    - "palette_cat.v"
+    - "palette_fish.v"
+    - "palette_heart.v"
+    - "palette_battery.v"
+    - "palette_z.v"
+    - "palette_eyes.v"
+    - "palette_playing.v"
+    - "palette_star.v"
+
+    - "rom_battery.v"
+    - "rom_cat_dead_eye.v"
+    - "rom_cat_sleep_eye.v"
+    - "rom_cat_raised_ear.v"
+    - "rom_hart.v"
+    - "rom_kat.v"
+    - "rom_vis.v"
+    - "rom_z.v"
+    - "rom_star.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: "gamepad_pmod_latch"
+  ui[5]: "gamepad_pmod_clk"
+  ui[6]: "gamepad_pmod_data"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "VS"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "HS"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: "AudioPWM"
+
+# Do not change!
+yaml_version: 6
