@@ -1,0 +1,97 @@
+177. Printing statistics.
+
+=== tt_um_baked_weights ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    15506        - wires
+    15541        - wire bits
+     3247        - public wires
+     3282        - public wire bits
+        8        - ports
+       43        - port bits
+    15515 1.81E+05 cells
+        7   87.584   sky130_fd_sc_hd__a2111o_2
+        1   15.014   sky130_fd_sc_hd__a2111oi_2
+      165 1.65E+03   sky130_fd_sc_hd__a211o_2
+       76  950.912   sky130_fd_sc_hd__a211oi_2
+      117 1.17E+03   sky130_fd_sc_hd__a21bo_2
+       45  506.736   sky130_fd_sc_hd__a21boi_2
+      529 4.63E+03   sky130_fd_sc_hd__a21o_2
+      731  6402.39   sky130_fd_sc_hd__a21oi_2
+       82  923.386   sky130_fd_sc_hd__a221o_2
+        4   60.058   sky130_fd_sc_hd__a221oi_2
+      793 7.94E+03   sky130_fd_sc_hd__a22o_2
+       61  763.232   sky130_fd_sc_hd__a22oi_2
+       45  506.736   sky130_fd_sc_hd__a2bb2o_2
+        2   30.029   sky130_fd_sc_hd__a2bb2oi_2
+       30  337.824   sky130_fd_sc_hd__a311o_2
+        6   90.086   sky130_fd_sc_hd__a311oi_2
+      274  2.4E+03   sky130_fd_sc_hd__a31o_2
+       14  175.168   sky130_fd_sc_hd__a31oi_2
+       45  506.736   sky130_fd_sc_hd__a32o_2
+        2   32.531   sky130_fd_sc_hd__a32oi_2
+       18  202.694   sky130_fd_sc_hd__a41o_2
+        3   48.797   sky130_fd_sc_hd__a41oi_2
+      435 3.27E+03   sky130_fd_sc_hd__and2_2
+      144  1261.21   sky130_fd_sc_hd__and2b_2
+      357  2680.07   sky130_fd_sc_hd__and3_2
+       62  620.595   sky130_fd_sc_hd__and3b_2
+      100  1000.96   sky130_fd_sc_hd__and4_2
+        3   33.782   sky130_fd_sc_hd__and4b_2
+        8  100.096   sky130_fd_sc_hd__and4bb_2
+       20  100.096   sky130_fd_sc_hd__buf_2
+       11    41.29   sky130_fd_sc_hd__conb_1
+     3120 6.64E+04   sky130_fd_sc_hd__dfxtp_2
+      100        -   sky130_fd_sc_hd__dlclkp_1
+      245  919.632   sky130_fd_sc_hd__inv_2
+     2213 2.49E+04   sky130_fd_sc_hd__mux2_1
+      138 3.11E+03   sky130_fd_sc_hd__mux4_2
+      858 5.37E+03   sky130_fd_sc_hd__nand2_2
+      119  1042.25   sky130_fd_sc_hd__nand2b_2
+      216 2.16E+03   sky130_fd_sc_hd__nand3_2
+       27  304.042   sky130_fd_sc_hd__nand3b_2
+       62  775.744   sky130_fd_sc_hd__nand4_2
+        1   15.014   sky130_fd_sc_hd__nand4b_2
+     1411 8.83E+03   sky130_fd_sc_hd__nor2_2
+       85  850.816   sky130_fd_sc_hd__nor3_2
+        7   87.584   sky130_fd_sc_hd__nor3b_2
+       15   187.68   sky130_fd_sc_hd__nor4_2
+        1   15.014   sky130_fd_sc_hd__nor4b_2
+        7   87.584   sky130_fd_sc_hd__o2111a_2
+        1   15.014   sky130_fd_sc_hd__o2111ai_2
+      227 2.27E+03   sky130_fd_sc_hd__o211a_2
+       56  700.672   sky130_fd_sc_hd__o211ai_2
+      213 1.87E+03   sky130_fd_sc_hd__o21a_2
+      312 2.73E+03   sky130_fd_sc_hd__o21ai_2
+       80  800.768   sky130_fd_sc_hd__o21ba_2
+       38   427.91   sky130_fd_sc_hd__o21bai_2
+       77  867.082   sky130_fd_sc_hd__o221a_2
+        2   30.029   sky130_fd_sc_hd__o221ai_2
+       65  650.624   sky130_fd_sc_hd__o22a_2
+       10   125.12   sky130_fd_sc_hd__o22ai_2
+       33  371.606   sky130_fd_sc_hd__o2bb2a_2
+       50   563.04   sky130_fd_sc_hd__o311a_2
+        1   16.266   sky130_fd_sc_hd__o311ai_2
+       73  730.701   sky130_fd_sc_hd__o31a_2
+       10   125.12   sky130_fd_sc_hd__o31ai_2
+       48  540.518   sky130_fd_sc_hd__o32a_2
+        1   16.266   sky130_fd_sc_hd__o32ai_2
+        2   25.024   sky130_fd_sc_hd__o41a_2
+      534 3.34E+03   sky130_fd_sc_hd__or2_2
+      200  1501.44   sky130_fd_sc_hd__or3_2
+       58  507.987   sky130_fd_sc_hd__or3b_2
+       54  472.954   sky130_fd_sc_hd__or4_2
+       17  170.163   sky130_fd_sc_hd__or4b_2
+        7   87.584   sky130_fd_sc_hd__or4bb_2
+      370 6.02E+03   sky130_fd_sc_hd__xnor2_2
+      160  2.6E+03   sky130_fd_sc_hd__xor2_2
+        1        -   wrom_b0
+
+   Area for cell type \sky130_fd_sc_hd__dlclkp_1 is unknown!
+   Area for cell type \wrom_b0 is unknown!
+
+   Chip area for module '\tt_um_baked_weights': 181148.736000
+     of which used for sequential elements: 66363.648000 (36.63%)
+
