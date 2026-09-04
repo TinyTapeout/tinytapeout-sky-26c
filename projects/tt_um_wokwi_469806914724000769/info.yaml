@@ -1,12 +1,12 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
   wokwi_id: "469806914724000769" # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title: "Simple Spinner" # Project title
+  title: "Spin and Text" # Project title
   author: "Michael Pucher" # Your name
   discord: "cluosh" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "Spinning the seven segment display" # One line description of what your project does
+  description: "Making the seven segment display spin around and showing some simple text" # One line description of what your project does
   language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz: 10000 # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz: 4096 # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -15,34 +15,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "unused"
+  ui[1]: "unused"
+  ui[2]: "unused"
+  ui[3]: "unused"
+  ui[4]: "unused"
+  ui[5]: "unused"
+  ui[6]: "unused"
+  ui[7]: "unused"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "sevseg1:A"
+  uo[1]: "sevseg1:B"
+  uo[2]: "sevseg1:C"
+  uo[3]: "sevseg1:D"
+  uo[4]: "sevseg1:E"
+  uo[5]: "sevseg1:F"
+  uo[6]: "sevseg1:G"
+  uo[7]: "sevseg1:DP"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "unused"
+  uio[1]: "unused"
+  uio[2]: "unused"
+  uio[3]: "unused"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
 
 # Do not change!
 yaml_version: 6
