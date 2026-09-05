@@ -18,10 +18,10 @@ pinout:
   ui[1]: "Scroll speed bit 1"
   ui[2]: "Pause scrolling"
   ui[3]: "UART RX"
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[4]: "Text colour bit 0"
+  ui[5]: "Text colour bit 1"
+  ui[6]: "Background colour bit 0"
+  ui[7]: "Background colour bit 1"
 
   # Outputs: TinyVGA RGB222 mapping
   uo[0]: "VGA R1"
