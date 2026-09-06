@@ -120,7 +120,8 @@ The simulated IPTAT is not so linear, but may work well enough in the 0°-100°C
 
 ### Theory
 
-The oscillator is based on [Milestone 2](https://analogicus.com/aic2026/the_project#milestone-2-the-oscillator)
+The oscillator is based on [Milestone 2](https://analogicus.com/aic2026/the_project#milestone-2-the-oscillator):
+
 
 where the capacitor is charged by a PTAT current up to a CTAT voltage, both of which are supplied by the bandgap. The inverters provide a slight delay for the comparator to fully discharge the capacitor, restarting the cycle.
 
