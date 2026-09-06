@@ -5,7 +5,7 @@ project:
   discord: "tiles_os"
   description: "Two ADC architectures share one analog input: a VCO pulse-frequency path and a first-order switched-capacitor delta-sigma bitstream, with a buffered analog loop monitor."
   language: "Analog"
-  clock_hz: 1000000
+  clock_hz: 500000
 
   # A SKY130 2x2 analog template has a 334.88 x 225.76 um die area.
   tiles: "2x2"
