@@ -61,7 +61,7 @@ During the sample/evaluate portion of a cycle, the input and DAC capacitors
 sample their references while the StrongARM comparator updates a static held
 decision latch. During integration, charge is transferred into `Cf`; the
 previously held decision selects either VGND or VDPWR for negative feedback.
-On-chip non-overlap logic derives every phase from the external 1 MHz `clk`.
+On-chip non-overlap logic derives every phase from the external 500 kHz `clk`.
 
 A buffered 11:1:12 supply-tracking ladder generates nominal
 `VCM=0.900 V` and `VINC=0.975 V`. The integrator monitor reaches `ua[1]` only
@@ -75,7 +75,7 @@ through a high-input-impedance buffer.
 | `ua[1]` | analog output | Buffered delta-sigma loop-state monitor |
 | `uo_out[0]` | digital output | Raw VCO pulse train |
 | `uo_out[1]` | digital output | Raw delta-sigma one-bit stream |
-| `clk` | digital input | Nominal 1 MHz delta-sigma sample clock |
+| `clk` | digital input | 500 kHz, 50% duty delta-sigma sample clock |
 | `rst_n` | digital input | Active-low delta-sigma reset |
 | `VDPWR` | power | Nominal 1.8 V supply |
 | `VGND` | power | Ground |
@@ -92,13 +92,25 @@ analog pads remain isolated.
 | Shared input range | 0.750--1.200 V |
 | Input/reference center | 0.975 V |
 | Internal common mode | 0.900 V nominal |
-| Delta-sigma clock | 1 MHz nominal |
+| Delta-sigma clock | 500 kHz, 50% duty |
 | Feedback DAC levels | 0 V / 1.8 V |
-| Shaping record | 8,192 output bits, OSR 128, 1220.703125 Hz tone |
+| Shaping test target | 8,192 output bits, OSR 128, 1220.703125 Hz tone |
 
 The input range is an absolute single-ended voltage range, not a differential
 common-mode specification. Keep `ua[0]` inside this range and use a stable,
-low-impedance source.
+low-impedance source. The characterized clock has 50% duty; the available 40%
+and 60% controls generally violate phase or timing limits and do not establish
+a duty-cycle tolerance. Do not use 1 MHz as an unconditional PVT operating
+point: extracted passive-corner checks lose timing margin at HH and suppress
+evaluation at SS_HH.
+
+At 500 kHz/50% duty, the extracted clock block passes all 24 legal installed
+MOS/passive model sections both at their screened supply/temperature defaults
+and at 1.8 V/27 C. A separate SS_HH check at 1.62 V/125 C passes all 15
+combinations of 0.1/1/10 ns clock edges and five reset-release phases. The
+short final-top SS_HH check produces valid, monotonic decisions at 0.750,
+0.975, and 1.200 V. These deterministic simulations establish the bring-up
+mode; they do not specify statistical yield or a guaranteed clock tolerance.
 
 The tables below collect the production-facing simulation and extracted-layout
 results used for signoff. Intermediate bring-up sweeps and deliberately broken
@@ -193,7 +205,47 @@ silicon mismatch.
 
 ## Delta-sigma characterization
 
-### DC transfer and startup
+### Selected 500 kHz operating point
+
+At the screened SS_HH passive/process corner, 1.62 V, and 125 C, complete
+2,048-bit final-top records are monotonic across the input range:
+
+| `ua[0]` | Density | Longest run | Continuous state | Solver |
+|---:|---:|---:|---:|---|
+| 0.750 V | 0.360352 | 2 | 0.65553--0.91835 V | second-order Gear |
+| 0.975 V | 0.603027 | 2 | 0.68400--0.94734 V | ngspice default |
+| 1.200 V | 0.846680 | 6 | 0.70987--0.97309 V | ngspice default |
+
+All retained samples are valid logic values, both decisions occur at every
+input, and the continuous loop state stays inside the registered
+`VDD/2 +/- 0.3 V` window. The low-input default-method run stopped in a VPP
+model square-root/timestep failure after 1,633 valid samples; the complete
+Gear rerun is retained as a numerical control rather than treating ngspice's
+zero process status as success.
+
+Eight separate SS_HH/1.62 V/125 C final-top cases pass the registered recovery
+and interface limits: baseline startup, a warm reset, clock stop/restart, reset
+before clock start, a 50 us supply ramp, delayed input application, explicit
+pin loading, and a bounded 5 ohm external supply. The interface case includes
+500 ohm/5 pF at `ua[0]`, 1 kohm/0.245 pF at `clk`, and 50 fF at each digital
+output. Every case returns valid logic with both decisions, bounded state and
+references, full VCO swing, and less than 0.619 mA simulated peak supply
+current. These are deterministic extracted simulations, not package or board
+qualification.
+
+A complete selected-point 8,192-bit shaping record is unavailable. The default
+ngspice transient remained functional for 3,344 retained bits, then stopped in
+a VPP model square-root/timestep failure. A second-order Gear rerun reached its
+fixed six-hour timeout without producing a complete stream. No current
+transistor-level SNDR, ENOB, SFDR, THD, or shaping-slope value is claimed. Use
+the 500 kHz setting for screened functional bring-up and characterize converter
+performance on returned silicon before relying on an accuracy or noise figure.
+
+### Historical nominal-clock DC transfer and startup
+
+The tables in this subsection are retained nominal-condition results from the
+earlier 1 MHz characterization. They do not override the 500 kHz/50% duty
+operating point above or establish 1 MHz operation across PVT.
 
 The final 2,048-bit extracted DC/reset/held-decision gate produced monotonic
 density at all three input points:
@@ -253,7 +305,12 @@ threshold shift:
 This is a deterministic robustness allocation, not a statistical
 mismatch-yield claim.
 
-### Noise shaping
+### Historical nominal-clock noise shaping
+
+The original transistor bitstreams behind this table were not retained. A
+later audit found that the analysis helper included out-of-band harmonic power
+in its in-band distortion sum, so the numerical SNDR/ENOB values below are
+historical and unrecomputed. They are not supported performance claims.
 
 | Extracted 8,192-bit case | Slope | SNDR | ENOB estimate | Continuous state |
 |---|---:|---:|---:|---:|
@@ -294,17 +351,21 @@ and is not used as signoff evidence.
 
 1. Apply 1.8 V to VDPWR and connect VGND. Select/enable the project through
    the Tiny Tapeout multiplexer.
-2. Hold `rst_n` low, apply a nominal 1 MHz clock to `clk`, then release reset.
-   The VCO path does not require the clock or reset.
+2. Hold `rst_n` low and apply a 500 kHz clock with 50% duty to `clk`. Keep reset
+   asserted for at least four complete clock cycles, then release it away from
+   a clock transition. The VCO path does not require the clock or reset.
 3. Drive `ua[0]` from a stable, low-impedance source between 0.750 and 1.200 V.
 4. Capture rising edges on `uo_out[0]`. Calibrate each die with known voltages
    before converting edge counts to input voltage.
-5. Capture `uo_out[1]` and apply an off-chip low-pass/decimation filter. Use
-   the raw density checks above as an initial bring-up test.
+5. Wait at least 128 complete cycles after reset release, clock restart, or a
+   material input step. Capture one `uo_out[1]` value per clock cycle, preserve
+   the raw stream, and apply an off-chip low-pass/decimation filter. An OSR-128
+   block average produces 3,906.25 output samples/s. Use raw density as an
+   initial bring-up check.
 6. If needed, observe `ua[1]` with a high-impedance instrument. Do not heavily
    load this diagnostic output.
 
-Suggested equipment is a stable analog source, a 1 MHz clock source, a logic
+Suggested equipment is a stable analog source, a 500 kHz clock source, a logic
 analyzer or FPGA/MCU counter, and a high-impedance oscilloscope or ADC for the
 monitor pin.
 
@@ -316,8 +377,9 @@ Foundry-model mismatch seeds were not sufficiently reproducible to support a
 yield percentile, and physical VCO jitter/phase noise is deferred to silicon.
 Consequently no VCO-path SNR, SNDR, THD, or ENOB is claimed here.
 
-The delta-sigma SNDR and ENOB values describe one finite extracted simulation
-record at the stated tone, clock, OSR, and nominal condition. They do not
-include board noise, clock jitter, source distortion, package effects, or
-statistical mismatch. Characterize both paths on returned silicon before using
-these figures as measured performance.
+The historical delta-sigma SNDR and ENOB values came from one finite extracted
+simulation record at the stated tone, clock, OSR, and nominal condition. The
+raw record is unavailable for corrected reanalysis, so those values are not a
+current performance claim. They also omitted board noise, clock jitter, source
+distortion, package effects, and statistical mismatch. Characterize both paths
+on returned silicon before assigning measured performance.
