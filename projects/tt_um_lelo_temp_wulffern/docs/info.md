@@ -27,7 +27,7 @@ temperature.
 <sub> Figure 0: System overview </sub>
 
 This temperature sensor was made to conform to the specification at [The
-Project: Design a temperature sensor](https://analogicus.com/aic2026/2026/01/09/The-Project.html#the-project-design-a-temperature-sensor).
+Project: Design a temperature sensor](https://analogicus.com/aic2026/the_project#the-project).
 
 For more information on the oscillator, see [Schematics](http://analogicus.com/lelo_temp_sky130a/schematic.html).
 
@@ -40,7 +40,7 @@ higher than 20 kHz, so we can't hear it (according to <https://youtu.be/_2By2ane
 
 The principle of operation of the FSM and counter can be seen in Figure 1. 
 
-The FSM starts in a IDLE state where a counter is reset. Next the temperature dependent oscillator is
+The FSM starts in an IDLE state where a counter is reset. Next the temperature dependent oscillator is
 started, and a number of oscillator pulses are counted. The FSM runs on LF_CLK
 and we use the count x LF_CLK to measure the oscillation frequency. 
 
@@ -92,7 +92,7 @@ of the curve needs to be compensated for. See the python model for details.
 Power the tile, then drive PWRUP_ANA (ui[0]) high to
 power the analog core up. The temperature-dependent oscillator output
 appears on OSC_TEMP (uo[0]); measure its frequency with a counter or a
-logic analyzer. The frequency tracks temperaturw. Aweep the ambient
+logic analyzer. The frequency tracks temperature. Sweep the ambient
 and record frequency versus temperature to calibrate. Drive PWRUP_ANA
 low and the core powers down to leakage.
 
@@ -109,12 +109,23 @@ No external hardware is required beyond something that can measure frequency.
 
 # Key parameters
 
-| Parameter             | Min | Typ             | Max | Unit |
-|:----------------------|:---:|:---------------:|:---:|:----:|
-| Technology            |     | Skywater 130 nm |     |      |
-| AVDD                  | 1.7 | 1.8             | 1.9 | V    |
-| Oscillation frequency | 1.7 | 3.0             | 4.0 | MHz  |
-| Temperature           | -40 | 27              | 125 | C    |
+| Parameter                       | Min  | Typ             | Max  | Unit |
+|:--------------------------------|:----:|:---------------:|:----:|:----:|
+| Technology                      |      | Skywater 130 nm |      |      |
+| AVDD                            | 1.7  | 1.8             | 1.9  | V    |
+| Temperature                     | -40  | 27              | 125  | C    |
+| Oscillation frequency           | 1.1  | 2.0             | 4.0  | MHz  |
+| Supply current (25 C)           | 63   | 83              | 107  | uA   |
+| Power-down current (25 C)       | 10   | 11              | 50   | nA   |
+| Temperature error, 1-point cal. | -6.7 |                 | +9.1 | C    |
+| Temperature error, 2-point cal. | -7.3 |                 | +5.3 | C    |
+
+Measured on the extracted view over the full industrial temperature
+range (-40 to 125 C): Typ is typical process at 1.8 V and 27 C (the
+typical frequency runs 1.4 to 3.2 MHz over that range); Min/Max span
+the extreme test condition corners (process corners at 1.7 to 1.9 V).
+Over the commercial range (0 to 70 C) the temperature error is
+-3.7..+2.9 C (1-point) and -1.9..+1.5 C (2-point).
 
 # Simulation graphs
 
@@ -134,10 +145,12 @@ which is the point of calibrating:
 
 <sub> Figure 4: Oscillator frequency versus temperature, typical</sub>
 
-Typical temperature error of the sensor is low, but I've calibrated the
-second order correction for typical *schematic* conditions, so the Lay
-one-point error carries the residual curvature the calibration no
-longer matches:
+Typical temperature error of the sensor is low. The frequency-to-
+temperature model is calibrated per netlist view (the effective
+oscillator capacitance is fitted from the typical run -- see
+`LELO_TEMP.FIT` in [py/LELO_TEMP.py](py/LELO_TEMP.py)), so both views
+show only the real residual curvature, about ±1 C after one-point
+calibration:
 
 ![](tran_err_typical.png)
 
