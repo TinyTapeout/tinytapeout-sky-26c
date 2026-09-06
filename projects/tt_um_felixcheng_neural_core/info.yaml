@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "Neural Compute Core (V0.15)"
+  author:       "Felix Cheng"
+  discord:      ""
+  description:  "Pipelined 50 MHz byte-stream int8 MAC engine on a single tile: single int32 accumulator, streaming vector-MAC (MACV), a toggle-able WIDE-input mode (WMACV, 2x throughput, time-shares the debug pins), saturating accumulator, and a SPILL opcode reading the raw int32 accumulator out (host does bias/requant/activation). MISR self-test + serial debug — a hardware MAC core for a compiler/MLIR co-design stack"
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_felixcheng_neural_core"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank.
+pinout:
+  # Inputs — instruction/operand byte bus (debug mode: ui[3:0] selects a debug register)
+  ui[0]: "IN_D0 / DBG_A0"
+  ui[1]: "IN_D1 / DBG_A1"
+  ui[2]: "IN_D2 / DBG_A2"
+  ui[3]: "IN_D3 / DBG_A3"
+  ui[4]: "IN_D4"
+  ui[5]: "IN_D5"
+  ui[6]: "IN_D6"
+  ui[7]: "IN_D7"
+
+  # Outputs — result byte (normal) or selected debug register (debug mode)
+  uo[0]: "OUT_D0"
+  uo[1]: "OUT_D1"
+  uo[2]: "OUT_D2"
+  uo[3]: "OUT_D3"
+  uo[4]: "OUT_D4"
+  uo[5]: "OUT_D5"
+  uo[6]: "OUT_D6"
+  uo[7]: "OUT_D7"
+
+  # Bidirectional — control in [1:0], status out [5:2] normally; during a WMACV
+  # wide burst ALL uio[7:0] flip to inputs and carry the weight byte (W0..W7).
+  uio[0]: "IN_VALID (in) / W0 (wide)"
+  uio[1]: "DBG_EN (in) / W1 (wide)"
+  uio[2]: "OUT_VALID (out) / W2 (wide)"
+  uio[3]: "DONE (out) / W3 (wide)"
+  uio[4]: "BUSY (out) / W4 (wide)"
+  uio[5]: "ERROR (out) / W5 (wide)"
+  uio[6]: "W6 (wide weight)"
+  uio[7]: "W7 (wide weight)"
+
+# Do not change!
+yaml_version: 6
