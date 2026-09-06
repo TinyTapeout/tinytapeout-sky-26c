@@ -1,0 +1,79 @@
+# Tiny Tapeout project information
+project:
+  title:        "WISH"      # Project title
+  author:       "Annabel Laneau, Wout Helsen, Sixten Strobbe, Hanne Vercammen, Isabelle Boogaerts"      # Your name
+  discord:      "/"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A pet dragon to keep alive and play with!"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "4x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_dragonochi"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "anim.v"
+    - "balance.v"
+    - "buttons.v"
+    - "chest_draw.v"
+    - "chest_game.v"
+    - "chest_menu.v"
+    - "coinbar.v"
+    - "dragon_draw.v"
+    - "dragon_state.v"
+    - "draw_buttons.v"
+    - "dual_lfsr.v"
+    - "feed_fx.v"
+    - "hearts.v"
+    - "home.v"
+    - "hvsync_generator.v"
+    - "icon_draw.v"
+    - "project.v"
+    - "renderer.v"
+    - "satisfactionbar.v"
+    - "sprites.v"
+    - "title_card.v"
+    - "title_egg.v"
+    - "water_fx.v"
+
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: "up/evolve"
+  ui[2]: ""
+  ui[3]: "down"
+  ui[4]: "feed"
+  ui[5]: "drink"
+  ui[6]: "select/sleep"
+  ui[7]: "back/play"
+
+  # Outputs
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "vsync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "hsync"
+
+  # Bidirectional pins
+  uio[0]: "mode[0]"
+  uio[1]: "mode[1]"
+  uio[2]: "mode[2]"
+  uio[3]: "chest_state[0]"
+  uio[4]: "chest_state[1]"
+  uio[5]: "fx_on"
+  uio[6]: "evolve_now"
+  uio[7]: "overflow"
+
+# Do not change!
+yaml_version: 6
