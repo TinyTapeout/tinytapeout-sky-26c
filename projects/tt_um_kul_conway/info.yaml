@@ -1,0 +1,74 @@
+# Tiny Tapeout project information
+project:
+  title: "Interactive Conway's Game of Life" # Project title
+  author: "Mathias Van Nuland, Sander Vanlessen, Sieben De Witte" # Your name
+  discord: "mathiasvan" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "Interactive VGA Conway's Game of Life on Tiny Tapeout with toggleable bounded/toroidal modes and cursor-based cell editing." # One line description of what your project does
+  language: "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 25175000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_kul_conway"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.sv"
+    - "sim_speed.sv"
+    - "logica/L_controller.sv"
+    - "project_datapath.sv"
+    - "project_controller.sv"
+    - "next_iter_countdown.sv"
+    - "vga/vga_get_cell_idx.sv"
+    - "vga/vga_get_cell_type.sv"
+    - "vga/vga_get_pixel_color.sv"
+    - "vga/vga_hvsync_generator.sv"
+    - "vga/vga.sv"
+    - "logica/L_datapath.sv"
+    - "logica/L_decider.sv"
+    - "logica/L_main.sv"
+    - "logica/L_rowcol_counter.sv"
+    - "register_board/register_board.sv"
+    - "Input/Input.sv"
+    - "Input/Debouncer.sv"
+    - "Input/Edge_detection.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "button_up"
+  ui[1]: "button_down"
+  ui[2]: "button_left"
+  ui[3]: "button_right"
+  ui[4]: "button_set"
+  ui[5]: "button_start_stop"
+  ui[6]: "button_cursor_on_off"
+  ui[7]: "button_bounded_board" # switch between 'TORUS' and 'BOUNDED' modes
+
+  # Outputs
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "vsync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "hsync"
+
+  # Bidirectional pins (all input)
+  uio[0]: "button_speed_sim_up"
+  uio[1]: "button_speed_sim_down"
+  uio[2]: "button_reset"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: "testing" # makes the simulation update once per frame, useful in tests
+
+# Do not change!
+yaml_version: 6
