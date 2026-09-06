@@ -44,7 +44,7 @@ The Tiny Tapeout Nova CPU is fully programmable assuming a QSPI PMOD is being us
 
 1. **Fetching**: When power is applied and reset is released, the CPU begins reading 16-bit instruction words from the Flash ROM.
 2. **Processing**: The CPU decodes each instruction and carries out arithmetic, logic, or data transfers using its internal general-purpose registers (`AC0` and `AC1`). Temporary data and variables are stored in PSRAM. Much like the original Nova 1200, the Tiny Tapeout implementation of the CPU processes 16-bit math 4 bits at a time.
-3. **Communicating**: The chip includes a built-in serial UART transceiver (19,200 Baud). When a program wants to print text or wait for input, it communicates over `ui_in[0]` and `uo_out[0]`. This allows for interactive terminal I/O, which the example program below demonstrates.
+3. **Communicating**: The chip includes a built-in serial UART transceiver operating at 19,200 Baud at the standard 1.5 MHz demoboard clock. The baud rate is determined by a fixed hardware clock divider of 78 cycles per bit ($\text{Baud} = f_{\text{clk}} / 78$). When a program wants to print text or wait for input, it communicates over `ui_in[0]` (RX) and `uo_out[0]` (TX). This allows for interactive terminal I/O, which the example program below demonstrates.
 4. **Blinkenlights**: As the CPU runs, it drives diagnostic blinkenlight signals on the output pins (`uo_out[7:1]`), using the demoboard's 7-segment display to show the CPU's major cycle, active instruction class, UART send/receive status, and halt status.
 
 ```text
@@ -83,10 +83,10 @@ ASM_SOURCE = """
 ; interactive UART echo
 START:  SKPDN 010        ; check if char was received on UART RX (Dev 0o10)
         JMP   START      ; wait for char
-        DIA   0, 010     ; read char into AC0 (clears RX done flag)
+        DIAC  0, 010     ; read char into AC0 (clears RX done flag)
 WAIT:   SKPBZ 011        ; wait until UART TX (Dev 0o11) is ready
         JMP   WAIT       ; wait
-        DOA   0, 011     ; echo char back out via UART TX
+        DOAS  0, 011     ; echo char back out via UART TX (with start pulse)
         JMP   START      ; loop indefinitely for next char
 """
 
@@ -100,17 +100,36 @@ def assemble_nova(source_text):
     cleaned = []
     pc = 0
     
+    def parse_string_bytes(s):
+        m = re.search(r'"([^"\\]*(?:\\.[^"\\]*)*)"', s)
+        if not m: return []
+        content = m.group(1).encode('utf-8').decode('unicode_escape')
+        byte_list = [ord(c) for c in content] + [0]
+        words = []
+        for i in range(0, len(byte_list), 2):
+            b_hi = byte_list[i]
+            b_lo = byte_list[i+1] if (i+1 < len(byte_list)) else 0
+            words.append((b_hi << 8) | b_lo)
+        return words
+
     # pass 1: strip comments, extract labels, map PC
     for raw in lines:
         line = re.sub(r'[;#].*$', '', raw).strip()
         if not line: continue
-        while ':' in line:
-            lbl, line = line.split(':', 1)
-            labels[lbl.strip()] = pc
-            line = line.strip()
+        while True:
+            m_lbl = re.match(r'^([A-Za-z0-9_]+):\s*(.*)$', line)
+            if m_lbl:
+                labels[m_lbl.group(1)] = pc
+                line = m_lbl.group(2).strip()
+            else:
+                break
         if line:
             cleaned.append((pc, line))
-            pc += 1
+            if line.upper().startswith('.STRING') or line.upper().startswith('.TXT'):
+                str_words = parse_string_bytes(line)
+                pc += max(1, len(str_words))
+            else:
+                pc += 1
             
     # instruction lookup
     alc_ops = {'COM':0, 'NEG':1, 'MOV':2, 'INC':3, 'ADC':4, 'SUB':5, 'ADD':6, 'AND':7}
@@ -135,6 +154,12 @@ def assemble_nova(source_text):
 
     # pass 2: encode instructions into 16-bit binary words
     for curr_pc, line in cleaned:
+        if line.upper().startswith('.STRING') or line.upper().startswith('.TXT'):
+            words = parse_string_bytes(line)
+            for idx, w in enumerate(words):
+                rom[curr_pc + idx] = w & 0xFFFF
+            continue
+
         if line.upper().startswith('.WORD'):
             val_str = line.split(None, 1)[1]
             rom[curr_pc] = resolve_val(val_str, curr_pc) & 0xFFFF
@@ -159,12 +184,15 @@ def assemble_nova(source_text):
             rom[curr_pc] = (0 << 0) | (3 << 1) | (0 << 3) | (7 << 5) | (ctrl << 8) | ((dev & 0x3F) << 10)
             continue
             
-        # I/O data transfer
-        if mnemonic in io_trans:
-            trans = io_trans[mnemonic]
-            ac = int(args[0].replace('AC', ''))
-            dev = int(args[1], 8) if args[1].startswith('0') else int(args[1])
-            rom[curr_pc] = (0 << 0) | (3 << 1) | ((ac & 1) << 3) | ((trans & 7) << 5) | (0 << 8) | ((dev & 0x3F) << 10)
+        # I/O data transfer instructions (DIA, DOA, NIO, DIAS, DIAC, DOAS, DOAC, etc.)
+        base_io = mnemonic[:3]
+        suffix_io = mnemonic[3:] if len(mnemonic) > 3 else ''
+        if base_io in io_trans and suffix_io in ('', 'S', 'C', 'P'):
+            trans = io_trans[base_io]
+            ctrl = {'':0, 'S':1, 'C':2, 'P':3}[suffix_io]
+            ac = int(args[0].replace('AC', '')) if base_io != 'NIO' else 0
+            dev = int(args[1], 8) if (len(args) > 1 and args[1].startswith('0')) else (int(args[1]) if len(args) > 1 else int(args[0], 8))
+            rom[curr_pc] = (0 << 0) | (3 << 1) | ((ac & 3) << 3) | ((trans & 7) << 5) | ((ctrl & 3) << 8) | ((dev & 0x3F) << 10)
             continue
             
         # MRC
@@ -175,16 +203,29 @@ def assemble_nova(source_text):
                 break
         if base_mrc:
             indir = 1 if ('@' in mnemonic or any('@' in a for a in args)) else 0
-            clean_args = [a.replace('@', '').replace('AC', '') for a in args]
+            clean_args = [re.sub(r'^AC(?=[0-3]|$)', '', a.replace('@', ''), flags=re.I) for a in args]
             mode, func = mrc_ops[base_mrc]
             if mode == 0:
                 func_or_ac = func
                 target = clean_args[0]
-                index = int(clean_args[1]) if len(clean_args) > 1 else 0
             else:
                 func_or_ac = int(clean_args[0])
                 target = clean_args[1]
-                index = int(clean_args[2]) if len(clean_args) > 2 else 0
+
+            explicit_index = len(clean_args) > (1 if mode == 0 else 2)
+            if explicit_index:
+                index = int(clean_args[1 if mode == 0 else 2])
+            else:
+                if target.startswith('.'):
+                    index = 1
+                else:
+                    addr_val_temp = resolve_val(target, curr_pc)
+                    if addr_val_temp < 256:
+                        index = 0
+                    elif -128 <= (addr_val_temp - (curr_pc + 1)) <= 127:
+                        index = 1
+                    else:
+                        index = 0
                 
             addr_val = resolve_val(target, curr_pc)
             disp = (addr_val - (curr_pc + 1)) if index == 1 else addr_val
@@ -199,11 +240,11 @@ def assemble_nova(source_text):
             shift = alc_shifts.get(sh_str, 0)
             carry = alc_carries.get(c_str, 0)
             no_load = 1 if nl_str == '#' else 0
-            clean_args = [a.replace('AC', '') for a in args]
+            clean_args = [re.sub(r'^AC(?=[0-3]|$)', '', a, flags=re.I) for a in args]
             acs = int(clean_args[0])
             acd = int(clean_args[1])
             skip = alc_skips.get(clean_args[2].upper(), 0) if len(clean_args) > 2 else 0
-            rom[curr_pc] = (1 << 0) | ((acs & 1) << 1) | ((acd & 1) << 3) | ((op & 7) << 5) | ((shift & 3) << 8) | ((carry & 3) << 10) | ((no_load & 1) << 12) | ((skip & 7) << 13)
+            rom[curr_pc] = (1 << 0) | ((acs & 3) << 1) | ((acd & 3) << 3) | ((op & 7) << 5) | ((shift & 3) << 8) | ((carry & 3) << 10) | ((no_load & 1) << 12) | ((skip & 7) << 13)
             continue
             
         raise ValueError(f"unknown instruction at line {curr_pc}: {line}")
@@ -235,13 +276,14 @@ python make_rom.py my_program.asm
 
 ### Step 2: Test on the Tiny Tapeout demoboard
 
-1. **Plug in the QSPI PMOD**: Insert the Tiny Tapeout Flash/PSRAM QSPI PMOD into the `uio` connector.
-2. **Flash the ROM**:
-   * **Tiny Tapeout webapp**: Open [app.tinytapeout.com](https://app.tinytapeout.com), select this project, and flash `rom.bin` to the PMOD.
+1. **Plug in the QSPI PMOD**: Insert the official Tiny Tapeout Flash/PSRAM QSPI PMOD into the **BIDIR (`uio`) PMOD connector**.
+2. **Set DIP Switches to OFF**: Ensure all 8 input DIP switches (`ui[7:0]`) on the demoboard are set to **OFF**. Specifically, DIP switch 1 (`ui[0]`) connects to UART RX; leaving it ON will clamp the line and prevent keyboard input from reaching the CPU.
+3. **Flash the ROM**:
+   * **Tiny Tapeout webapp**: Open [app.tinytapeout.com](https://app.tinytapeout.com), select this project (`tt_um_x4ntha_nova`), and flash `rom.bin` to the PMOD.
    * **or via CLI**: Run `python -m tt_board flash --pmod-flash rom.bin`
-3. **Select the project**: Select the project on the demoboard. The demoboard automatically sets the 1.5 MHz system clock.
-4. **Open terminal**: Connect a serial terminal to the demoboard at **19,200 Baud (8N1)**.
-5. **Interact**: With the example project, typing characters into your terminal will result in the Nova CPU echoing them back. The 7-segment display should also be illuminated as a representation of the CPU's "front panel" blinkenlights.
+4. **Select the project**: Select the project on the demoboard (`tt_um_x4ntha_nova`). The demoboard will automatically configure the system clock to **1.5 MHz**.
+5. **Open terminal**: Connect a serial terminal (screen, PuTTY, etc.) to the demoboard's virtual COM port at **19,200 Baud (8N1)**.
+6. **Interact**: With the example project, typing characters into your terminal will result in the Nova CPU echoing them back. The onboard 7-segment display will actively display CPU execution state and instruction telemetry.
 
 ---
 
@@ -298,6 +340,9 @@ python make_rom.py my_program.asm
   * `index=2` (AC0-indexed): $EA = AC0 + \text{disp}$ (Signed $\pm 128$).
   * `index=3` (AC1-indexed): $EA = AC1 + \text{disp}$ (Signed $\pm 128$).
 * **Indirect Bit (`indir=1` / `@`)**: Treats $M[EA]$ as a 15-bit address pointer to fetch the final operand.
+* **Memory Map**:
+  * `0x0000` - `0x3FFF` (16,384 words / 32 KB): SPI Flash ROM (`CS0#` on `uio[0]`). Contains instructions and constants.
+  * `0x4000` - `0x7FFF` (16,384 words / 32 KB): QSPI PSRAM RAM (`CS1#` on `uio[6]`). Read/write working memory.
 
 ---
 
@@ -323,4 +368,16 @@ python make_rom.py my_program.asm
 
 ## External hardware
 
-The official Tiny Tapeout QSPI PMOD is used in this project for Flash/PSRAM over 1-bit SPI.
+The official Tiny Tapeout QSPI PMOD is used in this project for Flash/PSRAM over 1-bit SPI:
+* `uio[0]`: Flash Chip Select (`CS0#`, active LOW)
+* `uio[1]`: SPI MOSI (`SIO0`)
+* `uio[2]`: SPI MISO (`SIO1`, input)
+* `uio[3]`: SPI SCK (Serial Clock, driven at $f_{\text{clk}} / 2$)
+* `uio[4]`: PSRAM `SIO2 / WP#` (driven HIGH internally to disable write protection in 1-bit mode)
+* `uio[5]`: PSRAM `SIO3 / HOLD#` (driven HIGH internally to disable hold in 1-bit mode)
+* `uio[6]`: PSRAM Chip Select (`CS1#`, active LOW)
+* `uio[7]`: Unused (parked HIGH)
+
+You can also wire Flash/PSRAM manually if you have spare components, like I did for my Tangy Tapeout FPGA testbed implementation:
+
+![Tangy Tapeout Breadboard](tangy-tapeout.jpeg)
