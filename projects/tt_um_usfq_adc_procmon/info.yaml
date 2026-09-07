@@ -1,27 +1,16 @@
 # Tiny Tapeout project information
 project:
   title: "USFQ 8-bit Tracking ADC and Process Variation Monitor"
-
   author: "Esteban Astudillo, Raul Villalba, Diego Guevara, Emilia Casares"
-
   discord: ""
-
   description: "SKY130 mixed-signal chip integrating an 8-bit tracking ADC and an on chip process variation monitor."
-
   language: "Analog"
-
   clock_hz: 100000000
 
-  # Both designs are integrated in the same Tiny Tapeout macro
   tiles: "1x2"
-
-  # Analog pins used by the ADC
   analog_pins: 2
-
-  # Only the 1.8 V VDPWR supply is used
   uses_vapwr: false
 
-  # Must match the GDS top cell, GDS filename, LEF filename, and Verilog module
   top_module: "tt_um_usfq_adc_procmon"
 
   source_files:
@@ -30,7 +19,7 @@ project:
 
 pinout:
 
-  # Dedicated inputs
+  # Digital inputs
   ui[0]: ""
   ui[1]: ""
   ui[2]: ""
@@ -38,36 +27,34 @@ pinout:
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""
-  ui[7]: ""
+  ui[7]: "CLK_IN"
 
 
   # Dedicated outputs
-  # 8-bit Tracking ADC output
-  uo[0]: "ADC_DOUT[0]"
-  uo[1]: "ADC_DOUT[1]"
-  uo[2]: "ADC_DOUT[2]"
-  uo[3]: "ADC_DOUT[3]"
-  uo[4]: "ADC_DOUT[4]"
-  uo[5]: "ADC_DOUT[5]"
-  uo[6]: "ADC_DOUT[6]"
-  uo[7]: "ADC_DOUT[7]"
+  uo[0]: ""
+  uo[1]: ""
+  uo[2]: "PMOS_RING_3"
+  uo[3]: "PMOS_RING_2"
+  uo[4]: "PMOS_RING_1"
+  uo[5]: "NMOS_RING_3"
+  uo[6]: "NMOS_RING_2"
+  uo[7]: "NMOS_RING_1"
 
 
-  # Bidirectional pins
-  # All uio pins are configured as outputs in the physical design
-  uio[0]: "N_CORNER_S"
-  uio[1]: "N_CORNER_T"
-  uio[2]: "N_CORNER_F"
-  uio[3]: "P_CORNER_S"
-  uio[4]: "P_CORNER_T"
-  uio[5]: "P_CORNER_F"
-  uio[6]: "N_RING_MON"
-  uio[7]: "P_RING_MON"
+  # Bidirectional pins used as outputs
+  uio[0]: "COUNT[0]"
+  uio[1]: "COUNT[1]"
+  uio[2]: "COUNT[2]"
+  uio[3]: "COUNT[3]"
+  uio[4]: "COUNT[4]"
+  uio[5]: "COUNT[5]"
+  uio[6]: "COUNT[6]"
+  uio[7]: "COUNT[7]"
 
 
   # Analog pins
-  ua[0]: "ADC_VIN"
-  ua[1]: "ADC_VDAC_MON"
+  ua[0]: "VDAC"
+  ua[1]: "VIN"
   ua[2]: ""
   ua[3]: ""
   ua[4]: ""
