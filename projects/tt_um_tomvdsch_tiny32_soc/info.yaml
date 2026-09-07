@@ -1,0 +1,71 @@
+# Tiny Tapeout project information
+project:
+  title:        "Tiny32 RV32IM Zephyr-target SoC"      # Project title
+  author:       "Tomvdsch"      # Your name
+  discord:      "tom.vds"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "RV32IM M-mode SoC with software boot, external flash and PSRAM, UART, GPIO and timers"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "8x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_tomvdsch_tiny32_soc"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "tiny32_soc.v"
+    - "rv32_core.v"
+    - "rv32_mdu.v"
+    - "qspi_psram.v"
+    - "spi_flash.v"
+    - "icache.v"
+    - "clint.v"
+    - "plic.v"
+    - "gpio_pinmux.v"
+    - "uart.v"
+    - "spi_master.v"
+    - "i2c_master.v"
+    - "pwm.v"
+    - "timer32.v"
+    - "watchdog.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "flash_miso"
+  ui[1]: "gpio_in1"
+  ui[2]: "gpio_in2"
+  ui[3]: "gpio_in3"
+  ui[4]: "gpio_in4"
+  ui[5]: "gpio_in5"
+  ui[6]: "gpio_in6"
+  ui[7]: "gpio_in7 / uart_rx"
+
+  # Outputs
+  uo[0]: "flash_cs_n"
+  uo[1]: "flash_mosi"
+  uo[2]: "flash_sck"
+  uo[3]: "gpio_out3 / uart_tx"
+  uo[4]: "gpio_out4"
+  uo[5]: "gpio_out5"
+  uo[6]: "gpio_out6"
+  uo[7]: "gpio_out7"
+
+  # Bidirectional pins
+  uio[0]: "ram_cs_n"
+  uio[1]: "ram_sck"
+  uio[2]: "ram_sd0"
+  uio[3]: "ram_sd1"
+  uio[4]: "ram_sd2"
+  uio[5]: "ram_sd3"
+  uio[6]: "gpio_io6"
+  uio[7]: "gpio_io7"
+
+# Do not change!
+yaml_version: 6
