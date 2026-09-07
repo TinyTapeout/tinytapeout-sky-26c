@@ -1,0 +1,22 @@
+108. Printing statistics.
+
+=== tt_um_osian_beam_controller ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        8        - wires
+       43        - wire bits
+        8        - public wires
+       43        - public wire bits
+        8        - ports
+       43        - port bits
+       24  106.352 cells
+        1    7.507   sky130_fd_sc_hd__and2_2
+        2   17.517   sky130_fd_sc_hd__and2b_2
+       20   75.072   sky130_fd_sc_hd__conb_1
+        1    6.256   sky130_fd_sc_hd__nor2_2
+
+   Chip area for module '\tt_um_osian_beam_controller': 106.352000
+     of which used for sequential elements: 0.000000 (0.00%)
+
