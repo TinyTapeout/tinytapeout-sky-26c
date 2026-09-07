@@ -33,15 +33,25 @@ module tt_um_algofoogle_ttsky26c_analog (
   // (* keep *)
   // coming_soon coming_soon_0();
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out[7]  = VGND;
-  assign uo_out[6]  = VGND;
-  assign uo_out[5]  = VGND;
-  assign uo_out[4]  = VGND;
-  assign uo_out[3]  = VGND;
-  assign uo_out[2]  = VGND;
-  assign uo_out[1]  = VGND;
-  assign uo_out[0]  = VGND;
+  wire isink;
+
+  ringosc ringosc_0(
+    .VPWR   (VDPWR),
+    .VGND   (VGND),
+    .Isink  (isink),
+    .osc_out(uo_out[6]),
+    .raw    (uo_out[7])
+  );
+
+  // All output pins must be assigned.
+  // assign uo_out[7]  = VGND;
+  // assign uo_out[6]  = VGND;
+  assign uo_out[5]  = VDPWR;
+  assign uo_out[4]  = VDPWR;
+  assign uo_out[3]  = VDPWR;
+  assign uo_out[2]  = VDPWR;
+  assign uo_out[1]  = VDPWR;
+  assign uo_out[0]  = VDPWR;
 
   assign uio_out[7] = VGND;
   assign uio_out[6] = VGND;
@@ -62,8 +72,8 @@ module tt_um_algofoogle_ttsky26c_analog (
   assign uio_oe[0]  = VGND;
 
   csdac255 dac(
-    // .Iout(),
     // .Vbias(),
+    .Iout (isink),
     .VPWR (VDPWR),
     .VGND (VGND),
     .data (uio_in),
