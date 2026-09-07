@@ -442,7 +442,7 @@ MACRO tt_um_porkfreezer_rrio_opamp
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 1.000 5.000 2.995 220.760 ;
+        RECT 1.000 5.000 3.000 220.760 ;
     END
   END VDPWR
   PIN VGND
@@ -450,7 +450,7 @@ MACRO tt_um_porkfreezer_rrio_opamp
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 4.000 5.000 5.965 220.760 ;
+        RECT 4.000 5.000 6.000 220.760 ;
     END
   END VGND
   OBS
