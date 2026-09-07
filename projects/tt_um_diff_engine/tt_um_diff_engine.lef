@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_lromor_xls
+MACRO tt_um_diff_engine
   CLASS BLOCK ;
-  FOREIGN tt_um_lromor_xls ;
+  FOREIGN tt_um_diff_engine ;
   ORIGIN 0.000 0.000 ;
   SIZE 161.000 BY 111.520 ;
   PIN VGND
@@ -50,6 +50,7 @@ MACRO tt_um_lromor_xls
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
     PORT
       LAYER met4 ;
         RECT 143.830 110.520 144.130 111.520 ;
@@ -66,6 +67,7 @@ MACRO tt_um_lromor_xls
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 141.070 110.520 141.370 111.520 ;
@@ -110,7 +112,6 @@ MACRO tt_um_lromor_xls
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 127.270 110.520 127.570 111.520 ;
@@ -119,7 +120,6 @@ MACRO tt_um_lromor_xls
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 124.510 110.520 124.810 111.520 ;
@@ -128,7 +128,6 @@ MACRO tt_um_lromor_xls
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 121.750 110.520 122.050 111.520 ;
@@ -137,7 +136,6 @@ MACRO tt_um_lromor_xls
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -146,7 +144,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 110.520 116.530 111.520 ;
@@ -155,7 +152,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 113.470 110.520 113.770 111.520 ;
@@ -164,7 +160,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 110.710 110.520 111.010 111.520 ;
@@ -173,7 +168,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 107.950 110.520 108.250 111.520 ;
@@ -182,7 +176,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 110.520 105.490 111.520 ;
@@ -191,7 +184,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 102.430 110.520 102.730 111.520 ;
@@ -200,7 +192,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 99.670 110.520 99.970 111.520 ;
@@ -209,7 +200,6 @@ MACRO tt_um_lromor_xls
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 96.910 110.520 97.210 111.520 ;
@@ -346,7 +336,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 94.150 110.520 94.450 111.520 ;
@@ -355,7 +344,7 @@ MACRO tt_um_lromor_xls
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -364,7 +353,7 @@ MACRO tt_um_lromor_xls
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -373,7 +362,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 85.870 110.520 86.170 111.520 ;
@@ -382,7 +370,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -391,7 +378,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -400,7 +386,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -409,7 +394,6 @@ MACRO tt_um_lromor_xls
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -421,11 +405,11 @@ MACRO tt_um_lromor_xls
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.040 ;
+        RECT 2.760 1.740 158.240 109.040 ;
       LAYER met2 ;
-        RECT 18.310 2.535 140.210 110.685 ;
+        RECT 4.690 1.710 156.760 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 140.235 110.665 ;
+        RECT 4.665 2.555 154.955 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
@@ -466,14 +450,17 @@ MACRO tt_um_lromor_xls
         RECT 130.730 110.120 132.390 110.665 ;
         RECT 133.490 110.120 135.150 110.665 ;
         RECT 136.250 110.120 137.910 110.665 ;
-        RECT 30.655 109.440 138.625 110.120 ;
-        RECT 30.655 102.855 56.750 109.440 ;
-        RECT 59.150 102.855 60.050 109.440 ;
-        RECT 62.450 102.855 95.620 109.440 ;
-        RECT 98.020 102.855 98.920 109.440 ;
-        RECT 101.320 102.855 134.490 109.440 ;
-        RECT 136.890 102.855 137.790 109.440 ;
+        RECT 139.010 110.120 140.670 110.665 ;
+        RECT 141.770 110.120 143.430 110.665 ;
+        RECT 30.655 109.440 144.145 110.120 ;
+        RECT 30.655 15.815 56.750 109.440 ;
+        RECT 59.150 15.815 60.050 109.440 ;
+        RECT 62.450 15.815 95.620 109.440 ;
+        RECT 98.020 15.815 98.920 109.440 ;
+        RECT 101.320 15.815 134.490 109.440 ;
+        RECT 136.890 15.815 137.790 109.440 ;
+        RECT 140.190 15.815 144.145 109.440 ;
   END
-END tt_um_lromor_xls
+END tt_um_diff_engine
 END LIBRARY
 
