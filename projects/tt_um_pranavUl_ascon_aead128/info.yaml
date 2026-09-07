@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "Ascon bit-serial permutation engine"      # Project title            
+  author:       "Pranav Ullas"      # Your name           
+  discord:      "giraffe8149"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Bit-serial Ascon permutation with streaming column-XOR interface; full AEAD-128 in the test suite"      # One line description of what your project does 
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_pranavUl_ascon_aead128"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "ascon_permutation_serial.v"
+    - "ascon_sbox.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "COL_IN[0]"
+  ui[1]: "COL_IN[1]"
+  ui[2]: "COL_IN[2]"
+  ui[3]: "COL_IN[3]"
+  ui[4]: "COL_IN[4]"
+  ui[5]: "LAP_GO"
+  ui[6]: "PERM_AFTER"
+  ui[7]: "PERM_12"
+
+  # Outputs
+  uo[0]: "COL_OUT[0]"
+  uo[1]: "COL_OUT[1]"
+  uo[2]: "COL_OUT[2]"
+  uo[3]: "COL_OUT[3]"
+  uo[4]: "COL_OUT[4]"
+  uo[5]: "LAP_ACTIVE"
+  uo[6]: "PERM_BUSY"
+  uo[7]: "PERM_DONE"
+
+  # Bidirectional pins
+  uio[0]: "LAP_XOR"
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: "READY"
+
+# Do not change!
+yaml_version: 6
