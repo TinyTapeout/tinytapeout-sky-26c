@@ -3,7 +3,7 @@ project:
   title: "DSLX finite_difference" # Project title
   author: "Leonardo Romor, Henner Zeller" # Your name
   discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "Placeholder 4-bit adder written in DSLX and compiled to SystemVerilog with google/xls" # One line description of what your project does
+  description: "Cubic polynomial sampler (difference engine) with an SPI request interface and step/dir output, written in DSLX and compiled with google/xls" # One line description of what your project does
   language: "DSLX" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz: 10000000 # Clock frequency in Hz (or 0 if not applicable)
 
@@ -24,19 +24,19 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
+  ui[0]: "SPI_SCLK"
+  ui[1]: "SPI_CS_N"
+  ui[2]: "SPI_MOSI"
+  ui[3]: "POLY_CLK"
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
+  uo[0]: "SPI_MISO (unused, 0)"
+  uo[1]: "STEP"
+  uo[2]: "DIR"
   uo[3]: ""
   uo[4]: ""
   uo[5]: ""
