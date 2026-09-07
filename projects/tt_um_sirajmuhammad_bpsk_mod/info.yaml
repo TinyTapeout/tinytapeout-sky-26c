@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "BPSK Baseband Modulator"      # Project title
+  author:       "Siraj Muhammad"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Transmit-only BPSK baseband modulator: PRBS-7 source, +/-1 symbol mapper and polyphase RRC pulse shaper on an 8-bit signed sample bus"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_sirajmuhammad_bpsk_mod"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "tx_enable"
+  ui[1]: "data_sel (0=PRBS, 1=ext_data)"
+  ui[2]: "ext_data"
+  ui[3]: "prbs_reload"
+  ui[4]: "clk_div_sel[0]"
+  ui[5]: "clk_div_sel[1]"
+  ui[6]: "clk_div_sel[2]"
+  ui[7]: "clk_div_sel[3]"
+
+  # Outputs
+  uo[0]: "sample[0] (LSB)"
+  uo[1]: "sample[1]"
+  uo[2]: "sample[2]"
+  uo[3]: "sample[3]"
+  uo[4]: "sample[4]"
+  uo[5]: "sample[5]"
+  uo[6]: "sample[6]"
+  uo[7]: "sample[7] (sign)"
+
+  # Bidirectional pins
+  uio[0]: "sample_valid"
+  uio[1]: "symbol_tick"
+  uio[2]: "prbs_bit"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
