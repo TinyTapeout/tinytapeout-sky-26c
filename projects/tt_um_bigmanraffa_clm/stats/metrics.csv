@@ -115,8 +115,8 @@ design__instance__count__class:fill_cell,4259
 design__instance__area__class:fill_cell,12145.4
 design__instance__count__class:tap_cell,1037
 design__instance__area__class:tap_cell,1297.49
-design__power_grid_violation__count__net:VPWR,0
 design__power_grid_violation__count__net:VGND,0
+design__power_grid_violation__count__net:VPWR,0
 design__power_grid_violation__count,0
 flow__warnings__count:GPL-0302,1
 timing__drv__floating__nets,2
