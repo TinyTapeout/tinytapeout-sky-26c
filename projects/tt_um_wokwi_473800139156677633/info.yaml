@@ -1,0 +1,49 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id:     473800139156677633
+  title:        "Tiny Snake with PRISM 8"
+  author:       "Ken Pettit"
+  discord:      "busy_courgette_50064"
+  description:  "A tiny snake on the 7-Segment LED, plus an 8-State FSM"      # One line description of what your project does
+  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000   # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "speed[0]/prism_enable"
+  ui[1]: "speed[1]/prism_cfg_data"
+  ui[2]: "speed[2]"
+  ui[3]: "speed[3]"
+  ui[4]: "speed[4]"
+  ui[5]: "speed[5]"
+  ui[6]: "speed[6]"
+  ui[7]: "speed[7]"
+
+  # Outputs
+  uo[0]: "seg_a"
+  uo[1]: "seg_b"
+  uo[2]: "seg_c"
+  uo[3]: "seg_d"
+  uo[4]: "seg_e"
+  uo[5]: "seg_f"
+  uo[6]: "seg_g"
+  uo[7]: "prism_debug"
+
+  # Bidirectional pins
+  uio[0]: "prism_in[0]"
+  uio[1]: "prism_in[1]"
+  uio[2]: "prism_in[2]"
+  uio[3]: "prism_out[0]"
+  uio[4]: "prism_out[1]"
+  uio[5]: "prism_out[2]"
+  uio[6]: "prism_out[3]"
+  uio[7]: "prism_cfg_clk"
+
+# Do not change!
+yaml_version: 6
