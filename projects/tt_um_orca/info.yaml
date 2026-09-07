@@ -1,0 +1,59 @@
+# Tiny Tapeout project information
+project:
+  title:        "ORCA — Online Reconfigurable Circuit with Adaptation"
+  author:       "Abhi Alavilli"
+  discord:      ""
+  description:  "A self-optimizing, self-healing evolving logic engine"
+  language:     "SystemVerilog"
+  clock_hz:     25000000
+
+  tiles: "2x2"
+  top_module:  "tt_um_orca"
+
+  source_files:
+    # tt_um_orca first: TT port-read parses only this file (no pkg imports);
+    # orca_pkg before the importing files for the synthesis read order
+    - "tt_um_orca.sv"
+    - "orca_pkg.sv"
+    - "fabric.sv"
+    - "fabric_cell.sv"
+    - "genome_store.sv"
+    - "eval_engine.sv"
+    - "settle_sensor.sv"
+    - "es_controller.sv"
+    - "ser_cmd.sv"
+    - "prng.sv"
+
+pinout:
+  # Inputs
+  ui[0]: "run_ena"
+  ui[1]: "anneal_en"
+  ui[2]: "fault_demo"
+  ui[3]: "reserved"
+  ui[4]: "ser_data"
+  ui[5]: "ser_shift"
+  ui[6]: "ser_exec"
+  ui[7]: "reserved"
+
+  # Outputs
+  uo[0]: "heartbeat"
+  uo[1]: "evolving"
+  uo[2]: "accept_pulse"
+  uo[3]: "solved"
+  uo[4]: "best_fitness_8"
+  uo[5]: "best_fitness_9"
+  uo[6]: "best_fitness_10"
+  uo[7]: "best_fitness_11"
+
+  # Bidirectional pins
+  uio[0]: "unused"
+  uio[1]: "unused"
+  uio[2]: "unused"
+  uio[3]: "ser_out"
+  uio[4]: "scope_trigger"
+  uio[5]: "settle_probe"
+  uio[6]: "unused"
+  uio[7]: "po_0"
+
+# Do not change!
+yaml_version: 6
