@@ -10,36 +10,41 @@ overflow is possible (`a*b` is in [-16256, 16384], `a*b+c` in
 [-16384, 16511]); `z` is the low 8 bits of the sum (mod-256 wraparound,
 e.g. `100 * 100 + 0 = 10000 -> z = 240 = -16`).
 
-A 1x1 tile has 16 input-capable pins but the operation needs 24 operand
-bits, so the operands are loaded one byte at a time:
+**Streaming protocol (one result every 2 cycles)**
 
-| Pin        | Name   | Role |
-|------------|--------|------|
-| `ui[2:0]`  | `CMD`  | `000` = load a, `001` = load b, `010` = load c, `011` = GO, `1xx` = reserved |
-| `ui[7:3]`  | —      | reserved, tie to 0 |
-| `uio[7:0]` | `DATA` | operand byte (input) |
-| `uo[7:0]`  | `Z`    | 8-bit signed result |
+Both input buses carry data, so two operands are loaded per cycle. The
+design free-runs a 2-phase toggle (starting in phase 0 after reset):
+
+| Cycle (phase) | `ui[7:0]` | `uio[7:0]` | `uo[7:0]` |
+|---------------|-----------|------------|-----------|
+| even (phase 0) | `a` | `b` | previous `z` |
+| odd  (phase 1) | `c` | (unused) | — |
+
+On each even cycle the design captures `a` (from `ui`) and `b` (from
+`uio`); on each odd cycle it captures `c` (from `ui`) and latches
+`z = a*b + c`. A result is valid on `uo` one cycle after its `c` is
+presented — **one result every 2 cycles**.
 
 **Usage**
 
-1. Drive `DATA = a`, `CMD = 000` — `a` is latched on the next rising clock edge
-2. Drive `DATA = b`, `CMD = 001`
-3. Drive `DATA = c`, `CMD = 010`
-4. Drive `CMD = 011` (GO)
-5. `Z = a*b + c` is valid one clock later and is held until the next GO
+1. Hold `rst_n` low for a few cycles, then release it. The design starts in phase 0.
+2. On an even cycle, drive `ui = a`, `uio = b`.
+3. On the next (odd) cycle, drive `ui = c`.
+4. Read `z` on `uo` the following even cycle.
+5. Repeat with the next `(a, b, c)` triple for a continuous stream.
 
-Load commands are level-sensitive: holding a load command keeps latching
-`DATA`. After reset `a = b = c = z = 0`, so a GO with nothing loaded
-returns 0.
+The host drives `clk` and `rst_n`, so it can count cycles from reset to
+stay phase-aligned. There is no separate start/valid signal (no spare
+pins); after reset `a = b = z = 0`.
 
 ## How to test
 
 The cocotb tests in `test/test.py` cover:
 
-- reset behavior (`z = 0`, GO with no loads returns 0)
+- reset behavior (`z = 0` after reset)
 - corner cases (min/max operands, wraparound)
 - 2000 randomized `(a, b, c)` triples against a Python reference
-- the load/GO protocol (result hold, partial reload, repeated GO)
+- back-to-back streaming (one result every 2 cycles)
 
 Run with `make` from the `test/` directory (see the Tiny Tapeout test
 workflow). A plain-Verilog self-checking testbench is also provided in
