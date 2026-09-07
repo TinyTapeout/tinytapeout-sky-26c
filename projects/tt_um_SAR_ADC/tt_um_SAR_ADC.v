@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+// Interface-only wrapper for the existing LDO and dynamic comparator GDS.
+// The preserved physical top cell is tt_um_SAR_ADC; this is not a full SAR ADC.
+// Analog behavior is implemented in the supplied layout, not in this Verilog.
 `default_nettype none
 
 module tt_um_SAR_ADC (

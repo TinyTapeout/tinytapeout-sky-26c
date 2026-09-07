@@ -1,9 +1,21 @@
+# Comparator source: Comparator_Scientific_Characterization.xlsx, PVT_All_Data.
+# TT, VDD=1.0 V, 27 C: decision=3.78 ns, reset=4.29 ns, power=108.841 uW.
+# Comparator SF/SS at 0.95 V and 0 C have incomplete decision-time results.
+# LDO Load Regulation: 0 to 10 mA, TT 27 C, delta Vout=5.616535 mV.
+# The workbook's Vin-Vout columns describe headroom, not a measured dropout limit.
+# Characterization source: SKY130_LDO_Ver3_PRE.xlsx, pre-layout simulation.
+# LDO nominal output approximately 1.0 V; these are not silicon guarantees.
+# Load Regulation, TT 27 C: Vout=1.00392632 V at 0 A;
+# Vout=0.998309785 V at 10 mA; ground current=38.5997397 uA at no load.
+# Line Regulation DE6/DE9: 4.55927 / 4.02168 mV/V, Vin 1.2 to 1.5 V,
+# no load / max load respectively, TT 27 C.
+# Pin names retained from supplied layout metadata; no connectivity changes.
 # Tiny Tapeout project information
 project:
-  title:        "SAR_ADC"      # Project title
+  title:        "CTW LDO and Dynamic Comparator"      # Project title
   author:       "TuanKiet"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "analog LDO"      # One line description of what your project does
+  description:  "Analog LDO and dynamic comparator test chip in SKY130"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
