@@ -1,0 +1,51 @@
+# Tiny Tapeout project information
+project:
+  title: "FP32 Math Unit"
+  author: "Sai Kiran Ratna"
+  discord: ""
+  description: "FP32 Math evaluation mapped to hardware switches and 7-segment display."
+  language: "Verilog"
+  clock_hz: 0
+
+  tiles: "1x1"
+  
+  source_files:
+    - "tt_um_fp16_mac.v"
+    - "CS_TT.v"
+    - "add_fp32.v"
+    - "nfp_add_single.v"
+  top_module: "tt_um_fp16_mac"
+
+pinout:
+  # Inputs
+  ui[0]: "Test Case Select [0]"
+  ui[1]: "Test Case Select [1]"
+  ui[2]: "Test Case Select [2]"
+  ui[3]: "Display Nibble Select [0]"
+  ui[4]: "Display Nibble Select [1]"
+  ui[5]: "Display Nibble Select [2]"
+  ui[6]: "Reset Counter (rst)"
+  ui[7]: "Direction Control (dir)"
+
+  # Outputs
+  uo[0]: "Segment A"
+  uo[1]: "Segment B"
+  uo[2]: "Segment C"
+  uo[3]: "Segment D"
+  uo[4]: "Segment E"
+  uo[5]: "Segment F"
+  uo[6]: "Segment G"
+  uo[7]: "Decimal Point (off)"
+
+  # Bidirectional pins
+  uio[0]: "Unused"
+  uio[1]: "Unused"
+  uio[2]: "Unused"
+  uio[3]: "Unused"
+  uio[4]: "Unused"
+  uio[5]: "Unused"
+  uio[6]: "Unused"
+  uio[7]: "Unused"
+
+# Do not change!
+yaml_version: 6
