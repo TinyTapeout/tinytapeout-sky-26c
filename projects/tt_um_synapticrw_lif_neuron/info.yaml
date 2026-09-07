@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title: "LIF Neuron (SynapticRW Teardown 2026)"
+  author: "Morgan"
+  discord: "SynapticRewrite"
+  description: "Leaky integrate and fire neuron. Settable weight/leak/threshold on the dip switches, membrane potential on the 7 segment display"
+  language: "Verilog"
+  clock_hz: 1000  # anything works, run it slow to watch it on the 7 seg
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_synapticrw_lif_neuron"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "SPIKE_IN"
+  ui[1]: "WEIGHT[0]"
+  ui[2]: "WEIGHT[1]"
+  ui[3]: "WEIGHT[2]"
+  ui[4]: "WEIGHT[3]"
+  ui[5]: "LEAK_SEL[0]"
+  ui[6]: "LEAK_SEL[1]"
+  ui[7]: "THRESH_SEL"
+
+  # Outputs
+  uo[0]: "SEG_A"
+  uo[1]: "SEG_B"
+  uo[2]: "SEG_C"
+  uo[3]: "SEG_D"
+  uo[4]: "SEG_E"
+  uo[5]: "SEG_F"
+  uo[6]: "SEG_G"
+  uo[7]: "SPIKE_OUT"
+
+  # Bidirectional pins
+  uio[0]: "V_MEM[0]"
+  uio[1]: "V_MEM[1]"
+  uio[2]: "V_MEM[2]"
+  uio[3]: "V_MEM[3]"
+  uio[4]: "V_MEM[4]"
+  uio[5]: "V_MEM[5]"
+  uio[6]: "V_MEM[6]"
+  uio[7]: "V_MEM[7]"
+
+# Do not change!
+yaml_version: 6
