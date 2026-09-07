@@ -1,0 +1,63 @@
+# Tiny Tapeout project information
+project:
+  title:        "Communotron"      # Project title
+  author:       "Garnet Koebel"      # Your name
+  discord:      "ve3kve"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Some basic experiments with asic design"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_garnetkoebel_communotron"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "communotron.v"
+    - "match_unit.v"
+    - "i2c_frame_handler.v"
+    - "i2c_address_detector.v"
+    - "i2c_start_detector.v"
+    - "i2c_stop_detector.v"
+    - "mod_n_counter.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "I2C SDA Input (sda_in)"
+  ui[1]: "I2C SCL (scl)"
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "I2C SDA Output (sda_out)"
+  uo[1]: "SPI Chip Select 1 (spi_cs_1)"
+  uo[2]: "SPI Chip Select 2 (spi_cs_2)"
+  uo[3]: "SPI Chip Select 3 (spi_cs_3)"
+  uo[4]: "SPI Chip Select 4 (spi_cs_4)"
+  uo[5]: "SPI Peripheral In Controller Out (spi_pico)"
+  uo[6]: "SPI Clock (spi_clk)"
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,55 @@
+145. Printing statistics.
+
+=== tt_um_garnetkoebel_communotron ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      177        - wires
+      212        - wire bits
+       63        - public wires
+       98        - public wire bits
+        8        - ports
+       43        - port bits
+      193 2.25E+03 cells
+        1    8.758   sky130_fd_sc_hd__a21o_2
+        1    8.758   sky130_fd_sc_hd__a21oi_2
+        1   15.014   sky130_fd_sc_hd__a221oi_2
+        9   90.086   sky130_fd_sc_hd__a22o_2
+        5   43.792   sky130_fd_sc_hd__a31o_2
+        2   25.024   sky130_fd_sc_hd__a31oi_2
+        8   90.086   sky130_fd_sc_hd__a32o_2
+        7   78.826   sky130_fd_sc_hd__a41o_2
+       10   75.072   sky130_fd_sc_hd__and2_2
+        1    8.758   sky130_fd_sc_hd__and2b_2
+        7    52.55   sky130_fd_sc_hd__and3_2
+        1    10.01   sky130_fd_sc_hd__and3b_2
+        2   22.522   sky130_fd_sc_hd__and4b_2
+        2   25.024   sky130_fd_sc_hd__and4bb_2
+        7   35.034   sky130_fd_sc_hd__buf_2
+       17   63.811   sky130_fd_sc_hd__conb_1
+       49  1042.25   sky130_fd_sc_hd__dfxtp_2
+        4   60.058   sky130_fd_sc_hd__dlxtn_1
+        7   26.275   sky130_fd_sc_hd__inv_2
+        4   45.043   sky130_fd_sc_hd__mux2_1
+        6   37.536   sky130_fd_sc_hd__nand2_2
+        2   17.517   sky130_fd_sc_hd__nand2b_2
+        1   11.261   sky130_fd_sc_hd__nand3b_2
+        8   50.048   sky130_fd_sc_hd__nor2_2
+        1   12.512   sky130_fd_sc_hd__nor4_2
+        1   12.512   sky130_fd_sc_hd__o2111a_2
+        4   40.038   sky130_fd_sc_hd__o211a_2
+        4   35.034   sky130_fd_sc_hd__o21a_2
+        2   20.019   sky130_fd_sc_hd__o21ba_2
+        1   11.261   sky130_fd_sc_hd__o2bb2a_2
+        4   45.043   sky130_fd_sc_hd__o311a_2
+        2   20.019   sky130_fd_sc_hd__o31a_2
+        1   11.261   sky130_fd_sc_hd__o32a_2
+        2   12.512   sky130_fd_sc_hd__or2_2
+        4   30.029   sky130_fd_sc_hd__or3_2
+        4   40.038   sky130_fd_sc_hd__or4b_2
+        1   12.512   sky130_fd_sc_hd__or4bb_2
+
+   Chip area for module '\tt_um_garnetkoebel_communotron': 2245.904000
+     of which used for sequential elements: 1042.249600 (46.41%)
+
