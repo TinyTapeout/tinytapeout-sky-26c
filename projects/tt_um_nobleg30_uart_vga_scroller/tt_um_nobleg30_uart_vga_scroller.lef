@@ -149,6 +149,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 224.760 116.530 225.760 ;
@@ -157,6 +158,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 113.470 224.760 113.770 225.760 ;
@@ -165,6 +167,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 110.710 224.760 111.010 225.760 ;
@@ -173,6 +176,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 107.950 224.760 108.250 225.760 ;
@@ -181,6 +185,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 224.760 105.490 225.760 ;
@@ -189,6 +194,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 102.430 224.760 102.730 225.760 ;
@@ -325,6 +331,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.429000 ;
     PORT
       LAYER met4 ;
         RECT 55.510 224.760 55.810 225.760 ;
@@ -333,6 +340,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 52.750 224.760 53.050 225.760 ;
@@ -350,7 +358,8 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNAGATEAREA 0.495000 ;
+    ANTENNADIFFAREA 0.911000 ;
     PORT
       LAYER met4 ;
         RECT 91.390 224.760 91.690 225.760 ;
@@ -359,7 +368,8 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNAGATEAREA 0.495000 ;
+    ANTENNADIFFAREA 0.911000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 224.760 88.930 225.760 ;
@@ -377,7 +387,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.336500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 83.110 224.760 83.410 225.760 ;
@@ -395,7 +405,7 @@ MACRO tt_um_nobleg30_uart_vga_scroller
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.336500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 77.590 224.760 77.890 225.760 ;
@@ -416,13 +426,13 @@ MACRO tt_um_nobleg30_uart_vga_scroller
       LAYER li1 ;
         RECT 2.760 2.635 158.240 223.125 ;
       LAYER met1 ;
-        RECT 2.760 2.080 158.240 223.280 ;
+        RECT 2.760 2.480 158.240 223.280 ;
       LAYER met2 ;
-        RECT 4.700 2.050 157.680 224.925 ;
+        RECT 4.240 2.535 156.760 224.925 ;
       LAYER met3 ;
-        RECT 13.405 2.555 154.955 224.905 ;
+        RECT 13.865 2.555 152.195 224.905 ;
       LAYER met4 ;
-        RECT 20.535 224.360 30.270 224.905 ;
+        RECT 15.015 224.360 30.270 224.905 ;
         RECT 31.370 224.360 33.030 224.905 ;
         RECT 34.130 224.360 35.790 224.905 ;
         RECT 36.890 224.360 38.550 224.905 ;
@@ -465,16 +475,17 @@ MACRO tt_um_nobleg30_uart_vga_scroller
         RECT 139.010 224.360 140.670 224.905 ;
         RECT 141.770 224.360 143.430 224.905 ;
         RECT 144.530 224.360 146.190 224.905 ;
-        RECT 147.290 224.360 151.505 224.905 ;
-        RECT 20.535 223.680 151.505 224.360 ;
-        RECT 20.535 19.895 21.180 223.680 ;
-        RECT 23.580 19.895 56.750 223.680 ;
-        RECT 59.150 19.895 60.050 223.680 ;
-        RECT 62.450 19.895 95.620 223.680 ;
-        RECT 98.020 19.895 98.920 223.680 ;
-        RECT 101.320 19.895 134.490 223.680 ;
-        RECT 136.890 19.895 137.790 223.680 ;
-        RECT 140.190 19.895 151.505 223.680 ;
+        RECT 147.290 224.360 148.745 224.905 ;
+        RECT 15.015 223.680 148.745 224.360 ;
+        RECT 15.015 13.095 17.880 223.680 ;
+        RECT 20.280 13.095 21.180 223.680 ;
+        RECT 23.580 13.095 56.750 223.680 ;
+        RECT 59.150 13.095 60.050 223.680 ;
+        RECT 62.450 13.095 95.620 223.680 ;
+        RECT 98.020 13.095 98.920 223.680 ;
+        RECT 101.320 13.095 134.490 223.680 ;
+        RECT 136.890 13.095 137.790 223.680 ;
+        RECT 140.190 13.095 148.745 223.680 ;
   END
 END tt_um_nobleg30_uart_vga_scroller
 END LIBRARY
