@@ -1,3 +1,7 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
 MACRO tt_um_algofoogle_ttsky26c_analog
   CLASS BLOCK ;
   FOREIGN tt_um_algofoogle_ttsky26c_analog ;
@@ -486,7 +490,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
         RECT 122.450 110.120 124.110 110.520 ;
         RECT 7.100 106.900 124.860 110.120 ;
         RECT 7.500 105.150 124.250 106.900 ;
-        RECT 7.500 21.980 122.750 105.150 ;
+        RECT 7.500 6.100 122.750 105.150 ;
   END
 END tt_um_algofoogle_ttsky26c_analog
 END LIBRARY

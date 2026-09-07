@@ -5,9 +5,9 @@
 
 `default_nettype none
 
-// (* blackbox *) (* keep *)
-// module coming_soon ();
-// endmodule
+(* blackbox *) (* keep *)
+module olaf ();
+endmodule
 
 //////// !!NOTE!! This isn't the real module.
 // This 1x1 tile is a custom layout, and this file
@@ -30,8 +30,8 @@ module tt_um_algofoogle_ttsky26c_analog (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // (* keep *)
-  // coming_soon coming_soon_0();
+  (* keep *)
+  olaf olaf_0();
 
   wire isink;
 

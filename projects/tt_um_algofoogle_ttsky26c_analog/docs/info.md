@@ -9,11 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Custom layout within the 1x1 tile area performs magic.
+Custom layout within the 1x1 tile area. Uses csdac255 [from a prior submission of mine](https://github.com/algofoogle/ttsky25b-analog-vga-dacs), modified slightly so it can sink less current. This then acts as the current sink for a 21-stage ring oscillator, allowing for variable oscillation from about 8.7MHz to 26MHz.
 
 ## How to test
 
-Apply power and see the magic happen!
+Set a bias level (`bias[2:0]`), sweep DAC input codes on `uio_in`, and measure the DAC output on `uo_out[6]`.
 
 ## External hardware
 

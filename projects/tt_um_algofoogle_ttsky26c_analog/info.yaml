@@ -23,34 +23,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "in0"
-  ui[1]: "in1"
-  ui[2]: "in2"
-  ui[3]: "in3"
-  ui[4]: "in4"
-  ui[5]: "in5"
-  ui[6]: "in6"
-  ui[7]: "in7"
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: "bias0"
+  ui[6]: "bias1"
+  ui[7]: "bias2"
 
   # Outputs
-  uo[0]: "out0"
-  uo[1]: "out1"
-  uo[2]: "out2"
-  uo[3]: "out3"
-  uo[4]: "out4"
-  uo[5]: "out5"
-  uo[6]: "out6"
-  uo[7]: "out7"
+  uo[0]: "high"
+  uo[1]: "high"
+  uo[2]: "high"
+  uo[3]: "high"
+  uo[4]: "high"
+  uo[5]: "high"
+  uo[6]: "osc_out"
+  uo[7]: "osc_raw"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "dac_in0"
+  uio[1]: "dac_in1"
+  uio[2]: "dac_in2"
+  uio[3]: "dac_in3"
+  uio[4]: "dac_in4"
+  uio[5]: "dac_in5"
+  uio[6]: "dac_in6"
+  uio[7]: "dac_in7"
 
 # Do not change!
 yaml_version: 6
