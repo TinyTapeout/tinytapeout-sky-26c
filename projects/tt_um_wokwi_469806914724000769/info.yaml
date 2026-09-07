@@ -1,10 +1,10 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
   wokwi_id: "469806914724000769" # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title: "Spin and Text" # Project title
+  title: "Spin, Text and VGA" # Project title
   author: "Michael Pucher" # Your name
   discord: "cluosh" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "Making the seven segment display spin around and showing some simple text" # One line description of what your project does
+  description: "Making the seven segment display spin around, showing text and drawing a logo to VGA" # One line description of what your project does
   language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz: 4 # Clock frequency in Hz (or 0 if not applicable)
 
@@ -15,7 +15,7 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "unused"
+  ui[0]: "Pull high/flip DIP switch to enable VGA"
   ui[1]: "unused"
   ui[2]: "unused"
   ui[3]: "unused"
@@ -25,14 +25,14 @@ pinout:
   ui[7]: "unused"
 
   # Outputs
-  uo[0]: "sevseg1:A"
-  uo[1]: "sevseg1:B"
-  uo[2]: "sevseg1:C"
-  uo[3]: "sevseg1:D"
-  uo[4]: "sevseg1:E"
-  uo[5]: "sevseg1:F"
-  uo[6]: "sevseg1:G"
-  uo[7]: "sevseg1:DP"
+  uo[0]: "sevseg1:A or R1"
+  uo[1]: "sevseg1:B or G1"
+  uo[2]: "sevseg1:C or B1"
+  uo[3]: "sevseg1:D or vsync"
+  uo[4]: "sevseg1:E or R0"
+  uo[5]: "sevseg1:F or G0"
+  uo[6]: "sevseg1:G or B0"
+  uo[7]: "sevseg1:DP or hsync"
 
   # Bidirectional pins
   uio[0]: "unused"
