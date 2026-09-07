@@ -17,17 +17,18 @@ A transmit-only BPSK baseband modulator. The datapath is:
   short enough to verify by eye in a waveform. `prbs_reload` (`ui[3]`) reseeds it.
 - **BPSK mapper** — maps each data bit to a `+/-1` symbol. `data_sel` (`ui[1]`) chooses
   between the internal PRBS and an external bit on `ext_data` (`ui[2]`).
-- **RRC pulse shaper** — root-raised-cosine, rolloff 0.35, 4 symbol span, 17 taps,
+- **RRC pulse shaper** — root-raised-cosine, rolloff 0.35, 6 symbol span, 25 taps,
   8-bit signed coefficients, at 4 samples per symbol.
 
-  The shaper is implemented as a **polyphase** filter rather than a literal 17-tap FIR.
-  Because the mapper emits impulses at 4x with zeros between them, only about 5 taps see
-  a nonzero input at any output phase. The design therefore keeps a 5-deep shift register
+  The shaper is implemented as a **polyphase** filter rather than a literal 25-tap FIR.
+  Because the mapper emits impulses at 4x with zeros between them, only about 7 taps see
+  a nonzero input at any output phase. The design therefore keeps a 7-deep shift register
   of symbol signs and selects one of 4 coefficient sets by phase, so each output sample is
-  a 5-term add/subtract. Since BPSK symbols are `+/-1`, every tap is a sign-selected add
+  a 6- or 7-term add/subtract. Since BPSK symbols are `+/-1`, every tap is a sign-selected add
   and **no multipliers are needed**.
 
-  The coefficients are scaled so that the worst case — all five signs aligned — sums to
+  The coefficients are scaled so that the worst case — all signs in the fullest branch
+  aligned — sums to
   `<= 127`. Overflow is therefore impossible by construction and **there is no saturation
   logic**, which removes the most likely source of disagreement between the RTL and the
   reference model.
@@ -45,6 +46,11 @@ off-chip.
 Drive `clk` and release `rst_n`, then set `tx_enable` (`ui[0]`) high with `data_sel`
 (`ui[1]`) low to select the internal PRBS-7 source. Shaped samples appear on `uo[7:0]`,
 one per `sample_valid` (`uio[0]`) pulse, as 8-bit signed two's complement values.
+
+Discard the first 24 samples (6 symbols) after each time `tx_enable` goes high. The
+shaper holds a 7-deep shift register of symbol signs, which is not cleared when
+`tx_enable` is deasserted, so those first samples still contain symbols from before
+the enable. From the seventh symbol onward the register holds only new data.
 
 Capture the sample bus on each `sample_valid` and compare against the Python
 reference model, which generates the RRC taps, the PRBS-7 sequence, and the expected
