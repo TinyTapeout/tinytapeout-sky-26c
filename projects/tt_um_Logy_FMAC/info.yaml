@@ -3,7 +3,7 @@ project:
   title:        "FMAC"      # Project title
   author:       "Antoine Lelong"      # Your name
   discord:       "Logy"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "8-bit signed fused multiply-add (z = a*b + c) with byte-wise operand loading"      # One line description of what your project does
+  description:  "8-bit signed fused multiply-add (z = a*b + c), streaming one result every 2 cycles"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -24,14 +24,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "CMD[0]"
-  ui[1]: "CMD[1]"
-  ui[2]: "CMD[2]"
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "A/C[0]"
+  ui[1]: "A/C[1]"
+  ui[2]: "A/C[2]"
+  ui[3]: "A/C[3]"
+  ui[4]: "A/C[4]"
+  ui[5]: "A/C[5]"
+  ui[6]: "A/C[6]"
+  ui[7]: "A/C[7]"
 
   # Outputs
   uo[0]: "Z[0]"
@@ -44,14 +44,14 @@ pinout:
   uo[7]: "Z[7]"
 
   # Bidirectional pins
-  uio[0]: "DATA[0]"
-  uio[1]: "DATA[1]"
-  uio[2]: "DATA[2]"
-  uio[3]: "DATA[3]"
-  uio[4]: "DATA[4]"
-  uio[5]: "DATA[5]"
-  uio[6]: "DATA[6]"
-  uio[7]: "DATA[7]"
+  uio[0]: "B[0]"
+  uio[1]: "B[1]"
+  uio[2]: "B[2]"
+  uio[3]: "B[3]"
+  uio[4]: "B[4]"
+  uio[5]: "B[5]"
+  uio[6]: "B[6]"
+  uio[7]: "B[7]"
 
 # Do not change!
 yaml_version: 6
