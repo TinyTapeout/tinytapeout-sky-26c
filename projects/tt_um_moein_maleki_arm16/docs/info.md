@@ -34,7 +34,7 @@ The UART of the original specification was dropped for area; UART_EN still blank
 
 With nothing on the memory socket: set BOOT_ROM (ui[6]) high, DISP_SEL (ui[1]) low, UART_EN (ui[2]) low,
 FWD_EN (ui[0]) high, fit the TinyVGA Pmod on the output socket, select the design at 25 MHz and release
-reset. The screen shows four digits counting. Set FWD_EN low and reset: the count runs about 2.3 times
+reset. The screen shows four digits counting. Set FWD_EN low and reset: the count runs about 2.23 times
 slower (the demo program is an eight-deep dependent chain). Set DISP_SEL high: the screen shows the
 program counter cycling through 0x0000 to 0x003C.
 
@@ -42,7 +42,8 @@ With the QSPI Pmod on the bidirectional socket: set the flash's quad-enable bit 
 then 31h with S9 = 1, holding uio[4] and uio[5] high during those single-lane commands), program a flash
 image built with `test/arm16_asm.py` (or `arm-none-eabi-as -march=armv4` linked at address 0), set
 BOOT_ROM low, set QSPI_DLY (ui[5:4]) to 2, and reset. The program runs from address 0. Try QSPI_DLY 1, 2
-and 3; at least two settings work on any board.
+and 3 and record which work. Setting 2 passes the tested 0 to 40 ns round-trip range. At 15 ns it is the
+only passing setting; two settings pass at 0 to 10 ns and at 20 to 40 ns.
 
 Cut the demo board's seven-segment jumpers JP2 to JP9 before running with the TinyVGA Pmod, or the
 digit loads the resistor ladder.
