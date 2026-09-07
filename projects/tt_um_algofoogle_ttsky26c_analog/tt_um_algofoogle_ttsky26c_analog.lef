@@ -74,6 +74,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 2.000000 ;
     PORT
       LAYER met4 ;
         RECT 124.510 110.520 124.810 111.520 ;
@@ -82,6 +83,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 1.000000 ;
     PORT
       LAYER met4 ;
         RECT 121.750 110.520 122.050 111.520 ;
@@ -90,6 +92,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.500000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -98,6 +101,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.495000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 110.520 116.530 111.520 ;
@@ -106,6 +110,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.742500 ;
     PORT
       LAYER met4 ;
         RECT 113.470 110.520 113.770 111.520 ;
@@ -114,6 +119,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met4 ;
         RECT 110.710 110.520 111.010 111.520 ;
@@ -122,6 +128,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met4 ;
         RECT 107.950 110.520 108.250 111.520 ;
@@ -130,6 +137,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.495000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 110.520 105.490 111.520 ;
@@ -138,6 +146,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.742500 ;
     PORT
       LAYER met4 ;
         RECT 102.430 110.520 102.730 111.520 ;
@@ -146,6 +155,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met4 ;
         RECT 99.670 110.520 99.970 111.520 ;
@@ -154,6 +164,7 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
     PORT
       LAYER met4 ;
         RECT 96.910 110.520 97.210 111.520 ;
@@ -162,6 +173,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 49.990 110.520 50.290 111.520 ;
@@ -170,6 +183,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 47.230 110.520 47.530 111.520 ;
@@ -178,6 +193,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 44.470 110.520 44.770 111.520 ;
@@ -186,6 +203,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 41.710 110.520 42.010 111.520 ;
@@ -194,6 +213,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 38.950 110.520 39.250 111.520 ;
@@ -202,6 +223,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 36.190 110.520 36.490 111.520 ;
@@ -210,6 +233,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 33.430 110.520 33.730 111.520 ;
@@ -218,6 +243,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_oe[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 30.670 110.520 30.970 111.520 ;
@@ -226,6 +253,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 72.070 110.520 72.370 111.520 ;
@@ -234,6 +263,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 69.310 110.520 69.610 111.520 ;
@@ -242,6 +273,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 66.550 110.520 66.850 111.520 ;
@@ -250,6 +283,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 63.790 110.520 64.090 111.520 ;
@@ -258,6 +293,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 61.030 110.520 61.330 111.520 ;
@@ -266,6 +303,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 58.270 110.520 58.570 111.520 ;
@@ -274,6 +313,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 55.510 110.520 55.810 111.520 ;
@@ -282,6 +323,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 52.750 110.520 53.050 111.520 ;
@@ -290,6 +333,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 94.150 110.520 94.450 111.520 ;
@@ -298,6 +343,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -306,6 +353,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -314,6 +363,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 85.870 110.520 86.170 111.520 ;
@@ -322,6 +373,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -330,6 +383,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -338,6 +393,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -346,6 +403,8 @@ MACRO tt_um_algofoogle_ttsky26c_analog
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 14.250000 ;
+    ANTENNADIFFAREA 145.427490 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -367,7 +426,33 @@ MACRO tt_um_algofoogle_ttsky26c_analog
         RECT 4.100 5.000 7.100 106.500 ;
     END
   END VGND
+  PIN VDPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 124.650 0.950 125.850 106.500 ;
+    END
+  END VDPWR
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 123.150 0.950 124.350 104.750 ;
+    END
+  END VGND
   OBS
+      LAYER pwell ;
+        RECT 72.475 25.080 123.100 103.530 ;
+      LAYER li1 ;
+        RECT 72.475 25.470 122.910 103.340 ;
+      LAYER met1 ;
+        RECT 72.320 25.370 129.645 110.180 ;
+      LAYER met2 ;
+        RECT 72.320 25.080 125.850 110.520 ;
+      LAYER met3 ;
+        RECT 1.320 23.580 125.850 110.520 ;
       LAYER met4 ;
         RECT 7.100 110.120 30.270 110.520 ;
         RECT 31.370 110.120 33.030 110.520 ;
@@ -403,8 +488,10 @@ MACRO tt_um_algofoogle_ttsky26c_analog
         RECT 114.170 110.120 115.830 110.520 ;
         RECT 116.930 110.120 118.590 110.520 ;
         RECT 119.690 110.120 121.350 110.520 ;
-        RECT 7.100 106.900 121.400 110.120 ;
-        RECT 7.500 35.000 121.400 106.900 ;
+        RECT 122.450 110.120 124.110 110.520 ;
+        RECT 7.100 106.900 124.860 110.120 ;
+        RECT 7.500 105.150 124.250 106.900 ;
+        RECT 7.500 21.980 122.750 105.150 ;
   END
 END tt_um_algofoogle_ttsky26c_analog
 END LIBRARY
