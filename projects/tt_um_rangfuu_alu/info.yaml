@@ -1,0 +1,42 @@
+# Tiny Tapeout project information
+project:
+  title:        "Tiny ALU PD"
+  author:       "rangfuu"
+  discord:      ""
+  description:  "Simple 4-bit ALU for TinyTapeout physical-design exploration"
+  language:     "Verilog"
+  clock_hz:     0
+  tiles: "1x1"
+  top_module:  "tt_um_rangfuu_alu"
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "A0"
+  ui[1]: "A1"
+  ui[2]: "A2"
+  ui[3]: "A3"
+  ui[4]: "B0"
+  ui[5]: "B1"
+  ui[6]: "B2"
+  ui[7]: "B3"
+
+  uo[0]: "Y0"
+  uo[1]: "Y1"
+  uo[2]: "Y2"
+  uo[3]: "Y3"
+  uo[4]: "carry_borrow"
+  uo[5]: "zero"
+  uo[6]: ""
+  uo[7]: ""
+
+  uio[0]: "op0"
+  uio[1]: "op1"
+  uio[2]: "op2"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
