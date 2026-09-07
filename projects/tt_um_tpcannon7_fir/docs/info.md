@@ -55,13 +55,13 @@ You can also include images in this folder and reference them in the markdown. E
 ### SPI Output Timing
 
 - Full duplex SPI interface
-    - MISO returns previous results while you send new samples on MOSI 
-    - This creates a pipeline with a fixed latency:
+    - MISO returns previous samples' results while you send new samples on MOSI 
+    - This creates a output pipeline with latency dependent on the chosen SCLK frequency
 
 | SCLK speed | Pipeline lag (k) | Leading garbage frames | Trailing NOPs needed |
 |------------|:---:|:---:|:---:|
-| 2–5 MHz | 2 | First 2 MISO outputs | Send 2 × 0x0000 at end |
-| ≤1 MHz | 1 | First 1 MISO output | Send 1 × 0x0000 at end |
+| 2–5 MHz | 2 | First 2 MISO outputs | Send 2x "0x0000" at end |
+| ≤1 MHz | 1 | First 1 MISO output | Send 1x "0x0000" at end |
 
 **Example (k=2):** sending `[A, B, C, D, E]` over MOSI:
 
@@ -75,7 +75,11 @@ You can also include images in this folder and reference them in the markdown. E
 | 6 | 0x0000 | result of D |
 | 7 | 0x0000 | result of E |
 
+- The pipeline drain only is only needed with finite sample batches, continous sample streaming does not require trailing NOPs; only required in the case you stop continous streaming
+
 ### SPI Timing
+
+- CS must go high between each 16-bit frame as noted in prior sections
 
 Loading Samples: 
 ```
@@ -151,7 +155,8 @@ MISO  X  d15  d14  d13  d12  d11  d10  d9   d8   d7   d6   d5   d4   d3   d2   d
 
 ![Truncated Multiplier Tradeoff](trunc_mult_tradeoff.png)
 
-The truncated multiplier was synthesized across all DropBits values (0–11) against the Sky130A HD standard cell library. The plot shows max and mean absolute error vs cell count and chip area.
+- The truncated multiplier was synthesized across all DropBits values (0–11) against the Sky130A HD standard cell library. The plot shows max and mean absolute error vs cell count and chip area.
+- Absolute error in full precision LSBs grows at the rate of ~$2^{DropBits}$ because each further dropped bit carries increasing weight which can contribute to large error at high DropBits
 
 | DropBits | Max \|error\| (full LSB) | Cells | Area (µm²) |
 |----------|---------------------------|-------|------------|
@@ -163,7 +168,7 @@ The truncated multiplier was synthesized across all DropBits values (0–11) aga
 **Design point: DropBits = 8** (vertical dashed line). At this level:
 - Error bound: ≤±2 truncated-output LSBs (≤512 full-precision LSBs)
 - ~27% cell savings vs a raw `*` operator synthesized through the same flow (717 cells baseline)
-- FIR output visually indistinguishable from the ideal floating-point reference (see Noisy Sinusoid Filtering below)
+- FIR output plot exactly overlaid on from the ideal floating-point reference (see Noisy Sinusoid Filtering below)
 
 ## Noisy Sinusoid Filtering
 
