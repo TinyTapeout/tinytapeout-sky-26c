@@ -1,12 +1,12 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
-  wokwi_id: "470637118495653889" # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title: "zg-Tiny Tapeout Template Copy (2)" # Project title
+  wokwi_id: "474471160110403585" # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title: "Cylon-Scanner" # Project title
   author: "Zach Gallimore" # Your name
   discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "LED color change" # One line description of what your project does
+  description: "Scans row of LEDs in a pattern reminiscent of a Cylon's visor" # One line description of what your project does
   language: "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz: 0 # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz: 7 # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -15,24 +15,24 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
+  ui[0]: reset (active low)
   ui[1]: ""
   ui[2]: ""
   ui[3]: ""
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""
-  ui[7]: "Push Button"
+  ui[7]: ""
 
   # Outputs
-  uo[0]: "RED LED"
-  uo[1]: "GREEN LED"
-  uo[2]: "BLUE LED"
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: LED 1 (leftmost)
+  uo[1]: LED 2
+  uo[2]: LED 3
+  uo[3]: LED 4
+  uo[4]: LED 5
+  uo[5]: LED 6
+  uo[6]: LED 7
+  uo[7]: LED 8 (rightmost)
 
   # Bidirectional pins
   uio[0]: ""
