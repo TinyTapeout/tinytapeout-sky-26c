@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title: "IO Expander with PWM" # Project title
+  author: "Tobias Lindskog" # Your name
+  discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "I2C-controlled IO expander" # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 0 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  top_module:  "tt_um_toby43479_iox"
+
+  source_files:
+    - "tt_um_toby43479_iox.v"
+    - "i2c_follow.v"
+    - "io_expander.v"
+    - "edgedet.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "gpi0"
+  ui[1]: "gpi1"
+  ui[2]: "gpi2"
+  ui[3]: "gpi3"
+  ui[4]: "gpi4"
+  ui[5]: "gpi5"
+  ui[6]: "gpi6"
+  ui[7]: "gpi7"
+
+  # Outputs
+  uo[0]: "gpo0/pwm0"
+  uo[1]: "gpo1/pwm1"
+  uo[2]: "gpo2/pwm2"
+  uo[3]: "gpo3/pwm3"
+  uo[4]: "gpo4/pwm4"
+  uo[5]: "gpo5/pwm5"
+  uo[6]: "gpo6/pwm6"
+  uo[7]: "gpo7/pwm7"
+
+  # Bidirectional pins
+  uio[0]: "scl"
+  uio[1]: "sda"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
