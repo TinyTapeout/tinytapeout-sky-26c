@@ -301,6 +301,7 @@ MACRO tt_um_rangfuu_alu
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 63.790 110.520 64.090 111.520 ;
@@ -309,6 +310,8 @@ MACRO tt_um_rangfuu_alu
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 3.096000 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 61.030 110.520 61.330 111.520 ;
@@ -317,6 +320,8 @@ MACRO tt_um_rangfuu_alu
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.126000 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 58.270 110.520 58.570 111.520 ;
@@ -325,6 +330,8 @@ MACRO tt_um_rangfuu_alu
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 2.853000 ;
+    ANTENNADIFFAREA 1.590400 ;
     PORT
       LAYER met4 ;
         RECT 55.510 110.520 55.810 111.520 ;
@@ -333,6 +340,8 @@ MACRO tt_um_rangfuu_alu
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 2.736000 ;
+    ANTENNADIFFAREA 0.702900 ;
     PORT
       LAYER met4 ;
         RECT 52.750 110.520 53.050 111.520 ;
@@ -341,8 +350,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.990000 ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 94.150 110.520 94.450 111.520 ;
@@ -351,8 +359,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.990000 ;
-    ANTENNADIFFAREA 0.452000 ;
+    ANTENNADIFFAREA 0.429000 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -361,8 +368,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.990000 ;
-    ANTENNADIFFAREA 0.985500 ;
+    ANTENNADIFFAREA 0.429000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -371,8 +377,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.990000 ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 85.870 110.520 86.170 111.520 ;
@@ -381,7 +386,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -390,7 +395,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -399,6 +404,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -407,6 +413,7 @@ MACRO tt_um_rangfuu_alu
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -418,11 +425,11 @@ MACRO tt_um_rangfuu_alu
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 109.440 ;
+        RECT 2.760 2.480 158.240 109.040 ;
       LAYER met2 ;
-        RECT 18.310 2.535 142.960 110.685 ;
+        RECT 18.310 2.535 148.020 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 140.235 110.665 ;
+        RECT 18.290 2.555 145.295 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
