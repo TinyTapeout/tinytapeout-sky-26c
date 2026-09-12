@@ -3,7 +3,7 @@ project:
   title:        "NS SAR ADC"      # Project title
   author:       "Silicon Edge"      # Your name
   discord:      "kavishka_21141"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "This is a research project designing a noise shaping SAR ADC design"      # One line description of what your project does
+  description:  "This is the SAR Core used in a research project designing a noise shaping SAR ADC."      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -25,9 +25,9 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
+  ui[0]: "CLK"
+  ui[1]: "RST_N"
+  ui[2]: "EN"
   ui[3]: ""
   ui[4]: ""
   ui[5]: ""
@@ -45,7 +45,7 @@ pinout:
   uo[7]: "B7"
 
   # Bidirectional pins
-  uio[0]: ""
+  uio[0]: "EOC"
   uio[1]: ""
   uio[2]: ""
   uio[3]: ""
@@ -55,9 +55,9 @@ pinout:
   uio[7]: ""
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: "VCM"
-  ua[1]: "VIN"
-  ua[2]: "VIP"
+  ua[0]: "V_N"
+  ua[1]: "V_P"
+  ua[2]: "VCM"
   ua[3]: "VREF_P"
   ua[4]: "VREF_N"
   ua[5]: "IBIAS"
