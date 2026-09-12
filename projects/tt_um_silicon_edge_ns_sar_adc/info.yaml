@@ -3,7 +3,7 @@ project:
   title:        "NS SAR ADC"      # Project title
   author:       "Silicon Edge"      # Your name
   discord:      "kavishka_21141"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "This is the SAR Core used in a research project designing a noise shaping SAR ADC."      # One line description of what your project does
+  description:  "This is the SAR Core used in a research project designing a noise shaping SAR ADC."     # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
